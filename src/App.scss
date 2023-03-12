@@ -13,11 +13,37 @@
   justify-content: center;
 }
 
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.container {
+  margin: 0 3rem;
 }
 
- */
+.active {
+  color: orange;
+}
+
+.search-form {
+  width: 100%;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-button {
+  position: absolute;
+  width:2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  right: 0;
+  transition: ease-in 0.2s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.search-svg {
+  width:1.5rem;
+  height: 1.5rem;
+}
