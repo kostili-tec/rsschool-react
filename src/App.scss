@@ -115,3 +115,55 @@
   margin-left: 1rem;
   height: 220px;
 }
+
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eeeeee;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.error-description {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    color: orange;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .error-button {
+    margin-top: 1rem;
+    padding-top: 5px;
+    width: 7rem;
+    height: 2rem;
+    background-color: orange;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+    &:hover{
+      background-color: rgb(214, 140, 3);
+    }
+  }
+}

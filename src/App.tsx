@@ -12,8 +12,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route id="Main Page" index element={<MainPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={<ErrorPage />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
