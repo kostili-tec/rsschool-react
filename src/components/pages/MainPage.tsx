@@ -3,6 +3,7 @@ import SearchForm from '../SearchForm';
 import Card from '../Card';
 import { getProducts } from '../../API/api';
 import { IProductsArray } from '../../interfaces';
+import reactSVG from '../../assets/react.svg';
 
 interface IState {
   products: IProductsArray;
@@ -27,10 +28,10 @@ export default class MainPage extends Component<Partial<IState>> {
       <>
         <SearchForm />
         <div className="cards-container">
-          {products ? (
+          {products.length ? (
             products.map((el) => <Card key={`card-${el.id}`} {...el} />)
           ) : (
-            <h1 style={{ color: 'black' }}>Loading</h1>
+            <img src={reactSVG} alt="react-logo" className="logo" />
           )}
         </div>
       </>
