@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchForm from '../SearchForm';
 import Card from '../Card';
-import { getProducts } from '../../API/api';
+import { getProducts } from '../../utils/api';
 import { IProductsArray } from '../../interfaces';
 import reactSVG from '../../assets/react.svg';
 
@@ -23,7 +23,6 @@ export default class MainPage extends Component<Partial<IState>> {
   }
   render() {
     const { products } = this.state;
-    console.log(products);
     return (
       <>
         <SearchForm />
