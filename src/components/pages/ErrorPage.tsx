@@ -5,7 +5,7 @@ import errorImage from '../../assets/error404.png';
 export default class ErrorPage extends Component {
   render() {
     return (
-      <div className="error-page">
+      <div className="error-page" data-testid="not-found-page">
         <div className="error-container">
           <img src={errorImage} alt="error-image" />
           <div className="error-description">

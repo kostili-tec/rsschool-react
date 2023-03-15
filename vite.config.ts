@@ -13,4 +13,9 @@ export default defineConfig(({ command, mode }) => ({
   },
 
   plugins: [react(), eslint()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/tests/setup.ts',
+  },
 }));
