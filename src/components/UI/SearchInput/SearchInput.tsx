@@ -14,17 +14,15 @@ export default class SearchInput extends Component<Partial<IInputState>> {
     this.setState({ inputState: e.target.value });
   };
 
-  componentDidUpdate(prevState: IInputState): void {
-    if (this.state.inputState !== prevState.inputState) {
-      localStorage.setItem('inputQuery', this.state.inputState);
-    }
-  }
-
   componentDidMount(): void {
     const inputQuery = localStorage.getItem('inputQuery');
     if (inputQuery) {
       this.setState({ inputState: inputQuery });
     }
+  }
+
+  componentWillUnmount(): void {
+    localStorage.setItem('inputQuery', this.state.inputState);
   }
 
   render() {
