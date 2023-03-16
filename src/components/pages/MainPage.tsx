@@ -15,8 +15,10 @@ export default class MainPage extends Component<Partial<IState>> {
   async componentDidMount() {
     try {
       const data = await getProducts();
-      const products = data?.products;
-      this.setState({ products });
+      if (data) {
+        const products = data.products;
+        this.setState({ products });
+      }
     } catch (error) {
       console.error('Failed to load data', error);
     }
@@ -24,7 +26,7 @@ export default class MainPage extends Component<Partial<IState>> {
   render() {
     const { products } = this.state;
     return (
-      <>
+      <div className="main-page" data-testid="main-page">
         <SearchForm />
         <div className="cards-container">
           {products.length ? (
@@ -33,7 +35,7 @@ export default class MainPage extends Component<Partial<IState>> {
             <img src={reactSVG} alt="react-logo" className="logo" />
           )}
         </div>
-      </>
+      </div>
     );
   }
 }

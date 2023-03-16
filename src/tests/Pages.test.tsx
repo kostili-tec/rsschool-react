@@ -1,12 +1,16 @@
 import { describe } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import MainPage from '../components/pages/MainPage';
-import SearchForm from '../components/SearchForm';
+import AboutPage from '../components/pages/AboutPage';
 
-describe('Main Page', () => {
-  it('have something', () => {
+describe('Pages test', () => {
+  it('render Main page', () => {
     render(<MainPage />);
     const btn = screen.getByRole('button');
     expect(btn).toBeInTheDocument();
+  });
+  it('render About page', () => {
+    render(<AboutPage />);
+    expect(screen.getByText(/about us/i));
   });
 });

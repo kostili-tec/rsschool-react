@@ -15,4 +15,12 @@ describe('Router test', () => {
     );
     expect(screen.getByTestId('not-found-page')).toBeInTheDocument();
   });
+  it('Main Page', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(screen.getByTestId('main-page')).toBeInTheDocument();
+  });
 });

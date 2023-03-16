@@ -8,7 +8,7 @@ export default class Card extends Component<IProduct> {
   }
   render() {
     return (
-      <div className="card">
+      <div className="card" data-testid={`card-${this.props.id}`}>
         <img src={this.props.thumbnail} alt={this.props.title} />
         <div className="card-description__container">
           <h4>{this.props.title}</h4>
