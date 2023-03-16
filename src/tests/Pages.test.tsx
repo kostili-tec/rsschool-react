@@ -1,5 +1,5 @@
 import { describe } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import MainPage from '../components/pages/MainPage';
 import AboutPage from '../components/pages/AboutPage';
 
