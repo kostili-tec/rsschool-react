@@ -36,3 +36,16 @@ export interface IApiGetRequest {
   skip: number;
   total: number;
 }
+
+export interface ICreatorFormState {
+  inputTitle: string;
+  textAreaDescription: string;
+  inputDate: string;
+  selectValue: string;
+  checkboxValue1: boolean;
+  checkboxValue2: boolean;
+  radioButton1: boolean;
+  radioButton2: boolean;
+  inputFile: File | null;
+  inputFileUrl: string;
+}
