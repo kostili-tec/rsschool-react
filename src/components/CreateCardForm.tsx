@@ -10,6 +10,7 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
   private teaxtAreaRef = React.createRef<HTMLTextAreaElement>();
   private inputDateRef = React.createRef<HTMLInputElement>();
   private selectValueRef = React.createRef<HTMLSelectElement>();
+  private inputPriceRef = React.createRef<HTMLInputElement>();
   private checkbox1ref = React.createRef<HTMLInputElement>();
   private checkbox2ref = React.createRef<HTMLInputElement>();
   private radioButton1ref = React.createRef<HTMLInputElement>();
@@ -19,6 +20,25 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
     super(props);
   }
 
+  checkPresents = (
+    checkbox1: boolean | undefined,
+    checkbox2: boolean | undefined
+  ): Array<string> | [] => {
+    if (checkbox1 && checkbox2) return ['sticker', 'trinket'];
+    if (checkbox1) return ['sticker'];
+    if (checkbox2) return ['trickent'];
+    else return [];
+  };
+
+  checkConditon = (
+    radioButton1: boolean | undefined,
+    radioButton2: boolean | undefined
+  ): string => {
+    if (radioButton1) return 'used';
+    else if (radioButton2) return 'unused';
+    else return '';
+  };
+
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const cardData: ICreatorFormRefs = {
@@ -26,10 +46,15 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
       inputDate: this.inputDateRef.current?.value ?? '',
       textAreaDescription: this.teaxtAreaRef.current?.value ?? '',
       selectValue: this.selectValueRef.current?.value ?? '',
-      checkboxValue1: this.checkbox1ref.current?.checked ?? false,
-      checkboxValue2: this.checkbox2ref.current?.checked ?? false,
-      radioButton1: this.radioButton1ref.current?.checked ?? false,
-      radioButton2: this.radioButton2ref.current?.checked ?? false,
+      inputPrice: this.inputPriceRef.current?.value ?? '',
+      checkboxValues: this.checkPresents(
+        this.checkbox1ref.current?.checked,
+        this.checkbox2ref.current?.checked
+      ),
+      radioButtonValue: this.checkConditon(
+        this.radioButton1ref.current?.checked,
+        this.radioButton2ref.current?.checked
+      ),
       inputFile: this.inputFileRef.current?.files ? this.inputFileRef.current.files[0] : null,
       inputFileUrl: this.inputFileRef.current?.files
         ? URL.createObjectURL(this.inputFileRef.current.files[0])
@@ -44,45 +69,41 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
           <div className="create-card__container card-container__left">
             <input type="text" ref={this.inputTitleRef} />
             <textarea ref={this.teaxtAreaRef} placeholder="Description here..."></textarea>
-            <select defaultValue="china" ref={this.selectValueRef}>
-              <option value="australia">Australia</option>
-              <option value="brazil">Brazil</option>
-              <option value="canada">Canada</option>
-              <option value="china">China</option>
-              <option value="france">France</option>
-              <option value="germany">Germany</option>
-              <option value="italy">Italy</option>
-              <option value="japan">Japan</option>
-              <option value="mexico">Mexico</option>
-              <option value="russia">Russia</option>
-              <option value="spain">Spain</option>
-              <option value="usa">USA</option>
+            <select ref={this.selectValueRef} defaultValue="Chose country">
+              <option disabled value="Chose category">
+                Chose country
+              </option>
+              <option value="smartphones">Smartphones</option>
+              <option value="laptops">Laptops</option>
+              <option value="fragrances">Fragrances</option>
+              <option value="skincare">Skincare</option>
+              <option value="another">Another</option>
             </select>
             <input type="date" ref={this.inputDateRef} />
+            <input type="number" ref={this.inputPriceRef} />
           </div>
 
           <div className="create-card__container card-container__right">
             <fieldset>
-              <legend>Chose your</legend>
+              <legend>Extra present</legend>
               <div>
                 <input type="checkbox" id="checkInput1" ref={this.checkbox1ref} />
-                <label htmlFor="checkInput1">label1</label>
+                <label htmlFor="checkInput1">Sticker</label>
               </div>
               <div>
                 <input type="checkbox" id="checkInput2" ref={this.checkbox2ref} />
-                <label htmlFor="checkInput2">Label2</label>
+                <label htmlFor="checkInput2">Trinket</label>
               </div>
             </fieldset>
             <fieldset>
-              <legend>Chose 2</legend>
-
+              <legend>Сondition</legend>
               <div>
                 <input type="radio" id="radioInput1" name="chose2" ref={this.radioButton1ref} />
-                <label htmlFor="radioInput1">radio1</label>
+                <label htmlFor="radioInput1">Used</label>
               </div>
               <div>
                 <input type="radio" id="radioInput2" name="chose2" ref={this.radioButton2ref} />
-                <label htmlFor="radioInput2">radio2</label>
+                <label htmlFor="radioInput2">Unused</label>
               </div>
             </fieldset>
 

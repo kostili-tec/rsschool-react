@@ -41,11 +41,10 @@ export interface ICreatorFormRefs {
   inputTitle: string;
   textAreaDescription: string;
   inputDate: string;
+  inputPrice: string;
   selectValue: string;
-  checkboxValue1: boolean;
-  checkboxValue2: boolean;
-  radioButton1: boolean;
-  radioButton2: boolean;
+  checkboxValues?: Array<string> | [];
+  radioButtonValue: string;
   inputFile: File | null;
   inputFileUrl: string;
 }
