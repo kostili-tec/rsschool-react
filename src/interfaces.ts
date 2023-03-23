@@ -37,7 +37,7 @@ export interface IApiGetRequest {
   total: number;
 }
 
-export interface ICreatorFormState {
+export interface ICreatorFormRefs {
   inputTitle: string;
   textAreaDescription: string;
   inputDate: string;

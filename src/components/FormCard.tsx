@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { ICreatorFormState } from '../interfaces';
+import { ICreatorFormRefs } from '../interfaces';
 
-export default class FormCard extends Component<ICreatorFormState> {
-  constructor(props: ICreatorFormState) {
+export default class FormCard extends Component<ICreatorFormRefs> {
+  constructor(props: ICreatorFormRefs) {
     super(props);
   }
   render() {

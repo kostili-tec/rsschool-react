@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import CreateCardForm from '../CreateCardForm';
 import FormCard from '../FormCard';
-import { ICreatorFormState } from '../../interfaces';
+import { ICreatorFormRefs } from '../../interfaces';
 interface IFormPageState {
-  cardsData: Array<ICreatorFormState> | [];
+  cardsData: Array<ICreatorFormRefs> | [];
 }
 
 export default class FormPage extends Component<Partial<IFormPageState>> {
@@ -11,7 +11,7 @@ export default class FormPage extends Component<Partial<IFormPageState>> {
     cardsData: [],
   };
 
-  createCard = (newCardData: Partial<ICreatorFormState>) => {
+  createCard = (newCardData: Partial<ICreatorFormRefs>) => {
     const { cardsData } = this.state;
     this.setState({ cardsData: [...cardsData, newCardData] });
   };
