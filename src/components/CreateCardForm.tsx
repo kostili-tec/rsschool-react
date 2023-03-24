@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { validateText, validateDescription } from '../utils/validation';
 import { ICreatorFormRefs } from '../interfaces';
 
 interface ICreateFormProps {
   create: (value: Partial<ICreatorFormRefs>) => void;
 }
 
-export default class CreateCardForm extends Component<ICreateFormProps> {
+type StateForm = { [key in keyof ICreatorFormRefs]: boolean };
+
+export default class CreateCardForm extends Component<ICreateFormProps, StateForm> {
   private inputTitleRef = React.createRef<HTMLInputElement>();
   private teaxtAreaRef = React.createRef<HTMLTextAreaElement>();
   private inputDateRef = React.createRef<HTMLInputElement>();
@@ -18,6 +21,17 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
   private inputFileRef = React.createRef<HTMLInputElement>();
   constructor(props: ICreateFormProps) {
     super(props);
+    this.state = {
+      inputDate: false,
+      inputTitle: true,
+      selectValue: false,
+      inputPrice: false,
+      textAreaDescription: false,
+      radioButtonValue: false,
+      checkboxValues: false,
+      inputFile: false,
+      inputFileUrl: false,
+    };
   }
 
   checkPresents = (
@@ -39,8 +53,15 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
     else return '';
   };
 
+  checkValidation = () => {
+    const checkTitle = validateText(this.inputTitleRef.current?.value);
+    const checkDescription = validateDescription(this.teaxtAreaRef.current?.value);
+    this.setState({ inputTitle: checkTitle, textAreaDescription: checkDescription });
+  };
+
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    this.checkValidation();
     const cardData: ICreatorFormRefs = {
       inputTitle: this.inputTitleRef.current?.value ?? '',
       inputDate: this.inputDateRef.current?.value ?? '',
@@ -67,11 +88,15 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
       <form className="form__create-card" onSubmit={this.handleSubmit}>
         <div className="create-components__container">
           <div className="create-card__container card-container__left">
-            <input type="text" ref={this.inputTitleRef} />
+            <div className="form-input__container">
+              <label htmlFor="title-input">Title</label>
+              <input id="title-input" type="text" ref={this.inputTitleRef} />
+              {!this.state.inputTitle && <span>Error</span>}
+            </div>
             <textarea ref={this.teaxtAreaRef} placeholder="Description here..."></textarea>
-            <select ref={this.selectValueRef} defaultValue="Chose country">
-              <option disabled value="Chose category">
-                Chose country
+            <select ref={this.selectValueRef} defaultValue={'chose'}>
+              <option disabled value="chose">
+                Chose category
               </option>
               <option value="smartphones">Smartphones</option>
               <option value="laptops">Laptops</option>
@@ -79,7 +104,7 @@ export default class CreateCardForm extends Component<ICreateFormProps> {
               <option value="skincare">Skincare</option>
               <option value="another">Another</option>
             </select>
-            <input type="date" ref={this.inputDateRef} />
+            <input type="date" max={`2023-03-24`} ref={this.inputDateRef} />
             <input type="number" ref={this.inputPriceRef} />
           </div>
 
