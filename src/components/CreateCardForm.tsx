@@ -9,6 +9,8 @@ import {
   validateRadioButtons,
   validateFileInput,
 } from '../utils/validation';
+import FormInput from './UI/FormComponents/FormInput';
+import FormSelect from './UI/FormComponents/FormSelect';
 import { ICreatorFormRefs } from '../interfaces';
 
 interface ICreateFormProps {
@@ -156,35 +158,34 @@ export default class CreateCardForm extends Component<ICreateFormProps, StateFor
       >
         <div className="create-components__container">
           <div className="create-card__container card-container__left">
+            <FormInput
+              type="text"
+              placeholder="Title..."
+              isValid={this.state.inputTitle}
+              refValue={this.inputTitleRef}
+            />
             <div className="form-input__container">
-              <input id="title-input" type="text" ref={this.inputTitleRef} placeholder="Title..." />
-              {!this.state.inputTitle && <span>Error</span>}
+              <textarea
+                rows={5}
+                cols={30}
+                ref={this.teaxtAreaRef}
+                placeholder="Description here..."
+              ></textarea>
+              {!this.state.textAreaDescription && <span className="error-span">Error</span>}
             </div>
-            <div className="form-input__container">
-              <textarea ref={this.teaxtAreaRef} placeholder="Description here..."></textarea>
-              {!this.state.textAreaDescription && <span>Error</span>}
-            </div>
-            <div className="form-input__container">
-              <select ref={this.selectValueRef} defaultValue={''}>
-                <option disabled value="">
-                  Chose category
-                </option>
-                <option value="smartphones">Smartphones</option>
-                <option value="laptops">Laptops</option>
-                <option value="fragrances">Fragrances</option>
-                <option value="skincare">Skincare</option>
-                <option value="another">Another</option>
-              </select>
-              {!this.state.selectValue && <span>Error</span>}
-            </div>
-            <div className="form-input__container">
-              <input type="date" max={this.getCurrentDate()} ref={this.inputDateRef} />
-              {!this.state.inputDate && <span>Error</span>}
-            </div>
-            <div className="form-input__container">
-              <input type="number" ref={this.inputPriceRef} placeholder="Price..." />
-              {!this.state.inputPrice && <span>Error</span>}
-            </div>
+            <FormSelect isValid={this.state.selectValue} refValue={this.selectValueRef} />
+            <FormInput
+              type="date"
+              isValid={this.state.inputDate}
+              refValue={this.inputDateRef}
+              max={this.getCurrentDate()}
+            />
+            <FormInput
+              type="number"
+              placeholder="Price..."
+              isValid={this.state.inputPrice}
+              refValue={this.inputPriceRef}
+            />
           </div>
 
           <div className="create-card__container card-container__right">
@@ -200,13 +201,13 @@ export default class CreateCardForm extends Component<ICreateFormProps, StateFor
                   <label htmlFor="checkInput2">Trinket</label>
                 </div>
               </div>
-              <div>{!this.state.checkboxValues && <span>Error</span>}</div>
+              <div>{!this.state.checkboxValues && <span className="error-span">Error</span>}</div>
             </fieldset>
             <fieldset className="form-fieldset">
               <legend>Сondition</legend>
               <div className="legend-item">
                 <div>
-                  <input type="radio" id="radioInput1" name="chose2" ref={this.radioButton1ref} />
+                  <input type="radio" id="radioInput1" name="chose1" ref={this.radioButton1ref} />
                   <label htmlFor="radioInput1">Used</label>
                 </div>
                 <div>
@@ -214,22 +215,18 @@ export default class CreateCardForm extends Component<ICreateFormProps, StateFor
                   <label htmlFor="radioInput2">Unused</label>
                 </div>
               </div>
-              <div>{!this.state.radioButtonValue && <span>Error</span>}</div>
+              <div>{!this.state.radioButtonValue && <span className="error-span">Error</span>}</div>
             </fieldset>
-
-            <div className="form-input__container">
-              <input
-                type="file"
-                accept="image/jpeg,image/png,image/gif"
-                id="file-input"
-                ref={this.inputFileRef}
-              />
-              {!this.state.inputFile && <span>Error</span>}
-            </div>
+            <FormInput
+              type="file"
+              accept="image/jpeg,image/png,image/gif"
+              isValid={this.state.inputFile}
+              refValue={this.inputFileRef}
+            />
+            <button type="submit">Submit</button>
           </div>
         </div>
         <hr />
-        <button type="submit">Submit</button>
       </form>
     );
   }

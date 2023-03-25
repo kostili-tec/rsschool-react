@@ -14,7 +14,6 @@ export const validateDescription = (inputValue: string | undefined): boolean => 
 };
 
 export const validateSelect = (selectValue: string | undefined): boolean => {
-  console.log(selectValue);
   if (selectValue) return true;
   else return false;
 };
