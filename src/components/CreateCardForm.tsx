@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import { validateText, validateDescription } from '../utils/validation';
+import {
+  validateText,
+  validateDescription,
+  validateSelect,
+  validateDate,
+  validatePrice,
+  validateCheckBoxes,
+  validateRadioButtons,
+  validateFileInput,
+} from '../utils/validation';
 import { ICreatorFormRefs } from '../interfaces';
 
 interface ICreateFormProps {
@@ -19,19 +28,21 @@ export default class CreateCardForm extends Component<ICreateFormProps, StateFor
   private radioButton1ref = React.createRef<HTMLInputElement>();
   private radioButton2ref = React.createRef<HTMLInputElement>();
   private inputFileRef = React.createRef<HTMLInputElement>();
+  private form: HTMLFormElement | null;
   constructor(props: ICreateFormProps) {
     super(props);
     this.state = {
-      inputDate: false,
+      inputDate: true,
       inputTitle: true,
-      selectValue: false,
-      inputPrice: false,
-      textAreaDescription: false,
-      radioButtonValue: false,
-      checkboxValues: false,
-      inputFile: false,
+      selectValue: true,
+      inputPrice: true,
+      textAreaDescription: true,
+      radioButtonValue: true,
+      checkboxValues: true,
+      inputFile: true,
       inputFileUrl: false,
     };
+    this.form = null;
   }
 
   checkPresents = (
@@ -56,88 +67,165 @@ export default class CreateCardForm extends Component<ICreateFormProps, StateFor
   checkValidation = () => {
     const checkTitle = validateText(this.inputTitleRef.current?.value);
     const checkDescription = validateDescription(this.teaxtAreaRef.current?.value);
-    this.setState({ inputTitle: checkTitle, textAreaDescription: checkDescription });
+    const checkSelect = validateSelect(this.selectValueRef.current?.value);
+    const checkDate = validateDate(this.inputDateRef.current?.value);
+    const checkPrice = validatePrice(this.inputPriceRef.current?.value);
+    const checkCheckBoxes = validateCheckBoxes(
+      this.checkPresents(this.checkbox1ref.current?.checked, this.checkbox2ref.current?.checked)
+    );
+    const checkRadio = validateRadioButtons(
+      this.checkConditon(
+        this.radioButton1ref.current?.checked,
+        this.radioButton2ref.current?.checked
+      )
+    );
+    const checkFileInput = validateFileInput(this.inputFileRef.current?.files);
+
+    const chacksArr = [
+      checkTitle,
+      checkDescription,
+      checkSelect,
+      checkDate,
+      checkPrice,
+      checkCheckBoxes,
+      checkRadio,
+      checkFileInput,
+    ];
+
+    this.setState({
+      inputTitle: checkTitle,
+      textAreaDescription: checkDescription,
+      selectValue: checkSelect,
+      inputDate: checkDate,
+      inputPrice: checkPrice,
+      checkboxValues: checkCheckBoxes,
+      radioButtonValue: checkRadio,
+      inputFile: checkFileInput,
+      inputFileUrl: checkFileInput,
+    });
+    if (chacksArr.includes(false)) return false;
+    else return true;
+  };
+
+  getCurrentDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  resetForm = () => {
+    if (this.form) this.form.reset();
   };
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    this.checkValidation();
-    const cardData: ICreatorFormRefs = {
-      inputTitle: this.inputTitleRef.current?.value ?? '',
-      inputDate: this.inputDateRef.current?.value ?? '',
-      textAreaDescription: this.teaxtAreaRef.current?.value ?? '',
-      selectValue: this.selectValueRef.current?.value ?? '',
-      inputPrice: this.inputPriceRef.current?.value ?? '',
-      checkboxValues: this.checkPresents(
-        this.checkbox1ref.current?.checked,
-        this.checkbox2ref.current?.checked
-      ),
-      radioButtonValue: this.checkConditon(
-        this.radioButton1ref.current?.checked,
-        this.radioButton2ref.current?.checked
-      ),
-      inputFile: this.inputFileRef.current?.files ? this.inputFileRef.current.files[0] : null,
-      inputFileUrl: this.inputFileRef.current?.files
-        ? URL.createObjectURL(this.inputFileRef.current.files[0])
-        : '',
-    };
-    this.props.create(cardData);
+    if (this.checkValidation()) {
+      this.checkValidation();
+      const cardData: ICreatorFormRefs = {
+        inputTitle: this.inputTitleRef.current?.value ?? '',
+        inputDate: this.inputDateRef.current?.value ?? '',
+        textAreaDescription: this.teaxtAreaRef.current?.value ?? '',
+        selectValue: this.selectValueRef.current?.value ?? '',
+        inputPrice: this.inputPriceRef.current?.value ?? '',
+        checkboxValues: this.checkPresents(
+          this.checkbox1ref.current?.checked,
+          this.checkbox2ref.current?.checked
+        ),
+        radioButtonValue: this.checkConditon(
+          this.radioButton1ref.current?.checked,
+          this.radioButton2ref.current?.checked
+        ),
+        inputFile: this.inputFileRef.current?.files ? this.inputFileRef.current.files[0] : null,
+        inputFileUrl: this.inputFileRef.current?.files
+          ? URL.createObjectURL(this.inputFileRef.current.files[0])
+          : '',
+      };
+      this.props.create(cardData);
+      this.resetForm();
+    }
   };
+
   render() {
     return (
-      <form className="form__create-card" onSubmit={this.handleSubmit}>
+      <form
+        className="form__create-card"
+        onSubmit={this.handleSubmit}
+        ref={(el) => (this.form = el)}
+      >
         <div className="create-components__container">
           <div className="create-card__container card-container__left">
             <div className="form-input__container">
-              <label htmlFor="title-input">Title</label>
-              <input id="title-input" type="text" ref={this.inputTitleRef} />
+              <input id="title-input" type="text" ref={this.inputTitleRef} placeholder="Title..." />
               {!this.state.inputTitle && <span>Error</span>}
             </div>
-            <textarea ref={this.teaxtAreaRef} placeholder="Description here..."></textarea>
-            <select ref={this.selectValueRef} defaultValue={'chose'}>
-              <option disabled value="chose">
-                Chose category
-              </option>
-              <option value="smartphones">Smartphones</option>
-              <option value="laptops">Laptops</option>
-              <option value="fragrances">Fragrances</option>
-              <option value="skincare">Skincare</option>
-              <option value="another">Another</option>
-            </select>
-            <input type="date" max={`2023-03-24`} ref={this.inputDateRef} />
-            <input type="number" ref={this.inputPriceRef} />
+            <div className="form-input__container">
+              <textarea ref={this.teaxtAreaRef} placeholder="Description here..."></textarea>
+              {!this.state.textAreaDescription && <span>Error</span>}
+            </div>
+            <div className="form-input__container">
+              <select ref={this.selectValueRef} defaultValue={''}>
+                <option disabled value="">
+                  Chose category
+                </option>
+                <option value="smartphones">Smartphones</option>
+                <option value="laptops">Laptops</option>
+                <option value="fragrances">Fragrances</option>
+                <option value="skincare">Skincare</option>
+                <option value="another">Another</option>
+              </select>
+              {!this.state.selectValue && <span>Error</span>}
+            </div>
+            <div className="form-input__container">
+              <input type="date" max={this.getCurrentDate()} ref={this.inputDateRef} />
+              {!this.state.inputDate && <span>Error</span>}
+            </div>
+            <div className="form-input__container">
+              <input type="number" ref={this.inputPriceRef} placeholder="Price..." />
+              {!this.state.inputPrice && <span>Error</span>}
+            </div>
           </div>
 
           <div className="create-card__container card-container__right">
-            <fieldset>
+            <fieldset className="form-fieldset">
               <legend>Extra present</legend>
-              <div>
-                <input type="checkbox" id="checkInput1" ref={this.checkbox1ref} />
-                <label htmlFor="checkInput1">Sticker</label>
+              <div className="legend-item">
+                <div>
+                  <input type="checkbox" id="checkInput1" ref={this.checkbox1ref} />
+                  <label htmlFor="checkInput1">Sticker</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="checkInput2" ref={this.checkbox2ref} />
+                  <label htmlFor="checkInput2">Trinket</label>
+                </div>
               </div>
-              <div>
-                <input type="checkbox" id="checkInput2" ref={this.checkbox2ref} />
-                <label htmlFor="checkInput2">Trinket</label>
-              </div>
+              <div>{!this.state.checkboxValues && <span>Error</span>}</div>
             </fieldset>
-            <fieldset>
+            <fieldset className="form-fieldset">
               <legend>Сondition</legend>
-              <div>
-                <input type="radio" id="radioInput1" name="chose2" ref={this.radioButton1ref} />
-                <label htmlFor="radioInput1">Used</label>
+              <div className="legend-item">
+                <div>
+                  <input type="radio" id="radioInput1" name="chose2" ref={this.radioButton1ref} />
+                  <label htmlFor="radioInput1">Used</label>
+                </div>
+                <div>
+                  <input type="radio" id="radioInput2" name="chose2" ref={this.radioButton2ref} />
+                  <label htmlFor="radioInput2">Unused</label>
+                </div>
               </div>
-              <div>
-                <input type="radio" id="radioInput2" name="chose2" ref={this.radioButton2ref} />
-                <label htmlFor="radioInput2">Unused</label>
-              </div>
+              <div>{!this.state.radioButtonValue && <span>Error</span>}</div>
             </fieldset>
 
-            <input
-              type="file"
-              accept="image/jpeg,image/png,image/gif"
-              id="file-input"
-              ref={this.inputFileRef}
-            />
+            <div className="form-input__container">
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/gif"
+                id="file-input"
+                ref={this.inputFileRef}
+              />
+              {!this.state.inputFile && <span>Error</span>}
+            </div>
           </div>
         </div>
         <hr />
