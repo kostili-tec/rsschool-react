@@ -51,6 +51,7 @@ export interface ICreatorFormRefs {
 
 export interface IFormPageState {
   cardsData: Array<ICreatorFormRefs> | [];
+  isVisibleMessage?: boolean;
 }
 
 export interface ICreateFormProps {

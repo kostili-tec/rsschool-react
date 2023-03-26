@@ -205,7 +205,7 @@ export default class CreateCardForm extends Component<ICreateFormProps, StateFor
                   <label htmlFor="radioInput1">Used</label>
                 </div>
                 <div>
-                  <input type="radio" id="radioInput2" name="chose2" ref={this.radioButton2ref} />
+                  <input type="radio" id="radioInput2" name="chose1" ref={this.radioButton2ref} />
                   <label htmlFor="radioInput2">Unused</label>
                 </div>
               </div>
