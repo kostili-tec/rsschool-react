@@ -22,13 +22,15 @@ export default class FormPage extends Component<Partial<IFormPageState>> {
       <>
         <CreateCardForm create={this.createCard} />
         {isVisibleMessage && <p>Card added</p>}
-        <div className="form-page__container">
-          {cardsData.length ? (
-            cardsData.map((el, ind) => <FormCard key={`my-card-${ind + 1}`} {...el} />)
-          ) : (
-            <div>No Cards</div>
-          )}
-        </div>
+        {cardsData.length ? (
+          <div className="form-page__container">
+            {cardsData.map((el, ind) => (
+              <FormCard key={`my-card-${ind + 1}`} {...el} />
+            ))}
+          </div>
+        ) : (
+          <div>No Cards</div>
+        )}
       </>
     );
   }
