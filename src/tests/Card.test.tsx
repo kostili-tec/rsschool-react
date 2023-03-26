@@ -11,10 +11,8 @@ describe('Card test', () => {
         <App />
       </MemoryRouter>
     );
-    const cardEl = await screen.findByTestId('card-1');
     const titleCard = await screen.findByText(/iPhone 9/i);
     const descriptionCard = await screen.findByText(/An apple mobile/i);
-    expect(cardEl).toBeTruthy();
     expect(titleCard).toBeInTheDocument();
     expect(descriptionCard).toBeInTheDocument();
   });
@@ -24,7 +22,7 @@ describe('Card test', () => {
         id: 1,
         thumbnail: 'https://example.com/product1.jpg',
         title: 'Product 1',
-        description: 'This is a description of Product 1',
+        description: 'This is a first description',
         brand: 'Brand 1',
         category: 'Category 1',
         rating: 4.5,
@@ -37,7 +35,7 @@ describe('Card test', () => {
         id: 2,
         thumbnail: 'https://example.com/product2.jpg',
         title: 'Product 2',
-        description: 'This is a description of Product 2',
+        description: 'This is a second description',
         brand: 'Brand 2',
         category: 'Category 2',
         rating: 2.3,
@@ -54,21 +52,20 @@ describe('Card test', () => {
         ))}
       </>
     );
-    expect(screen.getByTestId('card-1')).toBeInTheDocument();
-    expect(screen.getByTestId('card-1')).toHaveTextContent(/Product 1/i);
-    expect(screen.getByTestId('card-1')).toHaveTextContent(/This is a description of Product 1/i);
-    expect(screen.getByTestId('card-1')).toHaveTextContent(/Brand: Brand 1/i);
-    expect(screen.getByTestId('card-1')).toHaveTextContent(/Category 1/i);
-    expect(screen.getByTestId('card-1')).toHaveTextContent(/Rating: 4.5/i);
-    expect(screen.getByTestId('card-1')).toHaveTextContent(/In Stock: 10/i);
-    expect(screen.getByTestId('card-1')).toHaveTextContent('$ 100');
-    expect(screen.getByTestId('card-2')).toBeInTheDocument();
-    expect(screen.getByTestId('card-2')).toHaveTextContent(/Product 2/i);
-    expect(screen.getByTestId('card-2')).toHaveTextContent(/This is a description of Product 2/i);
-    expect(screen.getByTestId('card-2')).toHaveTextContent(/Brand: Brand 2/i);
-    expect(screen.getByTestId('card-2')).toHaveTextContent(/Category 2/i);
-    expect(screen.getByTestId('card-2')).toHaveTextContent(/Rating: 2.3/i);
-    expect(screen.getByTestId('card-2')).toHaveTextContent(/In Stock: 300/i);
-    expect(screen.getByTestId('card-2')).toHaveTextContent('$ 300');
+
+    expect(screen.getByText(/product 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/this is a first description/i)).toBeInTheDocument();
+    expect(screen.getByText(/Brand: Brand 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/Category 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/Rating: 4.5/i)).toBeInTheDocument();
+    expect(screen.getByText(/In Stock: 10/i)).toBeInTheDocument();
+    expect(screen.getByText('$ 100')).toBeInTheDocument();
+    expect(screen.getByText(/Product 2/i)).toBeInTheDocument();
+    expect(screen.getByText(/this is a second description/i)).toBeInTheDocument();
+    expect(screen.getByText(/Brand: Brand 2/i)).toBeInTheDocument();
+    expect(screen.getByText(/Category 2/i)).toBeInTheDocument();
+    expect(screen.getByText(/Rating: 2.3/i)).toBeInTheDocument();
+    expect(screen.getByText(/In Stock: 300/i)).toBeInTheDocument();
+    expect(screen.getByText('$ 300')).toBeInTheDocument();
   });
 });

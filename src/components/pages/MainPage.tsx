@@ -26,12 +26,12 @@ export default class MainPage extends Component<Partial<IState>> {
   render() {
     const { products } = this.state;
     return (
-      <div className="main-page" data-testid="main-page">
+      <div className="main-page">
         <SearchForm />
         {products.length ? (
           <div className="cards-container">
             {products.map((el) => (
-              <Card key={`card-${el.id}`} {...el} />
+              <Card key={el.id} {...el} />
             ))}
           </div>
         ) : (

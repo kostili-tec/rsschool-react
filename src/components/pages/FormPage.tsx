@@ -25,7 +25,7 @@ export default class FormPage extends Component<Partial<IFormPageState>> {
         {cardsData.length ? (
           <div className="form-page__container">
             {cardsData.map((el, ind) => (
-              <FormCard key={`my-card-${ind + 1}`} {...el} />
+              <FormCard key={ind + 1} {...el} />
             ))}
           </div>
         ) : (

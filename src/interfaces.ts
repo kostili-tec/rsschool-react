@@ -1,7 +1,6 @@
 export interface IHeaderLinks {
   linkName: string;
   linkTo: string;
-  'data-testid'?: string;
 }
 
 export interface IHeaderProps {
