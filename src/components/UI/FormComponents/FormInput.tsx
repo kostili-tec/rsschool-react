@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-
-interface IFormInputProps {
-  type: string;
-  refValue: React.RefObject<HTMLInputElement>;
-  isValid: boolean;
-  placeholder?: string;
-  id?: string;
-  max?: string;
-  accept?: string;
-}
+import { IFormInputProps } from '../../../interfaces';
 
 export default class FormInput extends Component<IFormInputProps> {
   render() {
@@ -22,6 +13,7 @@ export default class FormInput extends Component<IFormInputProps> {
           id={id}
           max={max}
           accept={accept}
+          role={`${type}box`}
         />
         {!isValid && <span className="error-span">Error</span>}
       </div>

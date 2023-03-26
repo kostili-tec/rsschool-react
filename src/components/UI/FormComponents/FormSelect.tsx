@@ -10,7 +10,7 @@ export default class FormSelect extends Component<ISelectProps> {
     const { refValue, isValid } = this.props;
     return (
       <div className="form-input__container">
-        <select ref={refValue} defaultValue={''}>
+        <select role={'select'} ref={refValue} defaultValue={''}>
           <option disabled value="">
             Chose category
           </option>

@@ -8,7 +8,11 @@ export default class FormCard extends Component<ICreatorFormRefs> {
   render() {
     return (
       <div className="form-card">
-        <img src={this.props.inputFileUrl} alt="uzver-image" className="form-card__image" />
+        <img
+          src={this.props.inputFileUrl}
+          alt={`${this.props.inputTitle}-image`}
+          className="form-card__image"
+        />
         <div className="card-description__container">
           <h1>{this.props.inputTitle}</h1>
           <p>{this.props.textAreaDescription}</p>

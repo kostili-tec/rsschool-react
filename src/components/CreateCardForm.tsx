@@ -11,13 +11,7 @@ import {
 } from '../utils/validation';
 import FormInput from './UI/FormComponents/FormInput';
 import FormSelect from './UI/FormComponents/FormSelect';
-import { ICreatorFormRefs } from '../interfaces';
-
-interface ICreateFormProps {
-  create: (value: Partial<ICreatorFormRefs>) => void;
-}
-
-type StateForm = { [key in keyof ICreatorFormRefs]: boolean };
+import { ICreatorFormRefs, ICreateFormProps, StateForm } from '../interfaces';
 
 export default class CreateCardForm extends Component<ICreateFormProps, StateForm> {
   private inputTitleRef = React.createRef<HTMLInputElement>();

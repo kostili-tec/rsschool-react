@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import CreateCardForm from '../CreateCardForm';
 import FormCard from '../FormCard';
-import { ICreatorFormRefs } from '../../interfaces';
-interface IFormPageState {
-  cardsData: Array<ICreatorFormRefs> | [];
-}
+import { ICreatorFormRefs, IFormPageState } from '../../interfaces';
 
 export default class FormPage extends Component<Partial<IFormPageState>> {
   state: IFormPageState = {

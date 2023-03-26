@@ -48,3 +48,23 @@ export interface ICreatorFormRefs {
   inputFile: File | null;
   inputFileUrl: string;
 }
+
+export interface IFormPageState {
+  cardsData: Array<ICreatorFormRefs> | [];
+}
+
+export interface ICreateFormProps {
+  create: (value: Partial<ICreatorFormRefs>) => void;
+}
+
+export type StateForm = { [key in keyof ICreatorFormRefs]: boolean };
+
+export interface IFormInputProps {
+  type: string;
+  refValue: React.RefObject<HTMLInputElement>;
+  isValid: boolean;
+  placeholder?: string;
+  id?: string;
+  max?: string;
+  accept?: string;
+}
