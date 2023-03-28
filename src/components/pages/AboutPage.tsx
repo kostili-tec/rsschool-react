@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 
-export default class AboutPage extends Component {
-  render() {
-    return <div>About Us</div>;
-  }
-}
+const AboutPage: FC = () => {
+  return <div>AboutPage</div>;
+};
+
+export default AboutPage;
