@@ -48,13 +48,8 @@ export interface ICreatorFormRefs {
   inputFileUrl: string;
 }
 
-export interface IFormPageState {
-  cardsData: Array<ICreatorFormRefs> | [];
-  isVisibleMessage?: boolean;
-}
-
 export interface ICreateFormProps {
-  create: (value: Partial<ICreatorFormRefs>) => void;
+  create: (value: ICreatorFormRefs) => void;
 }
 
 export type StateForm = { [key in keyof ICreatorFormRefs]: boolean };

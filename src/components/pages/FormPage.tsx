@@ -1,37 +1,32 @@
-import React, { Component } from 'react';
+import React, { FC, useState } from 'react';
 import CreateCardForm from '../CreateCardForm';
 import FormCard from '../FormCard';
-import { ICreatorFormRefs, IFormPageState } from '../../interfaces';
+import { ICreatorFormRefs } from '../../interfaces';
 
-export default class FormPage extends Component<Partial<IFormPageState>> {
-  state: IFormPageState = {
-    cardsData: [],
-    isVisibleMessage: false,
+const FormPage: FC = () => {
+  const [cards, setCards] = useState<Array<ICreatorFormRefs> | []>([]);
+  const [message, setMessage] = useState(false);
+
+  const createCard = (newCard: ICreatorFormRefs) => {
+    setCards([...cards, newCard]);
+    setMessage(true);
+    setTimeout(() => setMessage(false), 2000);
   };
+  return (
+    <>
+      <CreateCardForm create={createCard} />
+      {message && <p>Card added</p>}
+      {cards.length ? (
+        <div className="form-page__container">
+          {cards.map((el, ind) => (
+            <FormCard key={ind + 1} {...el} />
+          ))}
+        </div>
+      ) : (
+        <div>No Cards</div>
+      )}
+    </>
+  );
+};
 
-  createCard = (newCardData: Partial<ICreatorFormRefs>) => {
-    const { cardsData } = this.state;
-    this.setState({ cardsData: [...cardsData, newCardData] });
-    this.setState({ isVisibleMessage: true });
-    setTimeout(() => this.setState({ isVisibleMessage: false }), 2000);
-  };
-
-  render() {
-    const { cardsData, isVisibleMessage } = this.state;
-    return (
-      <>
-        <CreateCardForm create={this.createCard} />
-        {isVisibleMessage && <p>Card added</p>}
-        {cardsData.length ? (
-          <div className="form-page__container">
-            {cardsData.map((el, ind) => (
-              <FormCard key={ind + 1} {...el} />
-            ))}
-          </div>
-        ) : (
-          <div>No Cards</div>
-        )}
-      </>
-    );
-  }
-}
+export default FormPage;
