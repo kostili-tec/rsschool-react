@@ -1,20 +1,20 @@
 import React, { FC, useState } from 'react';
-import CreateCardForm from '../CreateCardForm';
 import FormCard from '../FormCard';
-import { ICreatorFormRefs } from '../../interfaces';
+import CardForm from '../CardForm';
+import { IFormCardData } from '../../interfaces';
 
 const FormPage: FC = () => {
-  const [cards, setCards] = useState<Array<ICreatorFormRefs> | []>([]);
+  const [cards, setCards] = useState<Array<IFormCardData> | []>([]);
   const [message, setMessage] = useState(false);
 
-  const createCard = (newCard: ICreatorFormRefs) => {
+  const createCard = (newCard: IFormCardData) => {
     setCards([...cards, newCard]);
     setMessage(true);
     setTimeout(() => setMessage(false), 2000);
   };
   return (
     <>
-      <CreateCardForm create={createCard} />
+      <CardForm create={createCard} />
       {message && <p>Card added</p>}
       {cards.length ? (
         <div className="form-page__container">

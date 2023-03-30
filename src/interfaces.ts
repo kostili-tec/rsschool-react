@@ -48,8 +48,24 @@ export interface ICreatorFormRefs {
   inputFileUrl: string;
 }
 
+export interface IFormInputsData {
+  id?: number;
+  title: string;
+  description: string;
+  select: string;
+  price: string;
+  date: string;
+  checkboxes: Array<string>;
+  radio: string;
+  file: FileList;
+}
+
+export interface IFormCardData extends IFormInputsData {
+  fileUrl: string;
+}
+
 export interface ICreateFormProps {
-  create: (value: ICreatorFormRefs) => void;
+  create: (value: IFormCardData) => void;
 }
 
 export type StateForm = { [key in keyof ICreatorFormRefs]: boolean };
