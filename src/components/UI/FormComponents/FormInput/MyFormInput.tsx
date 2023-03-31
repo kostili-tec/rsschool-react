@@ -1,6 +1,7 @@
 import React, { FC, HTMLInputTypeAttribute } from 'react';
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
-import MyError from './MyError';
+import classes from './MyFormInput.module.scss';
+import MyError from '../FormError/MyError';
 
 interface IInputProps {
   register: UseFormRegisterReturn;
@@ -18,9 +19,9 @@ const MyFormInput: FC<IInputProps> = (props) => {
   const labelName = register.name.charAt(0).toUpperCase() + register.name.slice(1);
   return (
     <>
-      <label htmlFor={id}>
+      <label className={classes.labelInput} htmlFor={id}>
         {label ? label : labelName}
-        <input id={id} type={type} {...register} {...rest} />
+        <input className={classes.inputText} id={id} type={type} {...register} {...rest} />
       </label>
       <MyError errors={errors} />
     </>

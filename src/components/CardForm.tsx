@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
-import { useForm } from 'react-hook-form';
-import MyFormInput from './UI/FormComponents/MyFormInput';
-import MyFormSelect from './UI/FormComponents/MyFormSelect';
+import { FieldError, useForm } from 'react-hook-form';
+import MyFormInput from './UI/FormComponents/FormInput/MyFormInput';
+import MyFormSelect from './UI/FormComponents/FormSelect/MyFormSelect';
+import MyError from './UI/FormComponents/FormError/MyError';
 import { ICreateFormProps, IFormInputsData, IFormCardData } from '../interfaces';
 import classes from '../styles/form.module.scss';
 
@@ -30,120 +31,150 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
 
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-      <MyFormInput
-        register={register('title', {
-          required: 'You must specify the name',
-          pattern: {
-            value: textRegExp,
-            message: 'Only letters and numbers.\nmin of 3 characters',
-          },
-        })}
-        id={'title-input'}
-        type="text"
-        errors={errors.title}
-        className={'test-input'}
-      />
+      <div className={classes.formInputsContaner}>
+        <div className={classes.inputsContaner}>
+          <MyFormInput
+            register={register('title', {
+              required: 'You must specify the name',
+              pattern: {
+                value: textRegExp,
+                message: 'Only letters and numbers.\nmin of 3 characters',
+              },
+            })}
+            id={'title-input'}
+            type="text"
+            errors={errors.title}
+          />
 
-      <MyFormSelect
-        register={register('select', {
-          required: 'You must select a category',
-        })}
-        errors={errors.select}
-        id={'form-select'}
-      />
+          <MyFormSelect
+            register={register('select', {
+              required: 'You must select a category',
+            })}
+            errors={errors.select}
+            id={'form-select'}
+          />
 
-      <MyFormInput
-        register={register('price', {
-          required: 'You must specify the price',
-          pattern: {
-            value: numbersRegExp,
-            message: 'Only numbers',
-          },
-        })}
-        errors={errors.price}
-        type={'number'}
-        id={'price-input'}
-      />
+          <MyFormInput
+            register={register('price', {
+              required: 'You must specify the price',
+              pattern: {
+                value: numbersRegExp,
+                message: 'Only numbers',
+              },
+            })}
+            errors={errors.price}
+            type={'number'}
+            id={'price-input'}
+          />
 
-      <MyFormInput
-        register={register('date', {
-          required: 'You must specify the production date',
-          pattern: {
-            value: dateRegExp,
-            message: 'In the forman YYYY-MM-DD',
-          },
-        })}
-        errors={errors.date}
-        type={'date'}
-        id={'date-input'}
-      />
+          <MyFormInput
+            register={register('date', {
+              required: 'You must specify the production date',
+              pattern: {
+                value: dateRegExp,
+                message: 'In the forman YYYY-MM-DD',
+              },
+            })}
+            errors={errors.date}
+            type={'date'}
+            id={'date-input'}
+          />
+        </div>
 
-      <input
-        type="checkbox"
-        id="checkInput1"
-        value="Sticker"
-        {...register('checkboxes', {
-          required: true,
-        })}
-      />
-      <label htmlFor="checkInput1">Sticker</label>
-      <input
-        type="checkbox"
-        id="checkInput2"
-        value="Trinket"
-        {...register('checkboxes', {
-          required: true,
-        })}
-      />
-      <label htmlFor="checkInput1">Trinket</label>
-      <div>{errors?.checkboxes && <p>{errors?.checkboxes.message || 'Error'}</p>}</div>
+        <div className={classes.inputsContaner}>
+          <p className={classes.paragraphInput}>Select a gift</p>
+          <div className={classes.checkContainer}>
+            <label htmlFor="checkInput1">
+              Sticker
+              <input
+                type="checkbox"
+                id="checkInput1"
+                value="Sticker"
+                className={classes.checkBox}
+                {...register('checkboxes', {
+                  required: 'You have to choose a gift',
+                })}
+              />
+            </label>
 
-      <input
-        type="radio"
-        id="radio1"
-        value="Used"
-        {...register('radio', {
-          required: true,
-        })}
-      />
-      <label htmlFor="radio1">Used</label>
-      <input
-        type="radio"
-        id="radio2"
-        value="Unused"
-        {...register('radio', {
-          required: true,
-        })}
-      />
-      <label htmlFor="radio2">Unused</label>
-      <div>{errors?.radio && <p>{errors?.radio.message || 'Error'}</p>}</div>
+            <label htmlFor="checkInput1">
+              Trinket
+              <input
+                type="checkbox"
+                id="checkInput2"
+                value="Trinket"
+                className={classes.checkBox}
+                {...register('checkboxes', {
+                  required: 'You have to choose a gift',
+                })}
+              />
+            </label>
+          </div>
+          <MyError errors={errors.checkboxes as FieldError} />
 
-      <MyFormInput
-        register={register('file', {
-          required: 'You have to choose an image',
-        })}
-        errors={errors.file}
-        type={'file'}
-        id={'file-input'}
-        accept="image/jpeg,image/png,image/gif"
-      />
+          <hr />
 
-      <label htmlFor="form-textarea">
-        Description:
-        <textarea
-          id="form-textarea"
-          {...register('description', {
-            required: 'You must fill in the description',
-            pattern: {
-              value: descriptionRegExp,
-              message: 'Minimum of 10 characters including letters, numbers and symbols ?, !, -',
-            },
-          })}
-        ></textarea>
-      </label>
-      <div>{errors?.description && <p>{errors?.description.message || 'Error'}</p>}</div>
+          <p className={classes.paragraphInput}>Select condition</p>
+          <div className={classes.checkContainer}>
+            <label htmlFor="radio1">
+              Used
+              <input
+                type="radio"
+                id="radio1"
+                value="Used"
+                className={classes.checkBox}
+                {...register('radio', {
+                  required: 'You have to choose a condition',
+                })}
+              />
+            </label>
 
-      <input type="submit" value="Submit" />
+            <label htmlFor="radio2">
+              Unused
+              <input
+                type="radio"
+                id="radio2"
+                value="Unused"
+                className={classes.checkBox}
+                {...register('radio', {
+                  required: 'You have to choose a condition',
+                })}
+              />
+            </label>
+          </div>
+
+          <MyError errors={errors.radio} />
+          <hr />
+          <MyFormInput
+            register={register('file', {
+              required: 'You have to choose an image',
+            })}
+            errors={errors.file}
+            type={'file'}
+            id={'file-input'}
+            accept="image/jpeg,image/png,image/gif"
+            className={classes.inputFile}
+          />
+
+          <label htmlFor="form-textarea">
+            Description:
+            <textarea
+              id="form-textarea"
+              {...register('description', {
+                required: 'You must fill in the description',
+                pattern: {
+                  value: descriptionRegExp,
+                  message:
+                    'Minimum of 10 characters including letters, numbers and symbols ?, !, -',
+                },
+              })}
+            ></textarea>
+          </label>
+          <MyError errors={errors.description} />
+
+          <input type="submit" value="Submit" />
+        </div>
+      </div>
     </form>
   );
 };

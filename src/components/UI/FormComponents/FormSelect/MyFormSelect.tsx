@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
-import MyError from './MyError';
+import MyError from '../FormError/MyError';
+import classes from './MyFormSelect.module.scss';
+import inputClasses from '../FormInput/MyFormInput.module.scss';
 
 interface ISelectProps {
   register: UseFormRegisterReturn;
@@ -12,9 +14,9 @@ const MyFormSelect: FC<ISelectProps> = (props) => {
   const { register, id, errors } = props;
   return (
     <>
-      <label htmlFor={id}>
-        Category:
-        <select id={id} defaultValue={''} {...register}>
+      <label className={inputClasses.labelInput} htmlFor={id}>
+        Category
+        <select className={classes.select} id={id} defaultValue={''} {...register}>
           <option disabled value="">
             Chose category
           </option>
