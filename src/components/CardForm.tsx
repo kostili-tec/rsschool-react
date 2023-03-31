@@ -3,13 +3,15 @@ import { FieldError, useForm } from 'react-hook-form';
 import MyFormInput from './UI/FormComponents/FormInput/MyFormInput';
 import MyFormSelect from './UI/FormComponents/FormSelect/MyFormSelect';
 import MyError from './UI/FormComponents/FormError/MyError';
+import {
+  getCurrentDate,
+  textRegExp,
+  dateRegExp,
+  descriptionRegExp,
+  numbersRegExp,
+} from '../utils/utils';
 import { ICreateFormProps, IFormInputsData, IFormCardData } from '../interfaces';
 import classes from '../styles/form.module.scss';
-
-const textRegExp = /^(?=\s*\S)([a-zA-Z0-9][a-zA-Z0-9\s]{2,})$/;
-const descriptionRegExp = /^(?=\s*\S)([a-zA-Z0-9][a-zA-Z0-9\s:?!-]{9,})[,.\s:?!-]*$/;
-const dateRegExp = /^\d{4}-\d{2}-\d{2}$/;
-const numbersRegExp = /^\d+$/;
 
 const CardForm: FC<ICreateFormProps> = ({ create }) => {
   const {
@@ -78,6 +80,7 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
             errors={errors.date}
             type={'date'}
             id={'date-input'}
+            max={getCurrentDate()}
           />
         </div>
 
