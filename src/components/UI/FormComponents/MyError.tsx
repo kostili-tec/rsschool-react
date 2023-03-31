@@ -6,7 +6,6 @@ type TError = {
 };
 
 const MyError: FC<TError> = ({ errors }) => {
-  console.log(errors);
   return <div>{errors && <p>{errors.message || 'Error'}</p>}</div>;
 };
 

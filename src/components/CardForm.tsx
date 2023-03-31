@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import MyFormInput from './UI/FormComponents/MyFormInput';
+import MyFormSelect from './UI/FormComponents/MyFormSelect';
 import { ICreateFormProps, IFormInputsData, IFormCardData } from '../interfaces';
 import classes from '../styles/form.module.scss';
 
@@ -14,6 +15,7 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm<IFormInputsData>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -23,6 +25,7 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
   const onSubmit = (data: IFormInputsData) => {
     const cardData: IFormCardData = { fileUrl: URL.createObjectURL(data.file[0]), ...data };
     create(cardData);
+    reset();
   };
 
   return (
@@ -40,35 +43,15 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
         errors={errors.title}
         className={'test-input'}
       />
-      <label htmlFor="">
-        Description:
-        <textarea
-          {...register('description', {
-            required: 'Минимум 10 символов',
-          })}
-        ></textarea>
-      </label>
-      <div>{errors?.description && <p>{errors?.description.message || 'Error'}</p>}</div>
-      <label>
-        Category:
-        <select
-          role={'select'}
-          defaultValue={''}
-          {...register('select', {
-            required: 'You must select a category',
-          })}
-        >
-          <option disabled value="">
-            Chose category
-          </option>
-          <option value="smartphones">Smartphones</option>
-          <option value="laptops">Laptops</option>
-          <option value="fragrances">Fragrances</option>
-          <option value="skincare">Skincare</option>
-          <option value="another">Another</option>
-        </select>
-      </label>
-      <div>{errors?.select && <p>{errors?.select.message || 'Error'}</p>}</div>
+
+      <MyFormSelect
+        register={register('select', {
+          required: 'You must select a category',
+        })}
+        errors={errors.select}
+        id={'form-select'}
+      />
+
       <MyFormInput
         register={register('price', {
           required: 'You must specify the price',
@@ -81,6 +64,7 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
         type={'number'}
         id={'price-input'}
       />
+
       <MyFormInput
         register={register('date', {
           required: 'You must specify the production date',
@@ -113,6 +97,7 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
       />
       <label htmlFor="checkInput1">Trinket</label>
       <div>{errors?.checkboxes && <p>{errors?.checkboxes.message || 'Error'}</p>}</div>
+
       <input
         type="radio"
         id="radio1"
@@ -142,6 +127,21 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
         id={'file-input'}
         accept="image/jpeg,image/png,image/gif"
       />
+
+      <label htmlFor="form-textarea">
+        Description:
+        <textarea
+          id="form-textarea"
+          {...register('description', {
+            required: 'You must fill in the description',
+            pattern: {
+              value: descriptionRegExp,
+              message: 'Minimum of 10 characters including letters, numbers and symbols ?, !, -',
+            },
+          })}
+        ></textarea>
+      </label>
+      <div>{errors?.description && <p>{errors?.description.message || 'Error'}</p>}</div>
 
       <input type="submit" value="Submit" />
     </form>
