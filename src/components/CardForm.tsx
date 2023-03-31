@@ -1,34 +1,45 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
+import MyFormInput from './UI/FormComponents/MyFormInput';
 import { ICreateFormProps, IFormInputsData, IFormCardData } from '../interfaces';
 import classes from '../styles/form.module.scss';
+
+const textRegExp = /^(?=\s*\S)([a-zA-Z0-9][a-zA-Z0-9\s]{2,})$/;
+const descriptionRegExp = /^(?=\s*\S)([a-zA-Z0-9][a-zA-Z0-9\s:?!-]{9,})[,.\s:?!-]*$/;
+const dateRegExp = /^\d{4}-\d{2}-\d{2}$/;
+const numbersRegExp = /^\d+$/;
 
 const CardForm: FC<ICreateFormProps> = ({ create }) => {
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<IFormInputsData>();
+  } = useForm<IFormInputsData>({
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
+    shouldUseNativeValidation: false,
+  });
 
   const onSubmit = (data: IFormInputsData) => {
     const cardData: IFormCardData = { fileUrl: URL.createObjectURL(data.file[0]), ...data };
-    console.log(data);
-    console.log(cardData);
-
     create(cardData);
   };
 
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-      <label>
-        Title:
-        <input
-          {...register('title', {
-            required: 'Поле обязательно',
-          })}
-        />
-      </label>
-      <div>{errors?.title && <p>{errors?.title.message || 'Error'}</p>}</div>
+      <MyFormInput
+        register={register('title', {
+          required: 'You must specify the name',
+          pattern: {
+            value: textRegExp,
+            message: 'Only letters and numbers.\nmin of 3 characters',
+          },
+        })}
+        id={'title-input'}
+        type="text"
+        errors={errors.title}
+        className={'test-input'}
+      />
       <label htmlFor="">
         Description:
         <textarea
@@ -44,7 +55,7 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
           role={'select'}
           defaultValue={''}
           {...register('select', {
-            required: 'select',
+            required: 'You must select a category',
           })}
         >
           <option disabled value="">
@@ -58,26 +69,30 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
         </select>
       </label>
       <div>{errors?.select && <p>{errors?.select.message || 'Error'}</p>}</div>
-      <label htmlFor="">
-        Price:
-        <input
-          type="number"
-          {...register('price', {
-            required: 'Price',
-          })}
-        />
-      </label>
-      <div>{errors?.price && <p>{errors?.price.message || 'Error'}</p>}</div>
-      <label htmlFor="">
-        Date:
-        <input
-          type="date"
-          {...register('date', {
-            required: 'Date',
-          })}
-        />
-      </label>
-      <div>{errors?.price && <p>{errors?.price.message || 'Error'}</p>}</div>
+      <MyFormInput
+        register={register('price', {
+          required: 'You must specify the price',
+          pattern: {
+            value: numbersRegExp,
+            message: 'Only numbers',
+          },
+        })}
+        errors={errors.price}
+        type={'number'}
+        id={'price-input'}
+      />
+      <MyFormInput
+        register={register('date', {
+          required: 'You must specify the production date',
+          pattern: {
+            value: dateRegExp,
+            message: 'In the forman YYYY-MM-DD',
+          },
+        })}
+        errors={errors.date}
+        type={'date'}
+        id={'date-input'}
+      />
 
       <input
         type="checkbox"
@@ -118,14 +133,15 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
       <label htmlFor="radio2">Unused</label>
       <div>{errors?.radio && <p>{errors?.radio.message || 'Error'}</p>}</div>
 
-      <input
-        type="file"
-        accept="image/jpeg,image/png,image/gif"
-        {...register('file', {
-          required: true,
+      <MyFormInput
+        register={register('file', {
+          required: 'You have to choose an image',
         })}
+        errors={errors.file}
+        type={'file'}
+        id={'file-input'}
+        accept="image/jpeg,image/png,image/gif"
       />
-      <div>{errors?.file && <p>{errors?.file.message || 'Error'}</p>}</div>
 
       <input type="submit" value="Submit" />
     </form>
