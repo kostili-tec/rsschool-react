@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
-import FormCard from '../UI/FormComponents/FormCard';
-import CardForm from '../UI/FormComponents/CardForm';
+import FormCardView from '../UI/FormComponents/FormCardView';
+import FormFileds from '../UI/FormComponents/FormFields';
 import { IFormCardData } from '../../interfaces';
 
 const FormPage: FC = () => {
@@ -14,12 +14,12 @@ const FormPage: FC = () => {
   };
   return (
     <>
-      <CardForm create={createCard} />
+      <FormFileds create={createCard} />
       {message && <p>Card added</p>}
       {cards.length ? (
         <div className="form-page__container">
           {cards.map((el, ind) => (
-            <FormCard key={ind + 1} {...el} />
+            <FormCardView key={ind + 1} {...el} />
           ))}
         </div>
       ) : (

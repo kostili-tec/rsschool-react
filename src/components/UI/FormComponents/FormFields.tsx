@@ -13,7 +13,7 @@ import {
 import { ICreateFormProps, IFormInputsData, IFormCardData } from '../../../interfaces';
 import classes from './form.module.scss';
 
-const CardForm: FC<ICreateFormProps> = ({ create }) => {
+const FormFields: FC<ICreateFormProps> = ({ create }) => {
   const {
     register,
     formState: { errors },
@@ -182,4 +182,4 @@ const CardForm: FC<ICreateFormProps> = ({ create }) => {
   );
 };
 
-export default CardForm;
+export default FormFields;

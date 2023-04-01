@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { fn } from '@vitest/spy';
-import FormCard from '../components/UI/FormComponents/FormCard';
+import FormCardView from '../components/UI/FormComponents/FormCardView';
 import MyFormInput from '../components/UI/FormComponents/FormInput/MyFormInput';
 import MyFormSelect from '../components/UI/FormComponents/FormSelect/MyFormSelect';
-import CardForm from '../components/UI/FormComponents/CardForm';
+import FormFileds from '../components/UI/FormComponents/FormFields';
 import { useForm } from 'react-hook-form';
 import { IFormCardData, IFormInputsData } from '../interfaces';
 
@@ -59,7 +59,7 @@ describe('Form Card tests', () => {
     render(
       <>
         {Data.map((el, id) => (
-          <FormCard key={id} {...el} />
+          <FormCardView key={id} {...el} />
         ))}
       </>
     );
@@ -99,7 +99,7 @@ describe('Form select tests', () => {
 describe('Create Card form tests', () => {
   const create = fn();
   it('should be return 7 errors after click on submit', async () => {
-    render(<CardForm create={create} />);
+    render(<FormFileds create={create} />);
     const button = screen.getByText(/submit/i);
     expect(screen.queryByText(/you must/i)).toBeNull();
     fireEvent.submit(button);
@@ -114,7 +114,7 @@ describe('Create Card form tests', () => {
     expect(await screen.findByText(/you must fill in the description/i)).toBeInTheDocument();
   });
   it('test', () => {
-    render(<CardForm create={create} />);
+    render(<FormFileds create={create} />);
     const titleInput = screen.getByLabelText(/title/i);
     const descriptionText = screen.getByLabelText(/description/i);
     const select = screen.getByRole('select');

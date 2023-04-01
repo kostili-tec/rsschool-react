@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IFormCardData } from '../../../interfaces';
 
-const FormCard: FC<IFormCardData> = (props) => {
+const FormCardView: FC<IFormCardData> = (props) => {
   return (
     <div className="form-card">
       <img src={props.fileUrl} alt={`${props.title}-image`} className="form-card__image" />
@@ -18,4 +18,4 @@ const FormCard: FC<IFormCardData> = (props) => {
   );
 };
 
-export default FormCard;
+export default FormCardView;
