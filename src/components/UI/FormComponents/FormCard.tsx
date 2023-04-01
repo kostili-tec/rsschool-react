@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IFormCardData } from '../interfaces';
+import { IFormCardData } from '../../../interfaces';
 
 const FormCard: FC<IFormCardData> = (props) => {
   return (

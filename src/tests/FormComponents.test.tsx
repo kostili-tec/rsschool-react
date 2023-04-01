@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { fn } from '@vitest/spy';
-import FormCard from '../components/FormCard';
+import FormCard from '../components/UI/FormComponents/FormCard';
 import FormInput from '../components/UI/FormComponents/FormInput';
 import FormSelect from '../components/UI/FormComponents/FormSelect';
 import CreateCardForm from '../components/CreateCardForm';

@@ -21,7 +21,6 @@ const SearchInput: FC = () => {
     return () => {
       if (input) {
         localStorage.setItem('inputQuery', input.value);
-        console.log(input.value);
       }
     };
   }, []);

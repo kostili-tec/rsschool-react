@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
 import { FieldError, useForm } from 'react-hook-form';
-import MyFormInput from './UI/FormComponents/FormInput/MyFormInput';
-import MyFormSelect from './UI/FormComponents/FormSelect/MyFormSelect';
-import MyError from './UI/FormComponents/FormError/MyError';
+import MyFormInput from './FormInput/MyFormInput';
+import MyFormSelect from './FormSelect/MyFormSelect';
+import MyError from './FormError/MyError';
 import {
   getCurrentDate,
   textRegExp,
   dateRegExp,
   descriptionRegExp,
   numbersRegExp,
-} from '../utils/utils';
-import { ICreateFormProps, IFormInputsData, IFormCardData } from '../interfaces';
-import classes from '../styles/form.module.scss';
+} from '../../../utils/utils';
+import { ICreateFormProps, IFormInputsData, IFormCardData } from '../../../interfaces';
+import classes from './form.module.scss';
 
 const CardForm: FC<ICreateFormProps> = ({ create }) => {
   const {

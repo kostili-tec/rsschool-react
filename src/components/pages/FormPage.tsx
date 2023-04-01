@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
-import FormCard from '../FormCard';
-import CardForm from '../CardForm';
+import FormCard from '../UI/FormComponents/FormCard';
+import CardForm from '../UI/FormComponents/CardForm';
 import { IFormCardData } from '../../interfaces';
 
 const FormPage: FC = () => {
