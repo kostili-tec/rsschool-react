@@ -16,7 +16,7 @@ const MyFormSelect: FC<ISelectProps> = (props) => {
     <>
       <label className={inputClasses.labelInput} htmlFor={id}>
         Category
-        <select className={classes.select} id={id} defaultValue={''} {...register}>
+        <select role="select" className={classes.select} id={id} defaultValue={''} {...register}>
           <option disabled value="">
             Chose category
           </option>

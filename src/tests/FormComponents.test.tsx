@@ -2,33 +2,63 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { fn } from '@vitest/spy';
 import FormCard from '../components/UI/FormComponents/FormCard';
-import FormInput from '../components/UI/FormComponents/FormInput';
-import FormSelect from '../components/UI/FormComponents/FormSelect';
-import CreateCardForm from '../components/CreateCardForm';
-import image from './defaultImage.jpg';
+import MyFormInput from '../components/UI/FormComponents/FormInput/MyFormInput';
+import MyFormSelect from '../components/UI/FormComponents/FormSelect/MyFormSelect';
+import CardForm from '../components/UI/FormComponents/CardForm';
+import { useForm } from 'react-hook-form';
+import { IFormCardData, IFormInputsData } from '../interfaces';
 
-import { IFormPageState } from '../interfaces';
+const FormInputWithForm = () => {
+  const {
+    register,
+    formState: { errors },
+  } = useForm<IFormInputsData>();
+  return (
+    <MyFormInput
+      type={'text'}
+      errors={errors.title}
+      id="title-input"
+      className="violent and funky"
+      register={register('title', {
+        required: true,
+      })}
+    />
+  );
+};
+
+const FormSelectWithForm = () => {
+  const {
+    register,
+    formState: { errors },
+  } = useForm<IFormInputsData>();
+  return (
+    <MyFormSelect
+      register={register('select', {
+        required: 'You must select a category',
+      })}
+      errors={errors.select}
+      id={'form-select'}
+    />
+  );
+};
 
 describe('Form Card tests', () => {
   it('render card', () => {
-    const Data: IFormPageState = {
-      cardsData: [
-        {
-          inputTitle: 'title',
-          textAreaDescription: 'Description',
-          inputDate: '2022-12-12',
-          inputPrice: '300',
-          selectValue: 'laptops',
-          checkboxValues: ['sticker', 'big floppa'],
-          radioButtonValue: 'used',
-          inputFile: null,
-          inputFileUrl: image,
-        },
-      ],
-    };
+    const Data: Array<IFormCardData> = [
+      {
+        title: 'title',
+        description: 'Description',
+        date: '2022-12-12',
+        price: '300',
+        select: 'laptops',
+        checkboxes: ['sticker', 'big floppa'],
+        radio: 'used',
+        fileUrl: 'image',
+      },
+    ];
     render(
       <>
-        {Data.cardsData.map((el, id) => (
+        {Data.map((el, id) => (
           <FormCard key={id} {...el} />
         ))}
       </>
@@ -45,79 +75,52 @@ describe('Form Card tests', () => {
 });
 
 describe('Form input tests', () => {
-  const refTest = React.createRef<HTMLInputElement>();
-  it('render valid form text input', () => {
-    render(
-      <>
-        <FormInput type="text" isValid={true} refValue={refTest} placeholder="big floppa" />
-      </>
-    );
-    const textInput = screen.getByPlaceholderText(/big floppa/i);
-    const errorSpan = screen.queryByText(/error/i);
+  it('render MyFormInput', () => {
+    render(<FormInputWithForm />);
+    const textInput = screen.getByLabelText(/title/i);
     expect(textInput).toBeInTheDocument();
     expect(textInput).toHaveValue('');
     expect(textInput).toHaveAttribute('type', 'text');
-    expect(errorSpan).toBeNull();
-  });
-  it('render invalid form date input', () => {
-    render(
-      <FormInput
-        type="date"
-        isValid={false}
-        refValue={refTest}
-        max="2022-12-12"
-        placeholder="date floppa"
-      />
-    );
-    const dateInput = screen.getByPlaceholderText(/date floppa/i);
-    const errorSpan = screen.getByText(/error/i);
-    expect(dateInput).toBeInTheDocument();
-    expect(dateInput).toHaveAttribute('type', 'date');
-    expect(dateInput).toHaveAttribute('max', '2022-12-12');
-    expect(errorSpan).toBeInTheDocument();
+    expect(textInput).toHaveClass('violent');
+    expect(textInput).toHaveClass('and');
+    expect(textInput).toHaveClass('funky');
   });
 });
 
 describe('Form select tests', () => {
-  const refTest = React.createRef<HTMLSelectElement>();
-  it('render valid form select', () => {
-    render(<FormSelect isValid={true} refValue={refTest} />);
+  it('render MyFormSelect', () => {
+    render(<FormSelectWithForm />);
     expect(screen.getByText(/chose category/i)).toBeInTheDocument();
     expect(screen.getByText(/chose category/i)).toBeDisabled();
-    expect(screen.queryByText(/error/i)).toBeNull();
-  });
-  it('render invalid form select', () => {
-    render(<FormSelect isValid={false} refValue={refTest} />);
-    expect(screen.getByText(/chose category/i)).toBeInTheDocument();
-    expect(screen.getByText(/chose category/i)).toBeDisabled();
-    expect(screen.getByText(/error/i)).toBeInTheDocument();
+    expect(screen.getByText(/smartphones/i)).toBeInTheDocument();
   });
 });
 
 describe('Create Card form tests', () => {
   const create = fn();
-  it('should be return 7 errors after click on submit', () => {
-    render(<CreateCardForm create={create} />);
+  it('should be return 7 errors after click on submit', async () => {
+    render(<CardForm create={create} />);
     const button = screen.getByText(/submit/i);
-    expect(screen.queryByText(/error/i)).toBeNull();
-    fireEvent.click(button);
-    expect(screen.getAllByText(/error/i)[0]).toBeInTheDocument();
-    expect(screen.getAllByText(/error/i)[1]).toBeInTheDocument();
-    expect(screen.getAllByText(/error/i)[2]).toBeInTheDocument();
-    expect(screen.getAllByText(/error/i)[3]).toBeInTheDocument();
-    expect(screen.getAllByText(/error/i)[4]).toBeInTheDocument();
-    expect(screen.getAllByText(/error/i)[5]).toBeInTheDocument();
-    expect(screen.getAllByText(/error/i)[6]).toBeInTheDocument();
-    expect(screen.getAllByText(/error/i)[7]).toBeInTheDocument();
+    expect(screen.queryByText(/you must/i)).toBeNull();
+    fireEvent.submit(button);
+
+    expect(await screen.findByText(/you must specify the name/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you must select a category/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you must specify the price/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you must specify the production date/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you have to choose a gift/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you have to choose a condition/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you have to choose an image/i)).toBeInTheDocument();
+    expect(await screen.findByText(/you must fill in the description/i)).toBeInTheDocument();
   });
   it('test', () => {
-    render(<CreateCardForm create={create} />);
-    const titleInput = screen.getByPlaceholderText(/title/i);
-    const descriptionText = screen.getByPlaceholderText(/description/i);
+    render(<CardForm create={create} />);
+    const titleInput = screen.getByLabelText(/title/i);
+    const descriptionText = screen.getByLabelText(/description/i);
     const select = screen.getByRole('select');
     const option = screen.getByText(/smartphones/i);
-    const dateInput = screen.getByRole('datebox');
-    const priceInput = screen.getByPlaceholderText(/price/i);
+    const priceInput = screen.getByLabelText(/price/i);
+    const dateInput = screen.getByLabelText(/date/i);
     fireEvent.change(titleInput, { target: { value: 'White zombie' } });
     fireEvent.change(descriptionText, {
       target: {

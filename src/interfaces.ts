@@ -48,7 +48,7 @@ export interface ICreatorFormRefs {
   inputFileUrl: string;
 }
 
-export interface IFormInputsData {
+interface IBaseCardData {
   id?: number;
   title: string;
   description: string;
@@ -57,10 +57,12 @@ export interface IFormInputsData {
   date: string;
   checkboxes: Array<string>;
   radio: string;
+}
+export interface IFormInputsData extends IBaseCardData {
   file: FileList;
 }
 
-export interface IFormCardData extends IFormInputsData {
+export interface IFormCardData extends IBaseCardData {
   fileUrl: string;
 }
 
