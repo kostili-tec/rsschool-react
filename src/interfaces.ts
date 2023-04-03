@@ -9,10 +9,6 @@ export interface IHeaderProps {
 
 export type TypeHeaderProps = Array<IHeaderLinks>;
 
-export interface IStateHeader {
-  title: string;
-}
-
 export interface IProduct {
   id: number;
   title: string;

@@ -9,16 +9,14 @@ import './App.scss';
 
 const App: FC = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route id="Main Page" index element={<MainPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/form" element={<FormPage />} />
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route id="Main Page" index element={<MainPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/form" element={<FormPage />} />
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 };
 

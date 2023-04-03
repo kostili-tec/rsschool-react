@@ -36,7 +36,7 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
       <div className={classes.formInputsContaner}>
         <div className={classes.inputsContaner}>
           <MyFormInput
-            register={register('title', {
+            hookFormRegister={register('title', {
               required: 'You must specify the name',
               pattern: {
                 value: textRegExp,
@@ -49,7 +49,7 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
           />
 
           <MyFormSelect
-            register={register('select', {
+            hookFormRegister={register('select', {
               required: 'You must select a category',
             })}
             errors={errors.select}
@@ -57,7 +57,7 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
           />
 
           <MyFormInput
-            register={register('price', {
+            hookFormRegister={register('price', {
               required: 'You must specify the price',
               pattern: {
                 value: numbersRegExp,
@@ -70,7 +70,7 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
           />
 
           <MyFormInput
-            register={register('date', {
+            hookFormRegister={register('date', {
               required: 'You must specify the production date',
               pattern: {
                 value: dateRegExp,
@@ -87,31 +87,31 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
         <div className={classes.inputsContaner}>
           <p className={classes.paragraphInput}>Select a gift</p>
           <div className={classes.checkContainer}>
-            <label htmlFor="checkInput1">
-              Sticker
+            <div>
+              <label htmlFor="checkSticker">Sticker</label>
               <input
                 type="checkbox"
-                id="checkInput1"
+                id="checkSticker"
                 value="Sticker"
                 className={classes.checkBox}
                 {...register('checkboxes', {
                   required: 'You have to choose a gift',
                 })}
               />
-            </label>
+            </div>
 
-            <label htmlFor="checkInput1">
-              Trinket
+            <div>
+              <label htmlFor="checkTrinket">Trinket</label>
               <input
                 type="checkbox"
-                id="checkInput2"
+                id="checkTrinket"
                 value="Trinket"
                 className={classes.checkBox}
                 {...register('checkboxes', {
                   required: 'You have to choose a gift',
                 })}
               />
-            </label>
+            </div>
           </div>
           <MyError errors={errors.checkboxes as FieldError} />
 
@@ -119,37 +119,37 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
 
           <p className={classes.paragraphInput}>Select condition</p>
           <div className={classes.checkContainer}>
-            <label htmlFor="radio1">
-              Used
+            <div>
+              <label htmlFor="radioUsed">Used</label>
               <input
                 type="radio"
-                id="radio1"
+                id="radioUsed"
                 value="Used"
                 className={classes.checkBox}
                 {...register('radio', {
                   required: 'You have to choose a condition',
                 })}
               />
-            </label>
+            </div>
 
-            <label htmlFor="radio2">
-              Unused
+            <div>
+              <label htmlFor="radioUnused">Unused</label>
               <input
                 type="radio"
-                id="radio2"
+                id="radioUnused"
                 value="Unused"
                 className={classes.checkBox}
                 {...register('radio', {
                   required: 'You have to choose a condition',
                 })}
               />
-            </label>
+            </div>
           </div>
 
           <MyError errors={errors.radio} />
           <hr />
           <MyFormInput
-            register={register('file', {
+            hookFormRegister={register('file', {
               required: 'You have to choose an image',
             })}
             errors={errors.file}
@@ -159,20 +159,17 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
             className={classes.inputFile}
           />
 
-          <label htmlFor="form-textarea">
-            Description:
-            <textarea
-              id="form-textarea"
-              {...register('description', {
-                required: 'You must fill in the description',
-                pattern: {
-                  value: descriptionRegExp,
-                  message:
-                    'Minimum of 10 characters including letters, numbers and symbols ?, !, -',
-                },
-              })}
-            ></textarea>
-          </label>
+          <label htmlFor="form-textarea">Description:</label>
+          <textarea
+            id="form-textarea"
+            {...register('description', {
+              required: 'You must fill in the description',
+              pattern: {
+                value: descriptionRegExp,
+                message: 'Minimum of 10 characters including letters, numbers and symbols ?, !, -',
+              },
+            })}
+          ></textarea>
           <MyError errors={errors.description} />
 
           <input type="submit" value="Submit" />
