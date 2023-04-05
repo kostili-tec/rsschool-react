@@ -2,17 +2,17 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import classes from './input.module.scss';
 
 const SearchInput: FC = () => {
-  const [inputState, setInputState] = useState('');
+  const [searchField, setSearchField] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChangeInput = () => {
-    if (inputRef.current) setInputState(inputRef.current.value);
+    if (inputRef.current) setSearchField(inputRef.current.value);
   };
 
   useEffect(() => {
     const inputQuery = localStorage.getItem('inputQuery');
     if (inputQuery) {
-      setInputState(inputQuery);
+      setSearchField(inputQuery);
     }
   }, []);
 
@@ -29,7 +29,7 @@ const SearchInput: FC = () => {
     <input
       onChange={handleChangeInput}
       ref={inputRef}
-      value={inputState}
+      value={searchField}
       className={classes.input}
       placeholder="Search here"
     />

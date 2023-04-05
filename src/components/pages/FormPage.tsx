@@ -5,17 +5,17 @@ import { IFormCardData } from '../../interfaces';
 
 const FormPage: FC = () => {
   const [cards, setCards] = useState<Array<IFormCardData> | []>([]);
-  const [message, setMessage] = useState(false);
+  const [hasMessageCreated, setHasMessageCreated] = useState(false);
 
   const createCard = (newCard: IFormCardData) => {
     setCards([...cards, newCard]);
-    setMessage(true);
-    setTimeout(() => setMessage(false), 2000);
+    setHasMessageCreated(true);
+    setTimeout(() => setHasMessageCreated(false), 2000);
   };
   return (
     <>
       <FormFileds create={createCard} />
-      {message && <p>Card added</p>}
+      {hasMessageCreated && <p>Card added</p>}
       {cards.length ? (
         <div className="form-page__container">
           {cards.map((el, ind) => (

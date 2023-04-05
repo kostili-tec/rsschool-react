@@ -5,18 +5,24 @@ import classes from './MyFormSelect.module.scss';
 import inputClasses from '../FormInput/MyFormInput.module.scss';
 
 interface ISelectProps {
-  register: UseFormRegisterReturn;
+  hookFormRegister: UseFormRegisterReturn;
   id: string;
   errors: FieldError | undefined;
 }
 
 const MyFormSelect: FC<ISelectProps> = (props) => {
-  const { register, id, errors } = props;
+  const { hookFormRegister, id, errors } = props;
   return (
     <>
       <label className={inputClasses.labelInput} htmlFor={id}>
         Category
-        <select role="select" className={classes.select} id={id} defaultValue={''} {...register}>
+        <select
+          {...hookFormRegister}
+          className={classes.select}
+          id={id}
+          defaultValue={''}
+          role="select"
+        >
           <option disabled value="">
             Chose category
           </option>

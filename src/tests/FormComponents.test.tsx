@@ -19,7 +19,7 @@ const FormInputWithForm = () => {
       errors={errors.title}
       id="title-input"
       className="violent and funky"
-      register={register('title', {
+      hookFormRegister={register('title', {
         required: true,
       })}
     />
@@ -33,7 +33,7 @@ const FormSelectWithForm = () => {
   } = useForm<IFormInputsData>();
   return (
     <MyFormSelect
-      register={register('select', {
+      hookFormRegister={register('select', {
         required: 'You must select a category',
       })}
       errors={errors.select}
@@ -113,7 +113,7 @@ describe('Create Card form tests', () => {
     expect(await screen.findByText(/you have to choose an image/i)).toBeInTheDocument();
     expect(await screen.findByText(/you must fill in the description/i)).toBeInTheDocument();
   });
-  it('test', () => {
+  it('inputs should be works with correct data', () => {
     render(<FormFileds create={create} />);
     const titleInput = screen.getByLabelText(/title/i);
     const descriptionText = screen.getByLabelText(/description/i);

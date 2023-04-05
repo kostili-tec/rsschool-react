@@ -5,11 +5,8 @@ import { getProducts } from '../../utils/api';
 import { IProductsArray } from '../../interfaces';
 import reactSVG from '../../assets/react.svg';
 
-interface IState {
-  products: IProductsArray;
-}
 const MainPage: FC = () => {
-  const [products, setProducts] = useState<IState['products']>([]);
+  const [products, setProducts] = useState<IProductsArray>([]);
 
   useEffect(() => {
     const fetchData = async () => {
