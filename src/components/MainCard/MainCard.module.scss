@@ -5,10 +5,6 @@
 .imageContainer {
   position: relative;
   display: flex;
-/*   img {
-    width: 100%;
-    height: 100%;
-  } */
 }
 
 .cardInfo {
@@ -18,7 +14,13 @@
   height: 100%;
   top: 0;
   background-color: rgba(0, 0, 0, 0.253);
-  // padding: 1rem 0.5rem;
+  opacity: 0;
+  transition: 0.1s ease-in;
+  cursor: zoom-in;
+}
+
+.cardInfoHovered {
+  opacity: 1;
 }
 
 .title {
@@ -29,6 +31,7 @@
   margin-top: 1rem;
   font-weight: 400;
   font-size: 16px;
+  max-width: 75%;
 }
 
 .authorInfo {
