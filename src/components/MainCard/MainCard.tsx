@@ -3,20 +3,22 @@ import { IUnsplashResults } from '../../interfaces';
 import classes from './MainCard.module.scss';
 import likeSvg from '../../assets/like.svg';
 
-export const MainCard: FC<IUnsplashResults> = ({
-  alt_description,
-  description,
-  likes,
-  urls,
-  user,
-  tags,
-}) => {
+type MainCardProps = {
+  photoData: IUnsplashResults;
+  setCurrentId: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
+  const { description, alt_description, likes, urls, user, tags, id } = photoData;
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
       className={classes.unsplashCard}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => {
+        setCurrentId(id);
+      }}
     >
       <div className={classes.imageContainer}>
         <img src={urls.small} alt={`image-${description || alt_description}`} />

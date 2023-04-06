@@ -4,11 +4,12 @@ import { TUnsplashResultsArray, IUnsplashResults } from '../interfaces';
 
 type StateArray = (IUnsplashResults[] | [])[];
 
-type MyProps = {
+type MainCardListProps = {
   cardsArray: TUnsplashResultsArray;
+  setCurrentId: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export const MainCardList: FC<MyProps> = ({ cardsArray }) => {
+export const MainCardList: FC<MainCardListProps> = ({ cardsArray, setCurrentId }) => {
   const [chunksArr, setChunksArr] = useState<StateArray>([]);
 
   const splitArrayIntoThree = <T,>(array: Array<T>): T[][] => {
@@ -27,7 +28,7 @@ export const MainCardList: FC<MyProps> = ({ cardsArray }) => {
         chunksArr.map((array, ind) => (
           <div key={ind} className="cards-column">
             {array.map((el) => (
-              <MainCard key={el.id} {...el} />
+              <MainCard key={el.id} photoData={el} setCurrentId={setCurrentId} />
             ))}
           </div>
         ))}

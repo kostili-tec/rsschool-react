@@ -1,0 +1,55 @@
+.myModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.photoInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  background-color: white;
+  border-radius: 5px;
+  max-width: 1000px;
+  img {
+    display: flex;
+    margin: 0 2rem;
+  }
+}
+
+.headerPhoto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 13px 20px;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  img {
+    border-radius: 50%;
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.downloadContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.likeSvg {
+  width: 2rem;
+  height: 2rem;
+}
