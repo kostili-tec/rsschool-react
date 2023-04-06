@@ -98,6 +98,19 @@
   align-items: flex-start;
 }
 
+.main-cards__container {
+  display: grid;
+  grid-column-gap: 24px;
+  align-items: start;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+}
+
+.cards-column {
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  row-gap: 40px;
+}
+
 .card {
   width: 400px;
   height: 500px;

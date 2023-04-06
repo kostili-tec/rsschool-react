@@ -77,3 +77,59 @@ export interface IFormInputProps {
   max?: string;
   accept?: string;
 }
+
+/* UNSPLASH */
+
+type TTags = {
+  type: string;
+  title: string;
+};
+
+type TUrls = {
+  full: string;
+  raw: string;
+  regular: string;
+  small: string;
+  small_s3: string;
+  thumb: string;
+};
+
+type TUrserLinks = {
+  portfolio: string;
+};
+
+type TUserProfileImg = {
+  large: string;
+  medium: string;
+  small: string;
+};
+
+interface IUser {
+  name: string;
+  links: TUrserLinks;
+  profile_image: TUserProfileImg;
+}
+
+export interface IUnsplashResults {
+  id: string;
+  created_at: string;
+  color: string;
+  description: null | string;
+  alt_description: null | string;
+  likes: number;
+  tags: Array<TTags>;
+  urls: TUrls;
+  user: IUser;
+  height: number;
+  width: number;
+}
+
+export type TUnsplashResultsArray = Array<IUnsplashResults>;
+
+export interface IUnsplashRequestData {
+  total: number;
+  total_pages: number;
+  results: TUnsplashResultsArray | [];
+}
+
+/* UNSPLASH END */
