@@ -32,6 +32,8 @@ export interface IApiGetRequest {
   total: number;
 }
 
+export type TValidationState = { key: string; isValid: boolean };
+
 export interface ICreatorFormRefs {
   inputTitle: string;
   textAreaDescription: string;

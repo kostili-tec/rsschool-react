@@ -39,3 +39,14 @@ export const getJson = async (): Promise<IUnsplashRequestData> => {
   const data = await res.json();
   return data;
 };
+
+export const checkAccessKey = async (key: string) => {
+  const url = `${baseUrl}${additionGetPhoto}random?count=1`;
+  const res = await fetch(url, {
+    headers: {
+      Authorization: `Client-ID ${key}`,
+    },
+  });
+  if (res.status === 200) return true;
+  else return false;
+};

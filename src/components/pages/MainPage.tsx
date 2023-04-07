@@ -4,12 +4,16 @@ import MainSearchForm from '../UI/MainSearchForm/MainSearchForm';
 import MainCardList from '../MainCardList';
 import MyMainModal from '../UI/MainModal/MyMainModal';
 import { getJson, getPhotos } from '../../utils/api';
-import { TUnsplashResultsArray } from '../../interfaces';
-import reactSVG from '../../assets/react.svg';
+import { TUnsplashResultsArray, TValidationState } from '../../interfaces';
+import AccessForm from '../UI/AccessForm/AccessForm';
 
 const MainPage: FC = () => {
   const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
   const [currentPhotoId, setCurrentPhotoId] = useState('');
+  const [validationState, setValidationState] = useState<TValidationState>({
+    key: '',
+    isValid: false,
+  });
 
   const searchPhotos = async (searchValue: string) => {
     const data = await getPhotos(searchValue);
@@ -33,14 +37,18 @@ const MainPage: FC = () => {
 
   return (
     <div className="main-page">
+      {!validationState.isValid && <AccessForm setValidation={setValidationState} />}
       <MainSearchForm searchPhotos={searchPhotos} />
       {currentPhotoId &&
         createPortal(<MyMainModal id={currentPhotoId} setId={setCurrentPhotoId} />, document.body)}
-      {photosData.length ? (
+      {validationState.isValid && (
+        <MainCardList cardsArray={photosData} setCurrentId={setCurrentPhotoId} />
+      )}
+      {/*  {{photosData.length ? (
         <MainCardList cardsArray={photosData} setCurrentId={setCurrentPhotoId} />
       ) : (
         <img src={reactSVG} alt="react-logo" className="logo" />
-      )}
+      )}} */}
     </div>
   );
 };

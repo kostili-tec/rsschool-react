@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import MainCard from './MainCard/MainCard';
 import { TUnsplashResultsArray, IUnsplashResults } from '../interfaces';
+import reactSVG from '../assets/react.svg';
 
 type StateArray = (IUnsplashResults[] | [])[];
 
@@ -23,7 +24,23 @@ export const MainCardList: FC<MainCardListProps> = ({ cardsArray, setCurrentId }
   }, [cardsArray]);
 
   return (
-    <div className="main-cards__container">
+    <>
+      {cardsArray.length ? (
+        <div className="main-cards__container">
+          {chunksArr.length &&
+            chunksArr.map((array, ind) => (
+              <div key={ind} className="cards-column">
+                {array.map((el) => (
+                  <MainCard key={el.id} photoData={el} setCurrentId={setCurrentId} />
+                ))}
+              </div>
+            ))}
+        </div>
+      ) : (
+        <img src={reactSVG} alt="react-logo" className="logo" />
+      )}
+    </>
+    /* {<div className="main-cards__container">
       {chunksArr.length &&
         chunksArr.map((array, ind) => (
           <div key={ind} className="cards-column">
@@ -32,7 +49,7 @@ export const MainCardList: FC<MainCardListProps> = ({ cardsArray, setCurrentId }
             ))}
           </div>
         ))}
-    </div>
+    </div>} */
   );
 };
 
