@@ -96,6 +96,7 @@ type TUrls = {
 
 type TUrserLinks = {
   portfolio: string;
+  html: string;
 };
 
 type TUserProfileImg = {
@@ -110,12 +111,21 @@ interface IUser {
   profile_image: TUserProfileImg;
 }
 
+type photoDownloadsLinks = {
+  download: string;
+  download_location: string;
+  html: string;
+  self: string;
+};
+
 export interface IUnsplashResults {
   id: string;
   created_at: string;
+  promoted_at: string;
   color: string;
   description: null | string;
   alt_description: null | string;
+  links: photoDownloadsLinks;
   likes: number;
   tags: Array<TTags>;
   urls: TUrls;
@@ -130,6 +140,28 @@ export interface IUnsplashRequestData {
   total: number;
   total_pages: number;
   results: TUnsplashResultsArray | [];
+}
+
+type TExifPhoto = {
+  aperture: string;
+  exposure_time: string;
+  focal_length: string;
+  iso: number;
+  make: string;
+  model: string;
+  name: string;
+};
+
+type TLocationPhoto = {
+  country: string;
+  name: string;
+};
+
+export interface IUnsplashGetPhoto extends IUnsplashResults {
+  downloads: number;
+  exif: TExifPhoto;
+  views: number;
+  location: TLocationPhoto;
 }
 
 /* UNSPLASH END */

@@ -9,19 +9,24 @@
   left: 0;
   z-index: 5;
   background: rgba(0, 0, 0, 0.5);
+  overflow: auto;
 }
 
-.photoInfo {
+.myModalContent {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   background-color: white;
   border-radius: 5px;
   max-width: 1000px;
-  img {
-    display: flex;
-    margin: 0 2rem;
-  }
+  transform: translateY(2rem);
+}
+
+.photo {
+  display: flex;
+  margin: 0 2rem;
+  max-height: 600px;
+  object-fit: contain;
 }
 
 .headerPhoto {
@@ -32,9 +37,13 @@
 }
 
 .profileInfo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: black;
+  }
   img {
     border-radius: 50%;
     margin: 0;
@@ -47,9 +56,107 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  img {
+    margin: 0;
+  }
+}
+
+.downloadLink {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: orange;
+  font-weight: 400px;
+  margin-left: 1rem;
 }
 
 .likeSvg {
   width: 2rem;
   height: 2rem;
+}
+
+.footerPhoto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 13px 20px;
+}
+
+.paragraphGrey {
+  color: #767676;
+  font-size: 15px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 400;
+}
+
+.photoDescription {
+  max-width: 300px;
+}
+
+.viewsDownloads {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 1rem;
+  h3 {
+    color: #767676;
+    font-size: 14px;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-weight: 400;
+  }
+  p {
+    margin-top: 0.5rem;
+    font-size: 15px;
+  }
+}
+
+.exifInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.close{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  border: 4px solid #b3b3b3;
+  border-radius: 50%;
+  transition: 0.2s ease-in;
+  &::after, &::before {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 10px;
+    width: 26px;
+    height: 4px;
+    background: #b3b3b3;
+    transition: 0.2s ease-in;
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &:hover {
+    border-color: #f3f3f3;
+    &::before, &::after {
+      background-color:#f3f3f3;
+    }
+  }
+}
+
+.tagsSection {
+  display: flex;
+  flex-direction: column;
+  p {
+    padding: 1rem 0;
+  }
 }

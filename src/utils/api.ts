@@ -1,4 +1,9 @@
-import { IApiGetRequest, IUnsplashRequestData, IUnsplashResults } from '../interfaces';
+import {
+  IApiGetRequest,
+  IUnsplashRequestData,
+  IUnsplashResults,
+  IUnsplashGetPhoto,
+} from '../interfaces';
 
 const key = 'UjaKotcSxWlYeY_ei3APf9ukbH1TmeSxoUr6LdzSuoA';
 const baseUrl = 'https://api.unsplash.com/';
@@ -28,7 +33,7 @@ export const getPhotos = async () => {
   return await res.json();
 };
 
-export const getPhotoById = async (id: string): Promise<IUnsplashResults> => {
+export const getPhotoById = async (id: string): Promise<IUnsplashGetPhoto> => {
   const queryPhoto = `${baseUrl}${additionGetPhoto}${id}?client_id=${key}`;
   const res = await fetch(queryPhoto);
   return res.json();
