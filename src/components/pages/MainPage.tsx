@@ -1,15 +1,20 @@
 import React, { FC, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import SearchForm from '../SearchForm';
+import MainSearchForm from '../UI/MainSearchForm/MainSearchForm';
 import MainCardList from '../MainCardList';
 import MyMainModal from '../UI/MainModal/MyMainModal';
-import { getJson } from '../../utils/api';
+import { getJson, getPhotos } from '../../utils/api';
 import { TUnsplashResultsArray } from '../../interfaces';
 import reactSVG from '../../assets/react.svg';
 
 const MainPage: FC = () => {
   const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
   const [currentPhotoId, setCurrentPhotoId] = useState('');
+
+  const searchPhotos = async (searchValue: string) => {
+    const data = await getPhotos(searchValue);
+    setPhotosData(data.results);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +33,7 @@ const MainPage: FC = () => {
 
   return (
     <div className="main-page">
-      <SearchForm />
+      <MainSearchForm searchPhotos={searchPhotos} />
       {currentPhotoId &&
         createPortal(<MyMainModal id={currentPhotoId} setId={setCurrentPhotoId} />, document.body)}
       {photosData.length ? (

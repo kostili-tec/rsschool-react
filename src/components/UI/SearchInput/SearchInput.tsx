@@ -1,7 +1,12 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 import classes from './input.module.scss';
 
-const SearchInput: FC = () => {
+interface ISearchInputProps {
+  hookFormRegister: UseFormRegisterReturn;
+}
+
+const SearchInput: FC<ISearchInputProps> = ({ hookFormRegister }) => {
   const [searchField, setSearchField] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -25,15 +30,7 @@ const SearchInput: FC = () => {
     };
   }, []);
 
-  return (
-    <input
-      onChange={handleChangeInput}
-      ref={inputRef}
-      value={searchField}
-      className={classes.input}
-      placeholder="Search here"
-    />
-  );
+  return <input {...hookFormRegister} className={classes.input} placeholder="Search here" />;
 };
 
 export default SearchInput;

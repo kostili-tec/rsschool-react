@@ -1,9 +1,4 @@
-import {
-  IApiGetRequest,
-  IUnsplashRequestData,
-  IUnsplashResults,
-  IUnsplashGetPhoto,
-} from '../interfaces';
+import { IApiGetRequest, IUnsplashRequestData, IUnsplashGetPhoto } from '../interfaces';
 
 const key = 'UjaKotcSxWlYeY_ei3APf9ukbH1TmeSxoUr6LdzSuoA';
 const baseUrl = 'https://api.unsplash.com/';
@@ -20,12 +15,12 @@ export async function getProducts(limit = 20) {
   }
 }
 
-export const getPhotos = async () => {
+export const getPhotos = async (searchQuery: string): Promise<IUnsplashRequestData> => {
   const obj = {
     client_id: key,
-    query: 'legs',
+    query: searchQuery,
     page: '1',
-    per_page: '3',
+    per_page: '20',
   };
   const query = new URLSearchParams(obj);
   const fullQuery = baseUrl + additionSearh + query;
