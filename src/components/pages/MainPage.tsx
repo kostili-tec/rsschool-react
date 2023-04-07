@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import SearchForm from '../SearchForm';
 import MainCardList from '../MainCardList';
 import MyMainModal from '../UI/MainModal/MyMainModal';
@@ -28,8 +29,8 @@ const MainPage: FC = () => {
   return (
     <div className="main-page">
       <SearchForm />
-      {currentPhotoId && <MyMainModal id={currentPhotoId} setId={setCurrentPhotoId} />}
-
+      {currentPhotoId &&
+        createPortal(<MyMainModal id={currentPhotoId} setId={setCurrentPhotoId} />, document.body)}
       {photosData.length ? (
         <MainCardList cardsArray={photosData} setCurrentId={setCurrentPhotoId} />
       ) : (
