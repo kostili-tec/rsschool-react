@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import MainPageContent from '../UI/MainPageContent';
+import MainPageContent from '../UI/MainComponents/MainPageContent';
 import AccessForm from '../UI/AccessForm/AccessForm';
 import { TValidationState } from '../../interfaces';
 

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
-import { IUnsplashResults } from '../../interfaces';
+import { IUnsplashResults } from '../../../../interfaces';
 import classes from './MainCard.module.scss';
-import likeSvg from '../../assets/like.svg';
+import likeSvg from '../../../../assets/like.svg';
 
 type MainCardProps = {
   photoData: IUnsplashResults;

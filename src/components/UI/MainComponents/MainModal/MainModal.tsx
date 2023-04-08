@@ -1,10 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
-import { getPhotoById } from '../../../utils/api';
-import { IUnsplashGetPhoto } from '../../../interfaces';
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import { getPhotoById } from '../../../../utils/api';
+import { IUnsplashGetPhoto } from '../../../../interfaces';
+import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 import classes from './MainModal.module.scss';
-import cardClasses from '../../MainCard/MainCard.module.scss';
-import likeSvg from '../../../assets/likeBlack.svg';
+import cardClasses from '../MainCard/MainCard.module.scss';
+import likeSvg from '../../../../assets/likeBlack.svg';
 
 type ModalProps = {
   id: string;

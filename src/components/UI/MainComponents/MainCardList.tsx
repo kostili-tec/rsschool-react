@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import MainCard from './MainCard/MainCard';
-import { TUnsplashResultsArray, IUnsplashResults } from '../interfaces';
+import { TUnsplashResultsArray, IUnsplashResults } from '../../../interfaces';
 
 type StateArray = (IUnsplashResults[] | [])[];
 

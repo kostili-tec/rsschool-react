@@ -1,12 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import MainSearchForm from './MainSearchForm/MainSearchForm';
-import MainCardList from '../MainCardList';
+import MainCardList from './MainCardList';
 import MainModal from './MainModal/MainModal';
-import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
-import LogoutButton from './LogoutButton/LogoutButton';
-import { TUnsplashResultsArray, TValidationState } from '../../interfaces';
-import { getPhotos, getRandomPhotos } from '../../utils/api';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import LogoutButton from '../LogoutButton/LogoutButton';
+import { TUnsplashResultsArray, TValidationState } from '../../../interfaces';
+import { getPhotos, getRandomPhotos } from '../../../utils/api';
 
 type TMainContentProps = {
   validationState: TValidationState;
