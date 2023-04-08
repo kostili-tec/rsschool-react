@@ -15,7 +15,6 @@ export const MainCardList: FC<MainCardListProps> = ({ cardsArray, setCurrentId }
   const splitArrayIntoThree = <T,>(array: Array<T>): T[][] => {
     const n = Math.ceil(array.length / 3);
     const result = [array.slice(0, n), array.slice(n, 2 * n), array.slice(2 * n)];
-    console.log(result);
     return result;
   };
 

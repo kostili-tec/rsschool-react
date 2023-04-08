@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { getPhotoById } from '../../../utils/api';
 import { IUnsplashGetPhoto } from '../../../interfaces';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-import classes from './MyMainModal.module.scss';
+import classes from './MainModal.module.scss';
 import cardClasses from '../../MainCard/MainCard.module.scss';
 import likeSvg from '../../../assets/likeBlack.svg';
 
@@ -12,7 +12,7 @@ type ModalProps = {
   clientKey: string;
 };
 
-export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
+export const MainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
   const [photoData, setPhotoData] = useState<IUnsplashGetPhoto>();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,7 +25,6 @@ export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
           setPhotoData(photoData);
           setIsLoading(false);
         }
-        console.log(photoData);
       } catch (error) {
         throw error;
       }
@@ -127,4 +126,4 @@ export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
   );
 };
 
-export default MyMainModal;
+export default MainModal;

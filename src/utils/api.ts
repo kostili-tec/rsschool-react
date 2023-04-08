@@ -1,23 +1,8 @@
-import {
-  IApiGetRequest,
-  IUnsplashRequestData,
-  IUnsplashGetPhoto,
-  TUnsplashResultsArray,
-} from '../interfaces';
+import { IUnsplashRequestData, IUnsplashGetPhoto, TUnsplashResultsArray } from '../interfaces';
 
 const baseUrl = 'https://api.unsplash.com/';
 const additionSearh = 'search/photos?';
 const additionGetPhoto = 'photos/';
-
-export async function getProducts(limit = 20) {
-  try {
-    const res: Response = await fetch(`https://dummyjson.com/products?limit=${limit}`);
-    const data: IApiGetRequest = await res.json();
-    return data;
-  } catch {
-    return null;
-  }
-}
 
 export const getPhotos = async (
   clientKey: string,
@@ -45,7 +30,6 @@ export const getRandomPhotos = async (clientKey: string): Promise<TUnsplashResul
       Authorization: `Client-ID ${clientKey}`,
     },
   });
-  // console.log(await res.json());
   return await res.json();
 };
 

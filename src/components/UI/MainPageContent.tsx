@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import MainSearchForm from './MainSearchForm/MainSearchForm';
 import MainCardList from '../MainCardList';
-import MyMainModal from './MainModal/MyMainModal';
+import MainModal from './MainModal/MainModal';
 import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
 import LogoutButton from './LogoutButton/LogoutButton';
 import { TUnsplashResultsArray, TValidationState } from '../../interfaces';
@@ -38,7 +38,6 @@ export const MainPageContent: FC<TMainContentProps> = ({ validationState, logout
       try {
         const randomPhotos = await getRandomPhotos(validationState.clientKey);
         if (randomPhotos) {
-          console.log(randomPhotos);
           setPhotosData(randomPhotos);
           setisLoading(false);
         }
@@ -56,7 +55,7 @@ export const MainPageContent: FC<TMainContentProps> = ({ validationState, logout
       {isLoading && <LoadingSpinner />}
       {currentPhotoId &&
         createPortal(
-          <MyMainModal
+          <MainModal
             clientKey={validationState.clientKey}
             id={currentPhotoId}
             setId={setCurrentPhotoId}
