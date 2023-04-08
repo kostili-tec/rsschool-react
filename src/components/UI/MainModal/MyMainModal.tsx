@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { getPhotoById } from '../../../utils/api';
 import { IUnsplashGetPhoto } from '../../../interfaces';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import classes from './MyMainModal.module.scss';
 import cardClasses from '../../MainCard/MainCard.module.scss';
 import likeSvg from '../../../assets/likeBlack.svg';
@@ -13,11 +14,17 @@ type ModalProps = {
 
 export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
   const [photoData, setPhotoData] = useState<IUnsplashGetPhoto>();
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       try {
         const photoData = await getPhotoById(clientKey, id);
-        if (photoData) setPhotoData(photoData);
+        if (photoData) {
+          setPhotoData(photoData);
+          setIsLoading(false);
+        }
         console.log(photoData);
       } catch (error) {
         throw error;
@@ -25,13 +32,15 @@ export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
     };
     fetchData();
   }, [clientKey, id]);
+
   const returnDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
   };
+
   return (
     <>
-      {id && (
+      {!isLoading ? (
         <div className={classes.myModal} onClick={() => setId('')}>
           <div className={classes.close}></div>
           <div className={classes.myModalContent} onClick={(e) => e.stopPropagation()}>
@@ -109,6 +118,8 @@ export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
             </div>
           </div>
         </div>
+      ) : (
+        <LoadingSpinner />
       )}
     </>
   );

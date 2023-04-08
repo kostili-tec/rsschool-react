@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import SearchInput from '../SearchInput/SearchInput';
-import searchSVG from '../../../assets/search.svg';
 
 interface IUseSearchFormProps {
   inputValie: string;

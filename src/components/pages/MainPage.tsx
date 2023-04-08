@@ -3,9 +3,10 @@ import { createPortal } from 'react-dom';
 import MainSearchForm from '../UI/MainSearchForm/MainSearchForm';
 import MainCardList from '../MainCardList';
 import MyMainModal from '../UI/MainModal/MyMainModal';
+import AccessForm from '../UI/AccessForm/AccessForm';
+import LoadingSpinner from '../UI/LoadingSpinner/LoadingSpinner';
 import { getJson, getPhotos } from '../../utils/api';
 import { TUnsplashResultsArray, TValidationState } from '../../interfaces';
-import AccessForm from '../UI/AccessForm/AccessForm';
 
 const MainPage: FC = () => {
   const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
@@ -14,19 +15,31 @@ const MainPage: FC = () => {
     clientKey: '',
     isValid: false,
   });
+  const [isLoading, setisLoading] = useState(false);
 
   const searchPhotos = async (searchValue: string) => {
-    const data = await getPhotos(validationState.clientKey, searchValue);
-    setPhotosData(data.results);
+    setisLoading(true);
+    setPhotosData([]);
+    try {
+      const data = await getPhotos(validationState.clientKey, searchValue);
+      if (data) {
+        setPhotosData(data.results);
+        setisLoading(false);
+      }
+    } catch (error) {
+      throw error;
+    }
   };
 
   useEffect(() => {
+    setisLoading(true);
     const fetchData = async () => {
       try {
         const json = await getJson();
         console.log(json);
         if (json) {
           setPhotosData(json.results);
+          setisLoading(false);
         }
       } catch (error) {
         console.error('Failed to load data', error);
@@ -39,6 +52,7 @@ const MainPage: FC = () => {
     <div className="main-page">
       {!validationState.isValid && <AccessForm setValidation={setValidationState} />}
       <MainSearchForm searchPhotos={searchPhotos} />
+      {isLoading && <LoadingSpinner />}
       {currentPhotoId &&
         createPortal(
           <MyMainModal
@@ -51,11 +65,6 @@ const MainPage: FC = () => {
       {validationState.isValid && (
         <MainCardList cardsArray={photosData} setCurrentId={setCurrentPhotoId} />
       )}
-      {/*  {{photosData.length ? (
-        <MainCardList cardsArray={photosData} setCurrentId={setCurrentPhotoId} />
-      ) : (
-        <img src={reactSVG} alt="react-logo" className="logo" />
-      )}} */}
     </div>
   );
 };
