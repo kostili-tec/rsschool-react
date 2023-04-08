@@ -27,13 +27,14 @@ const AccessForm: FC<IUseFormProps> = ({ setValidation }) => {
     const storageIsValid = localStorage.getItem('kostili-isValid');
     const isTrue = storageIsValid === 'true';
     if (storageClientKey && isTrue) {
-      const checkValidation = async () => {
+      setValidation({ clientKey: storageClientKey, isValid: isTrue });
+      /* const checkValidation = async () => {
         const validation = await checkAccessKey(storageClientKey);
         if (validation) {
           setValidation({ clientKey: storageClientKey, isValid: validation });
         }
       };
-      checkValidation();
+      checkValidation(); */
     }
   });
 

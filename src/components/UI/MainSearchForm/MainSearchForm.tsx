@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import SearchInput from '../SearchInput/SearchInput';
+import classes from './MainSearchForm.module.scss';
 
 interface IUseSearchFormProps {
-  inputValie: string;
+  inputValue: string;
 }
 
 export interface ISearchFormProps {
@@ -11,19 +11,51 @@ export interface ISearchFormProps {
 }
 
 export const MainSearchForm: FC<ISearchFormProps> = ({ searchPhotos }) => {
-  const { register, handleSubmit } = useForm<IUseSearchFormProps>({ mode: 'onSubmit' });
+  const { register, handleSubmit, setValue } = useForm<IUseSearchFormProps>({
+    mode: 'onSubmit',
+  });
+  const [inputState, setInputState] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const inputLocalValue = localStorage.getItem('inputQuery');
+    if (inputLocalValue) {
+      setInputState(inputLocalValue);
+      setValue('inputValue', inputLocalValue);
+    }
+  }, [setValue]);
+
+  useEffect(() => {
+    const input = inputRef.current;
+    return () => {
+      if (input) {
+        localStorage.setItem('inputQuery', input.value);
+      }
+    };
+  }, []);
+
+  const handleChangeInput = () => {
+    if (inputRef.current) {
+      setInputState(inputRef.current.value);
+      setValue('inputValue', inputRef.current.value);
+    }
+  };
 
   const onSubmit = (data: IUseSearchFormProps) => {
-    console.log(data);
-    searchPhotos(data.inputValie);
+    if (data.inputValue) searchPhotos(data.inputValue);
   };
+
   return (
-    <form className="search-form" onSubmit={handleSubmit(onSubmit)}>
-      <SearchInput hookFormRegister={register('inputValie')} />
-      {/* <button className="search-button" onClick={(e) => e.preventDefault()}>
-        <img src={searchSVG} className="search-svg" />
-      </button> */}
-      <input type="submit" />
+    <form className={classes.searchForm} onSubmit={handleSubmit(onSubmit)}>
+      <input
+        type="text"
+        {...register('inputValue')}
+        onChange={handleChangeInput}
+        ref={inputRef}
+        value={inputState}
+        className={classes.input}
+      />
+      <input type="submit" value="" className={classes.inputSubmit} />
     </form>
   );
 };

@@ -24,15 +24,6 @@
   color: orange;
 }
 
-.search-form {
-  margin: 1rem 0;
-  width: 500px;
-  height: 2rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .search-button {
   position: absolute;
   width:2rem;
@@ -50,35 +41,6 @@
 .search-svg {
   width:1.5rem;
   height: 1.5rem;
-}
-
-.logo {
-  height: 26rem;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-  margin-top: 12rem;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-spin infinite 1s ease-in-out;
-  }
 }
 
 .main-page {
@@ -220,10 +182,6 @@
 }
 
 @media screen and (max-width: 550px)  {
-  .search-form {
-    width: 310px;
-  }
-
   .card {
     width: 320px;
   }

@@ -37,16 +37,6 @@ export const MainCardList: FC<MainCardListProps> = ({ cardsArray, setCurrentId }
         </div>
       )}
     </>
-    /* {<div className="main-cards__container">
-      {chunksArr.length &&
-        chunksArr.map((array, ind) => (
-          <div key={ind} className="cards-column">
-            {array.map((el) => (
-              <MainCard key={el.id} photoData={el} setCurrentId={setCurrentId} />
-            ))}
-          </div>
-        ))}
-    </div>} */
   );
 };
 
