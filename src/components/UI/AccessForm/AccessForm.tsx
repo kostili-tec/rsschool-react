@@ -18,19 +18,19 @@ const AccessForm: FC<IUseFormProps> = ({ setValidation }) => {
   const { register, handleSubmit } = useForm<IUseFormAcces>();
 
   const saveAuthorization = (authoriObj: TValidationState) => {
-    localStorage.setItem('kostili-client_key', authoriObj.key);
+    localStorage.setItem('kostili-client_key', authoriObj.clientKey);
     localStorage.setItem('kostili-isValid', authoriObj.isValid.toString());
   };
 
   useEffect(() => {
-    const clientKey = localStorage.getItem('kostili-client_key');
-    const isValid = localStorage.getItem('kostili-isValid');
-    const isTrue = isValid === 'true';
-    if (clientKey && isTrue) {
+    const storageClientKey = localStorage.getItem('kostili-client_key');
+    const storageIsValid = localStorage.getItem('kostili-isValid');
+    const isTrue = storageIsValid === 'true';
+    if (storageClientKey && isTrue) {
       const checkValidation = async () => {
-        const validation = await checkAccessKey(clientKey);
+        const validation = await checkAccessKey(storageClientKey);
         if (validation) {
-          setValidation({ key: clientKey, isValid: validation });
+          setValidation({ clientKey: storageClientKey, isValid: validation });
         }
       };
       checkValidation();
@@ -40,8 +40,8 @@ const AccessForm: FC<IUseFormProps> = ({ setValidation }) => {
   const onSubmit = async (data: IUseFormAcces) => {
     const status = await checkAccessKey(data.inputKey);
     console.log(status);
-    setValidation({ key: data.inputKey, isValid: status });
-    saveAuthorization({ key: data.inputKey, isValid: status });
+    setValidation({ clientKey: data.inputKey, isValid: status });
+    saveAuthorization({ clientKey: data.inputKey, isValid: status });
   };
 
   return createPortal(

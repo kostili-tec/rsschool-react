@@ -1,6 +1,5 @@
 import { IApiGetRequest, IUnsplashRequestData, IUnsplashGetPhoto } from '../interfaces';
 
-const key = 'UjaKotcSxWlYeY_ei3APf9ukbH1TmeSxoUr6LdzSuoA';
 const baseUrl = 'https://api.unsplash.com/';
 const additionSearh = 'search/photos?';
 const additionGetPhoto = 'photos/';
@@ -15,22 +14,32 @@ export async function getProducts(limit = 20) {
   }
 }
 
-export const getPhotos = async (searchQuery: string): Promise<IUnsplashRequestData> => {
-  const obj = {
-    client_id: key,
+export const getPhotos = async (
+  clientKey: string,
+  searchQuery: string
+): Promise<IUnsplashRequestData> => {
+  const queryObj = {
     query: searchQuery,
     page: '1',
-    per_page: '20',
+    per_page: '30',
   };
-  const query = new URLSearchParams(obj);
+  const query = new URLSearchParams(queryObj);
   const fullQuery = baseUrl + additionSearh + query;
-  const res = await fetch(fullQuery);
+  const res = await fetch(fullQuery, {
+    headers: {
+      Authorization: `Client-ID ${clientKey}`,
+    },
+  });
   return await res.json();
 };
 
-export const getPhotoById = async (id: string): Promise<IUnsplashGetPhoto> => {
-  const queryPhoto = `${baseUrl}${additionGetPhoto}${id}?client_id=${key}`;
-  const res = await fetch(queryPhoto);
+export const getPhotoById = async (clientKey: string, id: string): Promise<IUnsplashGetPhoto> => {
+  const queryPhoto = `${baseUrl}${additionGetPhoto}${id}`;
+  const res = await fetch(queryPhoto, {
+    headers: {
+      Authorization: `Client-ID ${clientKey}`,
+    },
+  });
   return res.json();
 };
 
@@ -40,11 +49,11 @@ export const getJson = async (): Promise<IUnsplashRequestData> => {
   return data;
 };
 
-export const checkAccessKey = async (key: string) => {
+export const checkAccessKey = async (clientKey: string) => {
   const url = `${baseUrl}${additionGetPhoto}random?count=1`;
   const res = await fetch(url, {
     headers: {
-      Authorization: `Client-ID ${key}`,
+      Authorization: `Client-ID ${clientKey}`,
     },
   });
   if (res.status === 200) return true;

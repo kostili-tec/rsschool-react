@@ -8,14 +8,15 @@ import likeSvg from '../../../assets/likeBlack.svg';
 type ModalProps = {
   id: string;
   setId: React.Dispatch<React.SetStateAction<string>>;
+  clientKey: string;
 };
 
-export const MyMainModal: FC<ModalProps> = ({ id, setId }) => {
+export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
   const [photoData, setPhotoData] = useState<IUnsplashGetPhoto>();
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const photoData = await getPhotoById(id);
+        const photoData = await getPhotoById(clientKey, id);
         if (photoData) setPhotoData(photoData);
         console.log(photoData);
       } catch (error) {
@@ -23,7 +24,7 @@ export const MyMainModal: FC<ModalProps> = ({ id, setId }) => {
       }
     };
     fetchData();
-  }, [id]);
+  }, [clientKey, id]);
   const returnDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });

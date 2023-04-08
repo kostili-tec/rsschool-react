@@ -11,12 +11,12 @@ const MainPage: FC = () => {
   const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
   const [currentPhotoId, setCurrentPhotoId] = useState('');
   const [validationState, setValidationState] = useState<TValidationState>({
-    key: '',
+    clientKey: '',
     isValid: false,
   });
 
   const searchPhotos = async (searchValue: string) => {
-    const data = await getPhotos(searchValue);
+    const data = await getPhotos(validationState.clientKey, searchValue);
     setPhotosData(data.results);
   };
 
@@ -40,7 +40,14 @@ const MainPage: FC = () => {
       {!validationState.isValid && <AccessForm setValidation={setValidationState} />}
       <MainSearchForm searchPhotos={searchPhotos} />
       {currentPhotoId &&
-        createPortal(<MyMainModal id={currentPhotoId} setId={setCurrentPhotoId} />, document.body)}
+        createPortal(
+          <MyMainModal
+            clientKey={validationState.clientKey}
+            id={currentPhotoId}
+            setId={setCurrentPhotoId}
+          />,
+          document.body
+        )}
       {validationState.isValid && (
         <MainCardList cardsArray={photosData} setCurrentId={setCurrentPhotoId} />
       )}
