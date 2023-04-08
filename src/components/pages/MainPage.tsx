@@ -9,12 +9,17 @@ const MainPage: FC = () => {
     isValid: false,
   });
 
+  const handleLogout = () => {
+    localStorage.clear();
+    setValidationState({ clientKey: '', isValid: false });
+  };
+
   return (
     <>
       {!validationState.isValid ? (
         <AccessForm setValidation={setValidationState} />
       ) : (
-        <MainPageContent validationState={validationState} />
+        <MainPageContent logoutCallback={handleLogout} validationState={validationState} />
       )}
     </>
   );

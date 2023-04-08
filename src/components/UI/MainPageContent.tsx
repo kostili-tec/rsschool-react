@@ -4,14 +4,16 @@ import MainSearchForm from './MainSearchForm/MainSearchForm';
 import MainCardList from '../MainCardList';
 import MyMainModal from './MainModal/MyMainModal';
 import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
+import LogoutButton from './LogoutButton/LogoutButton';
 import { TUnsplashResultsArray, TValidationState } from '../../interfaces';
 import { getPhotos, getRandomPhotos } from '../../utils/api';
 
 type TMainContentProps = {
   validationState: TValidationState;
+  logoutCallback: () => void;
 };
 
-export const MainPageContent: FC<TMainContentProps> = ({ validationState }) => {
+export const MainPageContent: FC<TMainContentProps> = ({ validationState, logoutCallback }) => {
   const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
   const [isLoading, setisLoading] = useState(false);
   const [currentPhotoId, setCurrentPhotoId] = useState('');
@@ -49,6 +51,7 @@ export const MainPageContent: FC<TMainContentProps> = ({ validationState }) => {
 
   return (
     <div className="main-page">
+      <LogoutButton logoutCallback={logoutCallback} />
       <MainSearchForm searchPhotos={searchPhotos} />
       {isLoading && <LoadingSpinner />}
       {currentPhotoId &&
