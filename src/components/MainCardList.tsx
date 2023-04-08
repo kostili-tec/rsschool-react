@@ -24,9 +24,9 @@ export const MainCardList: FC<MainCardListProps> = ({ cardsArray, setCurrentId }
 
   return (
     <>
-      {cardsArray.length && (
+      {!!cardsArray.length && (
         <div className="main-cards__container">
-          {chunksArr.length &&
+          {!!chunksArr.length &&
             chunksArr.map((array, ind) => (
               <div key={ind} className="cards-column">
                 {array.map((el) => (
