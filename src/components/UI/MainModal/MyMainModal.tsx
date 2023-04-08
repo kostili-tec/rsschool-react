@@ -105,17 +105,19 @@ export const MyMainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
                 )}
               </div>
             </div>
-            <div className={classes.tagsSection}>
-              <p>Related tags</p>
-              <div className={cardClasses.tagsContainer}>
-                {photoData?.tags.length &&
-                  photoData.tags.map((el, ind) => (
-                    <span className={cardClasses.tag} key={ind}>
-                      {el.title}
-                    </span>
-                  ))}
+            {photoData?.tags && (
+              <div className={classes.tagsSection}>
+                <p>Related tags</p>
+                <div className={cardClasses.tagsContainer}>
+                  {photoData?.tags.length &&
+                    photoData.tags.map((el, ind) => (
+                      <span className={cardClasses.tag} key={ind}>
+                        {el.title}
+                      </span>
+                    ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       ) : (

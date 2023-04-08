@@ -1,4 +1,9 @@
-import { IApiGetRequest, IUnsplashRequestData, IUnsplashGetPhoto } from '../interfaces';
+import {
+  IApiGetRequest,
+  IUnsplashRequestData,
+  IUnsplashGetPhoto,
+  TUnsplashResultsArray,
+} from '../interfaces';
 
 const baseUrl = 'https://api.unsplash.com/';
 const additionSearh = 'search/photos?';
@@ -30,6 +35,17 @@ export const getPhotos = async (
       Authorization: `Client-ID ${clientKey}`,
     },
   });
+  return await res.json();
+};
+
+export const getRandomPhotos = async (clientKey: string): Promise<TUnsplashResultsArray> => {
+  const query = `${baseUrl}${additionGetPhoto}random?count=30`;
+  const res = await fetch(query, {
+    headers: {
+      Authorization: `Client-ID ${clientKey}`,
+    },
+  });
+  // console.log(await res.json());
   return await res.json();
 };
 

@@ -129,7 +129,7 @@ export interface IUnsplashResults {
   alt_description: null | string;
   links: photoDownloadsLinks;
   likes: number;
-  tags: Array<TTags>;
+  tags?: Array<TTags>;
   urls: TUrls;
   user: IUser;
   height: number;

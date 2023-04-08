@@ -9,7 +9,7 @@ type MainCardProps = {
 };
 
 export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
-  const { description, alt_description, likes, urls, user, tags, id } = photoData;
+  const { description, alt_description, likes, urls, user, id } = photoData;
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
@@ -37,14 +37,16 @@ export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
           </div>
         </div>
       </div>
-      <div className={classes.tagsContainer}>
-        {tags.length &&
-          tags.map((el, ind) => (
-            <span className={classes.tag} key={ind}>
-              {el.title}
-            </span>
-          ))}
-      </div>
+      {photoData.tags && (
+        <div className={classes.tagsContainer}>
+          {photoData.tags.length &&
+            photoData.tags.map((el, ind) => (
+              <span className={classes.tag} key={ind}>
+                {el.title}
+              </span>
+            ))}
+        </div>
+      )}
     </div>
   );
 };
