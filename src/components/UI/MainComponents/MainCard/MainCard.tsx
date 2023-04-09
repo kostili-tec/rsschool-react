@@ -19,6 +19,7 @@ export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
       onClick={() => {
         setCurrentId(id);
       }}
+      role="main-card"
     >
       <div className={classes.imageContainer}>
         <img src={urls.small} alt={`image-${description || alt_description}`} />
@@ -26,6 +27,7 @@ export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
           className={
             isHovered ? `${classes.cardInfo} ${classes.cardInfoHovered}` : classes.cardInfo
           }
+          role="card-info"
         >
           <h5 className={classes.title}>{description || alt_description}</h5>
           <div className={classes.likesCointainer}>

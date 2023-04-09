@@ -46,7 +46,7 @@ export const MainSearchForm: FC<ISearchFormProps> = ({ searchPhotos }) => {
   };
 
   return (
-    <form className={classes.searchForm} onSubmit={handleSubmit(onSubmit)}>
+    <form className={classes.searchForm} onSubmit={handleSubmit(onSubmit)} role="search-form">
       <input
         type="text"
         {...register('inputValue')}
@@ -54,8 +54,9 @@ export const MainSearchForm: FC<ISearchFormProps> = ({ searchPhotos }) => {
         ref={inputRef}
         value={inputState}
         className={classes.input}
+        role="search-input"
       />
-      <input type="submit" value="" className={classes.inputSubmit} />
+      <input type="submit" value="" className={classes.inputSubmit} role="submit-input" />
     </form>
   );
 };
