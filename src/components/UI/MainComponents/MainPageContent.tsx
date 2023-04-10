@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import MainSearchForm from './MainSearchForm/MainSearchForm';
 import MainCardList from './MainCardList';
@@ -17,41 +17,48 @@ export const MainPageContent: FC<TMainContentProps> = ({ validationState, logout
   const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
   const [isLoading, setisLoading] = useState(false);
   const [currentPhotoId, setCurrentPhotoId] = useState('');
+  const [lastSearchQuery, setLastSearchQuery] = useState(localStorage.getItem('inputQuery') || ''); // костыль
 
-  const searchPhotos = async (searchValue: string) => {
+  const memoSearchPhotos = useCallback(
+    async (searchValue: string) => {
+      setisLoading(true);
+      setPhotosData([]);
+      try {
+        const data = await getPhotos(validationState.clientKey, searchValue);
+        if (data) {
+          setPhotosData(data.results);
+          setisLoading(false);
+          setLastSearchQuery(searchValue); // костыль
+        }
+      } catch (error) {
+        throw error;
+      }
+    },
+    [validationState.clientKey]
+  );
+
+  const memoGetRandomPhotos = useCallback(async () => {
     setisLoading(true);
-    setPhotosData([]);
     try {
-      const data = await getPhotos(validationState.clientKey, searchValue);
-      if (data) {
-        setPhotosData(data.results);
+      const randomPhotos = await getRandomPhotos(validationState.clientKey);
+      if (randomPhotos) {
+        setPhotosData(randomPhotos);
         setisLoading(false);
       }
     } catch (error) {
       throw error;
     }
-  };
+  }, [validationState.clientKey]);
 
   useEffect(() => {
-    setisLoading(true);
-    const fetchData = async () => {
-      try {
-        const randomPhotos = await getRandomPhotos(validationState.clientKey);
-        if (randomPhotos) {
-          setPhotosData(randomPhotos);
-          setisLoading(false);
-        }
-      } catch (error) {
-        console.error('Failed to load data', error);
-      }
-    };
-    fetchData();
-  }, [validationState.clientKey]);
+    if (lastSearchQuery === '') memoGetRandomPhotos();
+    else memoSearchPhotos(lastSearchQuery);
+  }, [memoGetRandomPhotos, memoSearchPhotos, lastSearchQuery]);
 
   return (
     <div className="main-page">
       <LogoutButton logoutCallback={logoutCallback} />
-      <MainSearchForm searchPhotos={searchPhotos} />
+      <MainSearchForm searchPhotos={memoSearchPhotos} />
       {isLoading && <LoadingSpinner />}
       {currentPhotoId &&
         createPortal(
