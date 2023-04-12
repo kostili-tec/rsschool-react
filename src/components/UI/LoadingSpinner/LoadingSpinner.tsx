@@ -12,9 +12,6 @@ export const LoadingSpinner: FC = () => {
       wrapperClass={classes.spinner}
       visible={true}
       ariaLabel="three-circles-rotating"
-      outerCircleColor=""
-      innerCircleColor=""
-      middleCircleColor=""
     />
   );
 };

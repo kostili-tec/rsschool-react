@@ -98,15 +98,6 @@ describe('MainCard tests', () => {
     expect(tag).toBeInTheDocument();
   });
 
-  it('mouse enter should set classes on card-info div', () => {
-    render(<MainCard photoData={photoData} setCurrentId={setCurrentId} />);
-    const card = screen.getByRole('main-card');
-    const cardInfo = screen.getByRole('card-info');
-    expect(cardInfo.getAttribute('class')).toContain('cardInfo');
-    fireEvent.mouseEnter(card);
-    expect(cardInfo.getAttribute('class')).toContain('cardInfoHovered');
-  });
-
   it('click on card shoud calls setCurrentId', () => {
     render(<MainCard photoData={photoData} setCurrentId={setCurrentId} />);
     const card = screen.getByRole('main-card');

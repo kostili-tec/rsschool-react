@@ -29,7 +29,7 @@ const AccessForm: FC<IUseFormProps> = ({ setValidation }) => {
     if (storageClientKey && isTrue) {
       setValidation({ clientKey: storageClientKey, isValid: isTrue });
     }
-  });
+  }, [setValidation]);
 
   const onSubmit = async (data: IUseFormAcces) => {
     const status = await checkAccessKey(data.inputKey);

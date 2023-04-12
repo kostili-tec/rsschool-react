@@ -3,7 +3,7 @@ import { FieldError } from 'react-hook-form';
 import classes from './MyError.module.scss';
 
 type TError = {
-  errors: FieldError | undefined;
+  errors?: FieldError;
 };
 
 const MyError: FC<TError> = ({ errors }) => {
