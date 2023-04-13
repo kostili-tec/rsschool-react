@@ -1,6 +1,7 @@
 import { rest } from 'msw';
-import accessJson from '../access.json';
+import accessJson from './access.json';
 import unsplashData from '../../../public/unsplash.json';
+import searchData from './searchData.json';
 
 const baseUrl = 'https://api.unsplash.com/';
 
@@ -19,6 +20,10 @@ const handlers = [
         context.json(accessJson)
       );
     }
+  }),
+  rest.get(`${baseUrl}search/photos`, (req, res, context) => {
+    const query = req.url.searchParams.get('query');
+    if (query) return res(context.status(200), context.delay(100), context.json(searchData));
   }),
 ];
 
