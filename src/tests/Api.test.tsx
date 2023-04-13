@@ -1,35 +1,34 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 import App from '../App';
-import { server } from './testServer';
+import { server } from './mocks/testServer';
 
 beforeAll(() => server.listen());
+
+afterEach(() => {
+  server.resetHandlers();
+});
+
 afterAll(() => server.close());
-afterEach(() => server.resetHandlers());
 
 describe('Api tests', () => {
-  const testKey = 'UjaKotcSxWlYeY_ei3APf9ukbH1TmeSxoUr6LdzSuoA';
+  const testKey = 'valid_key';
 
-  it('test', async () => {
+  it('enter valid key and get random photos', async () => {
     render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
     const input = screen.getByPlaceholderText(/enter your Unsplash key/i);
-    const submit = screen.getByText(/submit/i);
+    const submitButton = screen.getByText(/submit/i);
     expect(input).toBeInTheDocument();
-    fireEvent.change(input, { value: testKey });
-    fireEvent.click(submit);
+    fireEvent.change(input, { target: { value: testKey } });
+    fireEvent.click(submitButton);
+    const images = await screen.findAllByRole('main-card');
     await waitFor(() => {
-      const form = screen.getByText(/form/i);
-      expect(form).toBeInTheDocument();
-    });
-    await act(async () => {
-      await waitFor(() => {
-        expect(screen.getAllByAltText(/image-/i)).toBeInTheDocument();
-      });
+      expect(images).toHaveLength(30);
     });
   });
 });
