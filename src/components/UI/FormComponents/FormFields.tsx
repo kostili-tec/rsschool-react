@@ -13,6 +13,8 @@ import {
 import { ICreateFormProps, IFormInputsData, IFormCardData } from '../../../interfaces';
 import classes from './form.module.scss';
 
+let keyId = 0;
+
 const FormFields: FC<ICreateFormProps> = ({ create }) => {
   const {
     register,
@@ -26,8 +28,13 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
   });
 
   const onSubmit = (data: IFormInputsData) => {
-    const cardData: IFormCardData = { fileUrl: URL.createObjectURL(data.file[0]), ...data };
+    const cardData: IFormCardData = {
+      id: keyId++,
+      fileUrl: URL.createObjectURL(data.file[0]),
+      ...data,
+    };
     create(cardData);
+    console.log(keyId);
     reset();
   };
 

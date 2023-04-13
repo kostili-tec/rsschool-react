@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { IUnsplashResults } from '../../../../interfaces';
 import classes from './MainCard.module.scss';
 import likeSvg from '../../../../assets/like.svg';
@@ -10,12 +10,9 @@ type MainCardProps = {
 
 export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
   const { description, alt_description, likes, urls, user, id } = photoData;
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <div
       className={classes.unsplashCard}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={() => {
         setCurrentId(id);
       }}
@@ -23,12 +20,7 @@ export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
     >
       <div className={classes.imageContainer}>
         <img src={urls.small} alt={`image-${description || alt_description}`} />
-        <div
-          className={
-            isHovered ? `${classes.cardInfo} ${classes.cardInfoHovered}` : classes.cardInfo
-          }
-          role="card-info"
-        >
+        <div className={classes.cardInfo} role="card-info">
           <h5 className={classes.title}>{description || alt_description}</h5>
           <div className={classes.likesCointainer}>
             <img className={classes.likeSvg} src={likeSvg} alt="likes" />

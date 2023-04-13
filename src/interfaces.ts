@@ -1,14 +1,3 @@
-export interface IHeaderLinks {
-  linkName: string;
-  linkTo: string;
-}
-
-export interface IHeaderProps {
-  headerLinks: Array<IHeaderLinks>;
-}
-
-export type TypeHeaderProps = Array<IHeaderLinks>;
-
 export type TValidationState = { clientKey: string; isValid: boolean };
 
 export interface ICreatorFormRefs {
