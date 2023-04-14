@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import classes from './MainSearchForm.module.scss';
+import { useAppSelector, useAppDispatch } from '../../../../redux/store/store';
+import { actions as searchAction } from '../../../../redux/store/favorites/search.slice';
 
 interface IUseSearchFormProps {
   inputValue: string;
@@ -14,25 +16,10 @@ export const MainSearchForm: FC<ISearchFormProps> = ({ searchPhotos }) => {
   const { register, handleSubmit, setValue } = useForm<IUseSearchFormProps>({
     mode: 'onSubmit',
   });
-  const [inputState, setInputState] = useState('');
+  const { searchQuery } = useAppSelector((state) => state.searchState);
+  const [inputState, setInputState] = useState<string>(searchQuery);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const inputLocalValue = localStorage.getItem('inputQuery');
-    if (inputLocalValue) {
-      setInputState(inputLocalValue);
-      setValue('inputValue', inputLocalValue);
-    }
-  }, [setValue]);
-
-  useEffect(() => {
-    const input = inputRef.current;
-    return () => {
-      if (input) {
-        localStorage.setItem('inputQuery', input.value);
-      }
-    };
-  }, []);
+  const dispatch = useAppDispatch();
 
   const handleChangeInput = () => {
     if (inputRef.current) {
@@ -42,8 +29,15 @@ export const MainSearchForm: FC<ISearchFormProps> = ({ searchPhotos }) => {
   };
 
   const onSubmit = (data: IUseSearchFormProps) => {
-    if (data.inputValue) searchPhotos(data.inputValue);
+    if (data.inputValue) {
+      dispatch(searchAction.setSearch(inputState));
+      searchPhotos(data.inputValue);
+    }
   };
+
+  useEffect(() => {
+    setValue('inputValue', searchQuery);
+  }, [searchQuery, setValue]);
 
   return (
     <form className={classes.searchForm} onSubmit={handleSubmit(onSubmit)} role="search-form">

@@ -7,6 +7,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import LogoutButton from '../LogoutButton/LogoutButton';
 import { TUnsplashResultsArray, TValidationState } from '../../../interfaces';
 import { getPhotos, getRandomPhotos } from '../../../utils/api';
+import { useAppSelector } from '../../../redux/store/store';
 
 type TMainContentProps = {
   validationState: TValidationState;
@@ -17,7 +18,7 @@ export const MainPageContent: FC<TMainContentProps> = ({ validationState, logout
   const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
   const [isLoading, setisLoading] = useState(false);
   const [currentPhotoId, setCurrentPhotoId] = useState('');
-  const [lastSearchQuery, setLastSearchQuery] = useState(localStorage.getItem('inputQuery') || ''); // костыль
+  const { searchQuery } = useAppSelector((state) => state.searchState);
 
   const memoSearchPhotos = useCallback(
     async (searchValue: string) => {
@@ -28,7 +29,6 @@ export const MainPageContent: FC<TMainContentProps> = ({ validationState, logout
         if (data) {
           setPhotosData(data.results);
           setisLoading(false);
-          setLastSearchQuery(searchValue); // костыль
         }
       } catch (error) {
         throw error;
@@ -51,9 +51,9 @@ export const MainPageContent: FC<TMainContentProps> = ({ validationState, logout
   }, [validationState.clientKey]);
 
   useEffect(() => {
-    if (lastSearchQuery === '') memoGetRandomPhotos();
-    else memoSearchPhotos(lastSearchQuery);
-  }, [memoGetRandomPhotos, memoSearchPhotos, lastSearchQuery]);
+    if (searchQuery) memoSearchPhotos(searchQuery);
+    else memoGetRandomPhotos();
+  }, [memoGetRandomPhotos, memoSearchPhotos, searchQuery]);
 
   return (
     <div className="main-page">
