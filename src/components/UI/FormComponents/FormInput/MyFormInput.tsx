@@ -8,14 +8,13 @@ interface IInputProps {
   id: string;
   type: HTMLInputTypeAttribute;
   label?: string;
-  errors: FieldError | undefined;
+  errors?: FieldError;
   max?: string;
   accept?: string;
   className?: string;
 }
 
-const MyFormInput: FC<IInputProps> = (props) => {
-  const { hookFormRegister, type, id, label, errors, ...rest } = props;
+const MyFormInput: FC<IInputProps> = ({ hookFormRegister, type, id, label, errors, ...rest }) => {
   const labelName = hookFormRegister.name.charAt(0).toUpperCase() + hookFormRegister.name.slice(1);
   return (
     <>

@@ -7,32 +7,31 @@ import inputClasses from '../FormInput/MyFormInput.module.scss';
 interface ISelectProps {
   hookFormRegister: UseFormRegisterReturn;
   id: string;
-  errors: FieldError | undefined;
+  errors?: FieldError;
 }
 
-const MyFormSelect: FC<ISelectProps> = (props) => {
-  const { hookFormRegister, id, errors } = props;
+const MyFormSelect: FC<ISelectProps> = ({ hookFormRegister, id, errors }) => {
   return (
     <>
       <label className={inputClasses.labelInput} htmlFor={id}>
         Category
-        <select
-          {...hookFormRegister}
-          className={classes.select}
-          id={id}
-          defaultValue={''}
-          role="select"
-        >
-          <option disabled value="">
-            Chose category
-          </option>
-          <option value="smartphones">Smartphones</option>
-          <option value="laptops">Laptops</option>
-          <option value="fragrances">Fragrances</option>
-          <option value="skincare">Skincare</option>
-          <option value="another">Another</option>
-        </select>
       </label>
+      <select
+        {...hookFormRegister}
+        className={classes.select}
+        id={id}
+        defaultValue={''}
+        role="select"
+      >
+        <option disabled value="">
+          Chose category
+        </option>
+        <option value="smartphones">Smartphones</option>
+        <option value="laptops">Laptops</option>
+        <option value="fragrances">Fragrances</option>
+        <option value="skincare">Skincare</option>
+        <option value="another">Another</option>
+      </select>
       <MyError errors={errors} />
     </>
   );

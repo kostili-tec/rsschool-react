@@ -5,6 +5,9 @@
 .imageContainer {
   position: relative;
   display: flex;
+  &:hover > .cardInfo {
+    opacity: 1;
+  }
 }
 
 .cardInfo {
@@ -17,10 +20,6 @@
   opacity: 0;
   transition: 0.1s ease-in;
   cursor: zoom-in;
-}
-
-.cardInfoHovered {
-  opacity: 1;
 }
 
 .title {

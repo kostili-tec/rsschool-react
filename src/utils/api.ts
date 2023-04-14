@@ -43,12 +43,6 @@ export const getPhotoById = async (clientKey: string, id: string): Promise<IUnsp
   return res.json();
 };
 
-export const getJson = async (): Promise<IUnsplashRequestData> => {
-  const res = await fetch('./unsplash.json');
-  const data = await res.json();
-  return data;
-};
-
 export const checkAccessKey = async (clientKey: string) => {
   const url = `${baseUrl}${additionGetPhoto}random?count=1`;
   const res = await fetch(url, {
