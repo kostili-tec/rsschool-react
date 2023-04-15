@@ -1,10 +1,12 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { reducer as searchReducer } from './favorites/search.slice';
+import { reducer as formReducer } from './favorites/form.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import type { TypedUseSelectorHook } from 'react-redux';
 
 const reducers = combineReducers({
   searchState: searchReducer,
+  formState: formReducer,
 });
 
 export const store = configureStore({
