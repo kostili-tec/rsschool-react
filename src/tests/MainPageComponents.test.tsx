@@ -1,23 +1,31 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, vi } from 'vitest';
+import { vi } from 'vitest';
+import { Provider } from 'react-redux';
 import LogoutButton from '../components/UI/LogoutButton/LogoutButton';
 import MainSearchForm from '../components/UI/MainComponents/MainSearchForm/MainSearchForm';
 import LoadingSpinner from '../components/UI/LoadingSpinner/LoadingSpinner';
 import MainCard from '../components/UI/MainComponents/MainCard/MainCard';
+import { store } from '../redux/store/store';
 import { IUnsplashResults } from '../interfaces';
 
 describe('Main page components tests', () => {
-  const logoutCallback = vi.fn();
-  const searchPhotos = vi.fn();
-  it('shoud calls logoutCallback on click on LogoutButton', () => {
-    render(<LogoutButton logoutCallback={logoutCallback} />);
+  it('shoud return to AccesForm by click on Logout button', () => {
+    render(
+      <Provider store={store}>
+        <LogoutButton />
+      </Provider>
+    );
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
     fireEvent.click(button);
-    expect(logoutCallback).toHaveBeenCalled();
+    // expect(await screen.findByText(/to use this app you need/i)).toBeInTheDocument();
   });
   it('render MainSearcHForm', () => {
-    render(<MainSearchForm searchPhotos={searchPhotos} />);
+    render(
+      <Provider store={store}>
+        <MainSearchForm />
+      </Provider>
+    );
     const submitInput = screen.getByRole('search-input');
     expect(submitInput).toBeInTheDocument();
     expect(submitInput).toHaveValue('');

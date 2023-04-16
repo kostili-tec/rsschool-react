@@ -1,23 +1,28 @@
-import { describe } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import App from '../App';
 import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store/store';
+import App from '../App';
 
 describe('Router test', () => {
   it('Error page', () => {
     render(
-      <MemoryRouter initialEntries={['/aboba']}>
-        <App />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/aboba']}>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     expect(screen.getByAltText('error-image')).toBeInTheDocument();
     expect(screen.getByText('404')).toBeInTheDocument();
   });
   it('Main Page with modal authrization', () => {
     render(
-      <MemoryRouter initialEntries={['/']}>
-        <App />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/']}>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
     const header = screen.getByText(/to use this app/i);
     const inputText = screen.getByPlaceholderText(/enter your unsplash/i);
