@@ -12,7 +12,7 @@ export const MainSearchForm: FC = () => {
   const { register, handleSubmit, setValue } = useForm<IUseSearchFormProps>({
     mode: 'onSubmit',
   });
-  const { searchQuery } = useAppSelector((state) => state.searchState);
+  const { searchQuery, skip } = useAppSelector((state) => state.searchState);
   const [inputState, setInputState] = useState<string>(searchQuery);
   const inputRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
@@ -26,7 +26,8 @@ export const MainSearchForm: FC = () => {
 
   const onSubmit = (data: IUseSearchFormProps) => {
     if (data.inputValue) {
-      dispatch(searchAction.setSearch(inputState));
+      dispatch(searchAction.setSearch({ searchQuery: inputState }));
+      if (skip) dispatch(searchAction.setSearch({ searchQuery: inputState, skip: false }));
     }
   };
 

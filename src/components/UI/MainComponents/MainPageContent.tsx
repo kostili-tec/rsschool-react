@@ -5,25 +5,21 @@ import MainCardList from './MainCardList';
 import MainModal from './MainModal/MainModal';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import LogoutButton from '../LogoutButton/LogoutButton';
-import { TUnsplashResultsArray, TValidationState } from '../../../interfaces';
 import { useAppSelector } from '../../../redux/store/store';
 import { useGetRandomPhotosQuery, useSearchPhotosQuery } from '../../../redux/store/api/api';
 
 export const MainPageContent: FC = () => {
-  const [photosData, setPhotosData] = useState<TUnsplashResultsArray>([]);
-  const [isLoading, setisLoading] = useState(false);
   const [currentPhotoId, setCurrentPhotoId] = useState('');
-  const { searchQuery } = useAppSelector((state) => state.searchState);
-  const [searchPhotosParams, setSearchPhotosParams] = useState({ query: '', page: 1, perPage: 10 });
+  const { searchQuery, skip } = useAppSelector((state) => state.searchState);
   const randomPhotosRequest = useGetRandomPhotosQuery(30);
   const searchPhotosRequest = useSearchPhotosQuery(
     {
-      query: searchPhotosParams.query,
-      page: searchPhotosParams.page,
-      per_page: searchPhotosParams.perPage,
+      query: searchQuery,
+      page: 1,
+      per_page: 30,
     },
     {
-      skip: true,
+      skip,
     }
   );
 

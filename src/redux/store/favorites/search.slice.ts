@@ -1,15 +1,19 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-// const initialState = '';
+type TSeacthSlice = {
+  searchQuery: string;
+  skip?: boolean;
+};
 
 export const searchSlice = createSlice({
   name: 'search',
   initialState: {
     searchQuery: '',
-  },
+    skip: true, // костыль
+  } as TSeacthSlice,
   reducers: {
-    setSearch: (state, action: PayloadAction<string>) => {
-      state.searchQuery = action.payload;
+    setSearch: (state, { payload: { searchQuery, skip } }: PayloadAction<TSeacthSlice>) => {
+      (state.searchQuery = searchQuery), (state.skip = skip);
     },
   },
 });
