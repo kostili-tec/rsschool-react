@@ -8,11 +8,7 @@ interface IUseSearchFormProps {
   inputValue: string;
 }
 
-export interface ISearchFormProps {
-  searchPhotos: (value: string) => void;
-}
-
-export const MainSearchForm: FC<ISearchFormProps> = ({ searchPhotos }) => {
+export const MainSearchForm: FC = () => {
   const { register, handleSubmit, setValue } = useForm<IUseSearchFormProps>({
     mode: 'onSubmit',
   });
@@ -31,7 +27,6 @@ export const MainSearchForm: FC<ISearchFormProps> = ({ searchPhotos }) => {
   const onSubmit = (data: IUseSearchFormProps) => {
     if (data.inputValue) {
       dispatch(searchAction.setSearch(inputState));
-      searchPhotos(data.inputValue);
     }
   };
 

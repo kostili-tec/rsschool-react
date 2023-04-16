@@ -1,6 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
-import { getPhotoById } from '../../../../utils/api';
-import { IUnsplashGetPhoto } from '../../../../interfaces';
+import React, { FC } from 'react';
+import { useGetPhotoByIdQuery } from '../../../../redux/store/api/api';
 import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 import classes from './MainModal.module.scss';
 import cardClasses from '../MainCard/MainCard.module.scss';
@@ -9,28 +8,10 @@ import likeSvg from '../../../../assets/likeBlack.svg';
 type ModalProps = {
   id: string;
   setId: React.Dispatch<React.SetStateAction<string>>;
-  clientKey: string;
 };
 
-export const MainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
-  const [photoData, setPhotoData] = useState<IUnsplashGetPhoto>();
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const photoData = await getPhotoById(clientKey, id);
-        if (photoData) {
-          setPhotoData(photoData);
-          setIsLoading(false);
-        }
-      } catch (error) {
-        throw error;
-      }
-    };
-    fetchData();
-  }, [clientKey, id]);
+export const MainModal: FC<ModalProps> = ({ id, setId }) => {
+  const { data, isFetching } = useGetPhotoByIdQuery(id);
 
   const returnDate = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -39,24 +20,24 @@ export const MainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
 
   return (
     <>
-      {!isLoading ? (
+      {!isFetching ? (
         <div className={classes.myModal} onClick={() => setId('')}>
           <div className={classes.close}></div>
           <div className={classes.myModalContent} onClick={(e) => e.stopPropagation()}>
             <div className={classes.headerPhoto}>
               <div className={classes.profileInfo}>
-                <a href={photoData?.user.links.html} target="_blank" rel="noreferrer">
-                  <img src={photoData?.user.profile_image.medium} alt={photoData?.user.name} />
-                  <span>{photoData?.user.name}</span>
+                <a href={data?.user.links.html} target="_blank" rel="noreferrer">
+                  <img src={data?.user.profile_image.medium} alt={data?.user.name} />
+                  <span>{data?.user.name}</span>
                 </a>
               </div>
               <div className={classes.downloadContainer}>
                 <img className={classes.likeSvg} src={likeSvg} alt="likes" />
-                <span>{photoData?.likes}</span>
+                <span>{data?.likes}</span>
                 <a
                   className={classes.downloadLink}
                   target="_blank"
-                  href={photoData?.links.download}
+                  href={data?.links.download}
                   rel="noreferrer"
                 >
                   <span>Download</span>
@@ -65,51 +46,51 @@ export const MainModal: FC<ModalProps> = ({ clientKey, id, setId }) => {
             </div>
             <img
               className={classes.photo}
-              src={photoData?.urls.regular}
-              alt={`image-${photoData?.description}`}
+              src={data?.urls.regular}
+              alt={`image-${data?.description}`}
             />
             <div className={classes.footerPhoto}>
               <div>
                 <div className={classes.viewsDownloads}>
                   <div>
                     <h3>Views</h3>
-                    <p>{photoData?.views.toLocaleString('en-US')}</p>
+                    <p>{data?.views.toLocaleString('en-US')}</p>
                   </div>
                   <div>
                     <h3>Downloads</h3>
-                    <p>{photoData?.downloads.toLocaleString('en-US')}</p>
+                    <p>{data?.downloads.toLocaleString('en-US')}</p>
                   </div>
                 </div>
-                <p className={classes.paragraphGrey}>{photoData?.location.name}</p>
+                <p className={classes.paragraphGrey}>{data?.location.name}</p>
               </div>
               <p className={classes.photoDescription}>
-                {photoData?.description || photoData?.alt_description}
+                {data?.description || data?.alt_description}
               </p>
               <div className={classes.exifInfo}>
-                <p>Created on {photoData?.created_at && returnDate(photoData.created_at)}</p>
-                {photoData?.exif.model && (
+                <p>Created on {data?.created_at && returnDate(data.created_at)}</p>
+                {data?.exif.model && (
                   <div>
-                    <p className={classes.paragraphGrey}>Camera</p> <p>{photoData?.exif.model}</p>
+                    <p className={classes.paragraphGrey}>Camera</p> <p>{data?.exif.model}</p>
                   </div>
                 )}
-                {photoData?.exif.iso && (
+                {data?.exif.iso && (
                   <div>
                     <p className={classes.paragraphGrey}>Lens</p>
                     <p>
-                      {photoData?.exif.focal_length}mm f/{photoData?.exif.aperture}
+                      {data?.exif.focal_length}mm f/{data?.exif.aperture}
                     </p>
-                    <p>{photoData?.exif.exposure_time}s</p>
-                    <p>ISO {photoData?.exif.iso}</p>
+                    <p>{data?.exif.exposure_time}s</p>
+                    <p>ISO {data?.exif.iso}</p>
                   </div>
                 )}
               </div>
             </div>
-            {photoData?.tags && (
+            {data?.tags && (
               <div className={classes.tagsSection}>
                 <p>Related tags</p>
                 <div className={cardClasses.tagsContainer}>
-                  {photoData?.tags.length &&
-                    photoData.tags.map((el, ind) => (
+                  {data?.tags.length &&
+                    data.tags.map((el, ind) => (
                       <span className={cardClasses.tag} key={ind}>
                         {el.title}
                       </span>
