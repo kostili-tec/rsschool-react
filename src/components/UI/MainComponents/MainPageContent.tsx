@@ -4,7 +4,6 @@ import MainSearchForm from './MainSearchForm/MainSearchForm';
 import MainCardList from './MainCardList';
 import MainModal from './MainModal/MainModal';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-import LogoutButton from '../LogoutButton/LogoutButton';
 import { useAppSelector } from '../../../redux/store/store';
 import { useGetRandomPhotosQuery, useSearchPhotosQuery } from '../../../redux/store/api/api';
 
@@ -25,9 +24,8 @@ export const MainPageContent: FC = () => {
 
   return (
     <div className="main-page">
-      <LogoutButton />
       <MainSearchForm />
-      {(randomPhotosRequest.isLoading || searchPhotosRequest.isLoading) && <LoadingSpinner />}
+      {(randomPhotosRequest.isFetching || searchPhotosRequest.isFetching) && <LoadingSpinner />}
       {searchPhotosRequest.data ? (
         <MainCardList
           cardsArray={searchPhotosRequest.data.results}

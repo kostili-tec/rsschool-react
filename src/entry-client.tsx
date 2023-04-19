@@ -16,4 +16,3 @@ const entryClient = () => {
 };
 
 entryClient();
-console.log('hydrated');

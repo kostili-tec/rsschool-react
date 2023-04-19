@@ -4,7 +4,6 @@ import {
   IUnsplashRequestData,
   IUnsplashGetPhoto,
 } from '../../../interfaces';
-import { RootState } from '../store';
 
 const baseUrl = 'https://api.unsplash.com/';
 const additionSearh = 'search/photos?';
@@ -20,8 +19,8 @@ export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: baseUrl,
-    prepareHeaders: (headers, { getState }) => {
-      const token = (getState() as RootState).authState.token;
+    prepareHeaders: (headers) => {
+      const token = 'FYdN3NPqRZfJlZqP-pOElRcZ95ARwjpFvreQ-1zSBOM';
       if (token) {
         headers.set('Authorization', `Client-ID ${token}`);
       }
