@@ -10,7 +10,7 @@
     "build:server": "vite build --outDir dist/server --ssr src/entry-server.tsx",
     "server": "npx ts-node --esm server.ts",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --env coverage=false",
+    "cypress:run": "cypress run --env coverage=true",
     "cypress:coverage": "npx nyc report --reporter=text-summary",
     "eslint": "eslint --ext .ts,.tsx src",
     "eslint-fix": "eslint --ext .ts,.tsx src --fix",

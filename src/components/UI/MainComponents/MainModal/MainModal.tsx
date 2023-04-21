@@ -22,7 +22,7 @@ export const MainModal: FC<ModalProps> = ({ id, setId }) => {
     <>
       {!isFetching ? (
         <div className={classes.myModal} onClick={() => setId('')}>
-          <div className={classes.close}></div>
+          <div data-cy="close-modal" className={classes.close}></div>
           <div className={classes.myModalContent} onClick={(e) => e.stopPropagation()}>
             <div className={classes.headerPhoto}>
               <div className={classes.profileInfo}>
