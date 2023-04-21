@@ -1,0 +1,4389 @@
+{
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\favorites\\search.slice.ts": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\favorites\\search.slice.ts",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 8,
+          "column": 27
+        },
+        "end": {
+          "line": 19,
+          "column": 2
+        }
+      },
+      "1": {
+        "start": {
+          "line": 16,
+          "column": 6
+        },
+        "end": {
+          "line": 16,
+          "column": 61
+        }
+      },
+      "2": {
+        "start": {
+          "line": 21,
+          "column": 36
+        },
+        "end": {
+          "line": 21,
+          "column": 47
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 15,
+            "column": 15
+          },
+          "end": {
+            "line": 15,
+            "column": 16
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 15,
+            "column": 91
+          },
+          "end": {
+            "line": 17,
+            "column": 5
+          }
+        },
+        "line": 15
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 0,
+      "2": 1
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "662fc2a08c32ef4b3c78839d660e7b7d0c3469a3"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\favorites\\form.slice.ts": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\favorites\\form.slice.ts",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 4,
+          "column": 25
+        },
+        "end": {
+          "line": 14,
+          "column": 2
+        }
+      },
+      "1": {
+        "start": {
+          "line": 11,
+          "column": 6
+        },
+        "end": {
+          "line": 11,
+          "column": 43
+        }
+      },
+      "2": {
+        "start": {
+          "line": 16,
+          "column": 36
+        },
+        "end": {
+          "line": 16,
+          "column": 45
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 10,
+            "column": 13
+          },
+          "end": {
+            "line": 10,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 62
+          },
+          "end": {
+            "line": 12,
+            "column": 5
+          }
+        },
+        "line": 10
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 0,
+      "2": 1
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "c3ccc465f79cf2bfc3f7d0d1c295655d8c31f936"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\favorites\\auth.slice.ts": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\favorites\\auth.slice.ts",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 8,
+          "column": 25
+        },
+        "end": {
+          "line": 23,
+          "column": 2
+        }
+      },
+      "1": {
+        "start": {
+          "line": 19,
+          "column": 6
+        },
+        "end": {
+          "line": 19,
+          "column": 26
+        }
+      },
+      "2": {
+        "start": {
+          "line": 20,
+          "column": 6
+        },
+        "end": {
+          "line": 20,
+          "column": 30
+        }
+      },
+      "3": {
+        "start": {
+          "line": 25,
+          "column": 36
+        },
+        "end": {
+          "line": 25,
+          "column": 45
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 15,
+            "column": 14
+          },
+          "end": {
+            "line": 15,
+            "column": 15
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 9
+          },
+          "end": {
+            "line": 21,
+            "column": 5
+          }
+        },
+        "line": 18
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 0,
+      "2": 0,
+      "3": 1
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "c4427f3f7a18281377c77cbe0c913d16bc613647"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\api\\api.ts": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\api\\api.ts",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 8,
+          "column": 16
+        },
+        "end": {
+          "line": 8,
+          "column": 43
+        }
+      },
+      "1": {
+        "start": {
+          "line": 9,
+          "column": 22
+        },
+        "end": {
+          "line": 9,
+          "column": 38
+        }
+      },
+      "2": {
+        "start": {
+          "line": 10,
+          "column": 25
+        },
+        "end": {
+          "line": 10,
+          "column": 34
+        }
+      },
+      "3": {
+        "start": {
+          "line": 18,
+          "column": 19
+        },
+        "end": {
+          "line": 51,
+          "column": 2
+        }
+      },
+      "4": {
+        "start": {
+          "line": 23,
+          "column": 20
+        },
+        "end": {
+          "line": 23,
+          "column": 65
+        }
+      },
+      "5": {
+        "start": {
+          "line": 24,
+          "column": 6
+        },
+        "end": {
+          "line": 26,
+          "column": 7
+        }
+      },
+      "6": {
+        "start": {
+          "line": 25,
+          "column": 8
+        },
+        "end": {
+          "line": 25,
+          "column": 59
+        }
+      },
+      "7": {
+        "start": {
+          "line": 27,
+          "column": 6
+        },
+        "end": {
+          "line": 27,
+          "column": 21
+        }
+      },
+      "8": {
+        "start": {
+          "line": 30,
+          "column": 27
+        },
+        "end": {
+          "line": 50,
+          "column": 3
+        }
+      },
+      "9": {
+        "start": {
+          "line": 32,
+          "column": 24
+        },
+        "end": {
+          "line": 32,
+          "column": 54
+        }
+      },
+      "10": {
+        "start": {
+          "line": 35,
+          "column": 45
+        },
+        "end": {
+          "line": 42,
+          "column": 7
+        }
+      },
+      "11": {
+        "start": {
+          "line": 45,
+          "column": 21
+        },
+        "end": {
+          "line": 45,
+          "column": 47
+        }
+      },
+      "12": {
+        "start": {
+          "line": 48,
+          "column": 19
+        },
+        "end": {
+          "line": 48,
+          "column": 54
+        }
+      },
+      "13": {
+        "start": {
+          "line": 58,
+          "column": 4
+        },
+        "end": {
+          "line": 58,
+          "column": 7
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 22,
+            "column": 20
+          },
+          "end": {
+            "line": 22,
+            "column": 21
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 22,
+            "column": 33
+          },
+          "end": {
+            "line": 28,
+            "column": 5
+          }
+        },
+        "line": 22
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 30,
+            "column": 13
+          },
+          "end": {
+            "line": 30,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 30,
+            "column": 27
+          },
+          "end": {
+            "line": 50,
+            "column": 3
+          }
+        },
+        "line": 30
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 32,
+            "column": 13
+          },
+          "end": {
+            "line": 32,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 32,
+            "column": 24
+          },
+          "end": {
+            "line": 32,
+            "column": 54
+          }
+        },
+        "line": 32
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 35,
+            "column": 13
+          },
+          "end": {
+            "line": 35,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 35,
+            "column": 45
+          },
+          "end": {
+            "line": 42,
+            "column": 7
+          }
+        },
+        "line": 35
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 45,
+            "column": 13
+          },
+          "end": {
+            "line": 45,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 45,
+            "column": 21
+          },
+          "end": {
+            "line": 45,
+            "column": 47
+          }
+        },
+        "line": 45
+      },
+      "5": {
+        "name": "(anonymous_5)",
+        "decl": {
+          "start": {
+            "line": 48,
+            "column": 13
+          },
+          "end": {
+            "line": 48,
+            "column": 14
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 48,
+            "column": 19
+          },
+          "end": {
+            "line": 48,
+            "column": 54
+          }
+        },
+        "line": 48
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 6
+          },
+          "end": {
+            "line": 26,
+            "column": 7
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 24,
+              "column": 6
+            },
+            "end": {
+              "line": 26,
+              "column": 7
+            }
+          },
+          {
+            "start": {},
+            "end": {}
+          }
+        ],
+        "line": 24
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 1
+    },
+    "f": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    "b": {
+      "0": [
+        1,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "4692bd92a696d19781c6b4b5c70eaaba09f6e917"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\store.ts": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\redux\\store\\store.ts",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 9,
+          "column": 17
+        },
+        "end": {
+          "line": 14,
+          "column": 2
+        }
+      },
+      "1": {
+        "start": {
+          "line": 16,
+          "column": 21
+        },
+        "end": {
+          "line": 19,
+          "column": 2
+        }
+      },
+      "2": {
+        "start": {
+          "line": 18,
+          "column": 40
+        },
+        "end": {
+          "line": 18,
+          "column": 85
+        }
+      },
+      "3": {
+        "start": {
+          "line": 26,
+          "column": 49
+        },
+        "end": {
+          "line": 26,
+          "column": 60
+        }
+      },
+      "4": {
+        "start": {
+          "line": 27,
+          "column": 63
+        },
+        "end": {
+          "line": 27,
+          "column": 74
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 18,
+            "column": 14
+          },
+          "end": {
+            "line": 18,
+            "column": 15
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 40
+          },
+          "end": {
+            "line": 18,
+            "column": 85
+          }
+        },
+        "line": 18
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1
+    },
+    "f": {
+      "0": 1
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "154e8d7ad24b0291719b2de105b4eddabe03f4e6"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainSearchForm\\MainSearchForm.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainSearchForm\\MainSearchForm.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 11,
+          "column": 34
+        },
+        "end": {
+          "line": 52,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 12,
+          "column": 47
+        },
+        "end": {
+          "line": 14,
+          "column": 4
+        }
+      },
+      "2": {
+        "start": {
+          "line": 15,
+          "column": 32
+        },
+        "end": {
+          "line": 15,
+          "column": 76
+        }
+      },
+      "3": {
+        "start": {
+          "line": 15,
+          "column": 58
+        },
+        "end": {
+          "line": 15,
+          "column": 75
+        }
+      },
+      "4": {
+        "start": {
+          "line": 16,
+          "column": 38
+        },
+        "end": {
+          "line": 16,
+          "column": 67
+        }
+      },
+      "5": {
+        "start": {
+          "line": 17,
+          "column": 19
+        },
+        "end": {
+          "line": 17,
+          "column": 49
+        }
+      },
+      "6": {
+        "start": {
+          "line": 18,
+          "column": 19
+        },
+        "end": {
+          "line": 18,
+          "column": 35
+        }
+      },
+      "7": {
+        "start": {
+          "line": 20,
+          "column": 28
+        },
+        "end": {
+          "line": 25,
+          "column": 3
+        }
+      },
+      "8": {
+        "start": {
+          "line": 21,
+          "column": 4
+        },
+        "end": {
+          "line": 24,
+          "column": 5
+        }
+      },
+      "9": {
+        "start": {
+          "line": 22,
+          "column": 6
+        },
+        "end": {
+          "line": 22,
+          "column": 44
+        }
+      },
+      "10": {
+        "start": {
+          "line": 23,
+          "column": 6
+        },
+        "end": {
+          "line": 23,
+          "column": 53
+        }
+      },
+      "11": {
+        "start": {
+          "line": 27,
+          "column": 19
+        },
+        "end": {
+          "line": 32,
+          "column": 3
+        }
+      },
+      "12": {
+        "start": {
+          "line": 28,
+          "column": 4
+        },
+        "end": {
+          "line": 31,
+          "column": 5
+        }
+      },
+      "13": {
+        "start": {
+          "line": 29,
+          "column": 6
+        },
+        "end": {
+          "line": 29,
+          "column": 68
+        }
+      },
+      "14": {
+        "start": {
+          "line": 30,
+          "column": 6
+        },
+        "end": {
+          "line": 30,
+          "column": 91
+        }
+      },
+      "15": {
+        "start": {
+          "line": 30,
+          "column": 16
+        },
+        "end": {
+          "line": 30,
+          "column": 91
+        }
+      },
+      "16": {
+        "start": {
+          "line": 34,
+          "column": 2
+        },
+        "end": {
+          "line": 36,
+          "column": 30
+        }
+      },
+      "17": {
+        "start": {
+          "line": 35,
+          "column": 4
+        },
+        "end": {
+          "line": 35,
+          "column": 40
+        }
+      },
+      "18": {
+        "start": {
+          "line": 38,
+          "column": 2
+        },
+        "end": {
+          "line": 51,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 11,
+            "column": 34
+          },
+          "end": {
+            "line": 11,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 40
+          },
+          "end": {
+            "line": 52,
+            "column": 1
+          }
+        },
+        "line": 11
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 15,
+            "column": 47
+          },
+          "end": {
+            "line": 15,
+            "column": 48
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 15,
+            "column": 58
+          },
+          "end": {
+            "line": 15,
+            "column": 75
+          }
+        },
+        "line": 15
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 20,
+            "column": 28
+          },
+          "end": {
+            "line": 20,
+            "column": 29
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 20,
+            "column": 34
+          },
+          "end": {
+            "line": 25,
+            "column": 3
+          }
+        },
+        "line": 20
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 27,
+            "column": 19
+          },
+          "end": {
+            "line": 27,
+            "column": 20
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 27,
+            "column": 50
+          },
+          "end": {
+            "line": 32,
+            "column": 3
+          }
+        },
+        "line": 27
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 34,
+            "column": 12
+          },
+          "end": {
+            "line": 34,
+            "column": 13
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 34,
+            "column": 18
+          },
+          "end": {
+            "line": 36,
+            "column": 3
+          }
+        },
+        "line": 34
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 4
+          },
+          "end": {
+            "line": 24,
+            "column": 5
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 21,
+              "column": 4
+            },
+            "end": {
+              "line": 24,
+              "column": 5
+            }
+          },
+          {
+            "start": {},
+            "end": {}
+          }
+        ],
+        "line": 21
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 28,
+            "column": 4
+          },
+          "end": {
+            "line": 31,
+            "column": 5
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 28,
+              "column": 4
+            },
+            "end": {
+              "line": 31,
+              "column": 5
+            }
+          },
+          {
+            "start": {},
+            "end": {}
+          }
+        ],
+        "line": 28
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 30,
+            "column": 6
+          },
+          "end": {
+            "line": 30,
+            "column": 91
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 30,
+              "column": 6
+            },
+            "end": {
+              "line": 30,
+              "column": 91
+            }
+          },
+          {
+            "start": {},
+            "end": {}
+          }
+        ],
+        "line": 30
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 3,
+      "2": 3,
+      "3": 7,
+      "4": 3,
+      "5": 3,
+      "6": 3,
+      "7": 3,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 3,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 3,
+      "17": 1,
+      "18": 3
+    },
+    "f": {
+      "0": 3,
+      "1": 7,
+      "2": 0,
+      "3": 0,
+      "4": 1
+    },
+    "b": {
+      "0": [
+        0,
+        0
+      ],
+      "1": [
+        0,
+        0
+      ],
+      "2": [
+        0,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "64535a2d0beb9bdab0d36843997492c5ba5b585e"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainCard\\MainCard.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainCard\\MainCard.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 11,
+          "column": 43
+        },
+        "end": {
+          "line": 47,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 12,
+          "column": 66
+        },
+        "end": {
+          "line": 12,
+          "column": 75
+        }
+      },
+      "2": {
+        "start": {
+          "line": 13,
+          "column": 2
+        },
+        "end": {
+          "line": 46,
+          "column": 4
+        }
+      },
+      "3": {
+        "start": {
+          "line": 17,
+          "column": 8
+        },
+        "end": {
+          "line": 17,
+          "column": 25
+        }
+      },
+      "4": {
+        "start": {
+          "line": 39,
+          "column": 14
+        },
+        "end": {
+          "line": 41,
+          "column": 21
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 11,
+            "column": 43
+          },
+          "end": {
+            "line": 11,
+            "column": 44
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 76
+          },
+          "end": {
+            "line": 47,
+            "column": 1
+          }
+        },
+        "line": 11
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 16,
+            "column": 15
+          },
+          "end": {
+            "line": 16,
+            "column": 16
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 16,
+            "column": 21
+          },
+          "end": {
+            "line": 18,
+            "column": 7
+          }
+        },
+        "line": 16
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 38,
+            "column": 31
+          },
+          "end": {
+            "line": 38,
+            "column": 32
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 39,
+            "column": 14
+          },
+          "end": {
+            "line": 41,
+            "column": 21
+          }
+        },
+        "line": 39
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 23,
+            "column": 44
+          },
+          "end": {
+            "line": 23,
+            "column": 74
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 23,
+              "column": 44
+            },
+            "end": {
+              "line": 23,
+              "column": 55
+            }
+          },
+          {
+            "start": {
+              "line": 23,
+              "column": 59
+            },
+            "end": {
+              "line": 23,
+              "column": 74
+            }
+          }
+        ],
+        "line": 23
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 25,
+            "column": 41
+          },
+          "end": {
+            "line": 25,
+            "column": 71
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 25,
+              "column": 41
+            },
+            "end": {
+              "line": 25,
+              "column": 52
+            }
+          },
+          {
+            "start": {
+              "line": 25,
+              "column": 56
+            },
+            "end": {
+              "line": 25,
+              "column": 71
+            }
+          }
+        ],
+        "line": 25
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 35,
+            "column": 7
+          },
+          "end": {
+            "line": 44,
+            "column": 7
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 35,
+              "column": 7
+            },
+            "end": {
+              "line": 35,
+              "column": 21
+            }
+          },
+          {
+            "start": {
+              "line": 36,
+              "column": 8
+            },
+            "end": {
+              "line": 43,
+              "column": 14
+            }
+          }
+        ],
+        "line": 35
+      },
+      "3": {
+        "loc": {
+          "start": {
+            "line": 37,
+            "column": 11
+          },
+          "end": {
+            "line": 42,
+            "column": 14
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 37,
+              "column": 11
+            },
+            "end": {
+              "line": 37,
+              "column": 32
+            }
+          },
+          {
+            "start": {
+              "line": 38,
+              "column": 12
+            },
+            "end": {
+              "line": 42,
+              "column": 14
+            }
+          }
+        ],
+        "line": 37
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 30,
+      "2": 30,
+      "3": 0,
+      "4": 0
+    },
+    "f": {
+      "0": 30,
+      "1": 0,
+      "2": 0
+    },
+    "b": {
+      "0": [
+        30,
+        23
+      ],
+      "1": [
+        30,
+        23
+      ],
+      "2": [
+        30,
+        0
+      ],
+      "3": [
+        0,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "5ac82ea479033bada582ed501c5658ed7a9bed2c"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainCardList.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainCardList.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 12,
+          "column": 51
+        },
+        "end": {
+          "line": 41,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 13,
+          "column": 36
+        },
+        "end": {
+          "line": 13,
+          "column": 60
+        }
+      },
+      "2": {
+        "start": {
+          "line": 15,
+          "column": 30
+        },
+        "end": {
+          "line": 19,
+          "column": 3
+        }
+      },
+      "3": {
+        "start": {
+          "line": 16,
+          "column": 14
+        },
+        "end": {
+          "line": 16,
+          "column": 41
+        }
+      },
+      "4": {
+        "start": {
+          "line": 17,
+          "column": 19
+        },
+        "end": {
+          "line": 17,
+          "column": 81
+        }
+      },
+      "5": {
+        "start": {
+          "line": 18,
+          "column": 4
+        },
+        "end": {
+          "line": 18,
+          "column": 18
+        }
+      },
+      "6": {
+        "start": {
+          "line": 21,
+          "column": 2
+        },
+        "end": {
+          "line": 23,
+          "column": 19
+        }
+      },
+      "7": {
+        "start": {
+          "line": 22,
+          "column": 4
+        },
+        "end": {
+          "line": 22,
+          "column": 50
+        }
+      },
+      "8": {
+        "start": {
+          "line": 25,
+          "column": 2
+        },
+        "end": {
+          "line": 40,
+          "column": 4
+        }
+      },
+      "9": {
+        "start": {
+          "line": 31,
+          "column": 14
+        },
+        "end": {
+          "line": 35,
+          "column": 20
+        }
+      },
+      "10": {
+        "start": {
+          "line": 33,
+          "column": 18
+        },
+        "end": {
+          "line": 33,
+          "column": 85
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 12,
+            "column": 51
+          },
+          "end": {
+            "line": 12,
+            "column": 52
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 85
+          },
+          "end": {
+            "line": 41,
+            "column": 1
+          }
+        },
+        "line": 12
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 15,
+            "column": 30
+          },
+          "end": {
+            "line": 15,
+            "column": 31
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 15,
+            "column": 62
+          },
+          "end": {
+            "line": 19,
+            "column": 3
+          }
+        },
+        "line": 15
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 21,
+            "column": 12
+          },
+          "end": {
+            "line": 21,
+            "column": 13
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 18
+          },
+          "end": {
+            "line": 23,
+            "column": 3
+          }
+        },
+        "line": 21
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 30,
+            "column": 26
+          },
+          "end": {
+            "line": 30,
+            "column": 27
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 31,
+            "column": 14
+          },
+          "end": {
+            "line": 35,
+            "column": 20
+          }
+        },
+        "line": 31
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 32,
+            "column": 27
+          },
+          "end": {
+            "line": 32,
+            "column": 28
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 33,
+            "column": 18
+          },
+          "end": {
+            "line": 33,
+            "column": 85
+          }
+        },
+        "line": 33
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 27,
+            "column": 7
+          },
+          "end": {
+            "line": 38,
+            "column": 7
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 27,
+              "column": 7
+            },
+            "end": {
+              "line": 27,
+              "column": 26
+            }
+          },
+          {
+            "start": {
+              "line": 28,
+              "column": 8
+            },
+            "end": {
+              "line": 37,
+              "column": 14
+            }
+          }
+        ],
+        "line": 27
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 29,
+            "column": 11
+          },
+          "end": {
+            "line": 36,
+            "column": 14
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 29,
+              "column": 11
+            },
+            "end": {
+              "line": 29,
+              "column": 29
+            }
+          },
+          {
+            "start": {
+              "line": 30,
+              "column": 12
+            },
+            "end": {
+              "line": 36,
+              "column": 14
+            }
+          }
+        ],
+        "line": 29
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 2,
+      "2": 2,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 2,
+      "7": 1,
+      "8": 2,
+      "9": 3,
+      "10": 30
+    },
+    "f": {
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 3,
+      "4": 30
+    },
+    "b": {
+      "0": [
+        2,
+        2
+      ],
+      "1": [
+        2,
+        1
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "70884f2d2353db62ed99fe48fc0cba02005cd17b"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\LoadingSpinner\\LoadingSpinner.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\LoadingSpinner\\LoadingSpinner.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 5,
+          "column": 34
+        },
+        "end": {
+          "line": 11,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 6,
+          "column": 2
+        },
+        "end": {
+          "line": 10,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 5,
+            "column": 34
+          },
+          "end": {
+            "line": 5,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 40
+          },
+          "end": {
+            "line": 11,
+            "column": 1
+          }
+        },
+        "line": 5
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 2
+    },
+    "f": {
+      "0": 2
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "77097ebdda357741c4d341a4010e4041cf0d3f71"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainModal\\MainModal.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainModal\\MainModal.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 13,
+          "column": 41
+        },
+        "end": {
+          "line": 108,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 14,
+          "column": 31
+        },
+        "end": {
+          "line": 14,
+          "column": 55
+        }
+      },
+      "2": {
+        "start": {
+          "line": 16,
+          "column": 21
+        },
+        "end": {
+          "line": 19,
+          "column": 3
+        }
+      },
+      "3": {
+        "start": {
+          "line": 17,
+          "column": 17
+        },
+        "end": {
+          "line": 17,
+          "column": 34
+        }
+      },
+      "4": {
+        "start": {
+          "line": 18,
+          "column": 4
+        },
+        "end": {
+          "line": 18,
+          "column": 96
+        }
+      },
+      "5": {
+        "start": {
+          "line": 21,
+          "column": 2
+        },
+        "end": {
+          "line": 107,
+          "column": 4
+        }
+      },
+      "6": {
+        "start": {
+          "line": 24,
+          "column": 56
+        },
+        "end": {
+          "line": 24,
+          "column": 65
+        }
+      },
+      "7": {
+        "start": {
+          "line": 26,
+          "column": 66
+        },
+        "end": {
+          "line": 26,
+          "column": 85
+        }
+      },
+      "8": {
+        "start": {
+          "line": 94,
+          "column": 22
+        },
+        "end": {
+          "line": 96,
+          "column": 29
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 13,
+            "column": 41
+          },
+          "end": {
+            "line": 13,
+            "column": 42
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 60
+          },
+          "end": {
+            "line": 108,
+            "column": 1
+          }
+        },
+        "line": 13
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 16,
+            "column": 21
+          },
+          "end": {
+            "line": 16,
+            "column": 22
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 16,
+            "column": 42
+          },
+          "end": {
+            "line": 19,
+            "column": 3
+          }
+        },
+        "line": 16
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 24,
+            "column": 50
+          },
+          "end": {
+            "line": 24,
+            "column": 51
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 24,
+            "column": 56
+          },
+          "end": {
+            "line": 24,
+            "column": 65
+          }
+        },
+        "line": 24
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 26,
+            "column": 59
+          },
+          "end": {
+            "line": 26,
+            "column": 60
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 26,
+            "column": 66
+          },
+          "end": {
+            "line": 26,
+            "column": 85
+          }
+        },
+        "line": 26
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 93,
+            "column": 34
+          },
+          "end": {
+            "line": 93,
+            "column": 35
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 94,
+            "column": 22
+          },
+          "end": {
+            "line": 96,
+            "column": 29
+          }
+        },
+        "line": 94
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 23,
+            "column": 7
+          },
+          "end": {
+            "line": 105,
+            "column": 7
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 24,
+              "column": 8
+            },
+            "end": {
+              "line": 102,
+              "column": 14
+            }
+          },
+          {
+            "start": {
+              "line": 104,
+              "column": 8
+            },
+            "end": {
+              "line": 104,
+              "column": 26
+            }
+          }
+        ],
+        "line": 23
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 67,
+            "column": 17
+          },
+          "end": {
+            "line": 67,
+            "column": 59
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 67,
+              "column": 17
+            },
+            "end": {
+              "line": 67,
+              "column": 34
+            }
+          },
+          {
+            "start": {
+              "line": 67,
+              "column": 38
+            },
+            "end": {
+              "line": 67,
+              "column": 59
+            }
+          }
+        ],
+        "line": 67
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 70,
+            "column": 31
+          },
+          "end": {
+            "line": 70,
+            "column": 78
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 70,
+              "column": 31
+            },
+            "end": {
+              "line": 70,
+              "column": 47
+            }
+          },
+          {
+            "start": {
+              "line": 70,
+              "column": 51
+            },
+            "end": {
+              "line": 70,
+              "column": 78
+            }
+          }
+        ],
+        "line": 70
+      },
+      "3": {
+        "loc": {
+          "start": {
+            "line": 71,
+            "column": 17
+          },
+          "end": {
+            "line": 75,
+            "column": 17
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 71,
+              "column": 17
+            },
+            "end": {
+              "line": 71,
+              "column": 33
+            }
+          },
+          {
+            "start": {
+              "line": 72,
+              "column": 18
+            },
+            "end": {
+              "line": 74,
+              "column": 24
+            }
+          }
+        ],
+        "line": 71
+      },
+      "4": {
+        "loc": {
+          "start": {
+            "line": 76,
+            "column": 17
+          },
+          "end": {
+            "line": 85,
+            "column": 17
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 76,
+              "column": 17
+            },
+            "end": {
+              "line": 76,
+              "column": 31
+            }
+          },
+          {
+            "start": {
+              "line": 77,
+              "column": 18
+            },
+            "end": {
+              "line": 84,
+              "column": 24
+            }
+          }
+        ],
+        "line": 76
+      },
+      "5": {
+        "loc": {
+          "start": {
+            "line": 88,
+            "column": 13
+          },
+          "end": {
+            "line": 100,
+            "column": 13
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 88,
+              "column": 13
+            },
+            "end": {
+              "line": 88,
+              "column": 23
+            }
+          },
+          {
+            "start": {
+              "line": 89,
+              "column": 14
+            },
+            "end": {
+              "line": 99,
+              "column": 20
+            }
+          }
+        ],
+        "line": 88
+      },
+      "6": {
+        "loc": {
+          "start": {
+            "line": 92,
+            "column": 19
+          },
+          "end": {
+            "line": 97,
+            "column": 22
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 92,
+              "column": 19
+            },
+            "end": {
+              "line": 92,
+              "column": 36
+            }
+          },
+          {
+            "start": {
+              "line": 93,
+              "column": 20
+            },
+            "end": {
+              "line": 97,
+              "column": 22
+            }
+          }
+        ],
+        "line": 92
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0
+    },
+    "f": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    "b": {
+      "0": [
+        0,
+        0
+      ],
+      "1": [
+        0,
+        0
+      ],
+      "2": [
+        0,
+        0
+      ],
+      "3": [
+        0,
+        0
+      ],
+      "4": [
+        0,
+        0
+      ],
+      "5": [
+        0,
+        0
+      ],
+      "6": [
+        0,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "ed0c17e4914336bdba4a11653b9e6099f0abbd30"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainPageContent.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\MainComponents\\MainPageContent.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 10,
+          "column": 35
+        },
+        "end": {
+          "line": 43,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 11,
+          "column": 46
+        },
+        "end": {
+          "line": 11,
+          "column": 58
+        }
+      },
+      "2": {
+        "start": {
+          "line": 12,
+          "column": 32
+        },
+        "end": {
+          "line": 12,
+          "column": 76
+        }
+      },
+      "3": {
+        "start": {
+          "line": 12,
+          "column": 58
+        },
+        "end": {
+          "line": 12,
+          "column": 75
+        }
+      },
+      "4": {
+        "start": {
+          "line": 13,
+          "column": 30
+        },
+        "end": {
+          "line": 13,
+          "column": 57
+        }
+      },
+      "5": {
+        "start": {
+          "line": 14,
+          "column": 30
+        },
+        "end": {
+          "line": 23,
+          "column": 3
+        }
+      },
+      "6": {
+        "start": {
+          "line": 25,
+          "column": 2
+        },
+        "end": {
+          "line": 42,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 10,
+            "column": 35
+          },
+          "end": {
+            "line": 10,
+            "column": 36
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 41
+          },
+          "end": {
+            "line": 43,
+            "column": 1
+          }
+        },
+        "line": 10
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 12,
+            "column": 47
+          },
+          "end": {
+            "line": 12,
+            "column": 48
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 58
+          },
+          "end": {
+            "line": 12,
+            "column": 75
+          }
+        },
+        "line": 12
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 28,
+            "column": 7
+          },
+          "end": {
+            "line": 28,
+            "column": 95
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 28,
+              "column": 8
+            },
+            "end": {
+              "line": 28,
+              "column": 38
+            }
+          },
+          {
+            "start": {
+              "line": 28,
+              "column": 42
+            },
+            "end": {
+              "line": 28,
+              "column": 72
+            }
+          },
+          {
+            "start": {
+              "line": 28,
+              "column": 77
+            },
+            "end": {
+              "line": 28,
+              "column": 95
+            }
+          }
+        ],
+        "line": 28
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 29,
+            "column": 7
+          },
+          "end": {
+            "line": 38,
+            "column": 7
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 30,
+              "column": 8
+            },
+            "end": {
+              "line": 33,
+              "column": 10
+            }
+          },
+          {
+            "start": {
+              "line": 34,
+              "column": 10
+            },
+            "end": {
+              "line": 38,
+              "column": 7
+            }
+          }
+        ],
+        "line": 29
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 34,
+            "column": 10
+          },
+          "end": {
+            "line": 38,
+            "column": 7
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 35,
+              "column": 8
+            },
+            "end": {
+              "line": 35,
+              "column": 95
+            }
+          },
+          {
+            "start": {
+              "line": 37,
+              "column": 8
+            },
+            "end": {
+              "line": 37,
+              "column": 27
+            }
+          }
+        ],
+        "line": 34
+      },
+      "3": {
+        "loc": {
+          "start": {
+            "line": 39,
+            "column": 7
+          },
+          "end": {
+            "line": 40,
+            "column": 96
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 39,
+              "column": 7
+            },
+            "end": {
+              "line": 39,
+              "column": 21
+            }
+          },
+          {
+            "start": {
+              "line": 40,
+              "column": 8
+            },
+            "end": {
+              "line": 40,
+              "column": 96
+            }
+          }
+        ],
+        "line": 39
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 3,
+      "2": 3,
+      "3": 7,
+      "4": 3,
+      "5": 3,
+      "6": 3
+    },
+    "f": {
+      "0": 3,
+      "1": 7
+    },
+    "b": {
+      "0": [
+        3,
+        1,
+        2
+      ],
+      "1": [
+        0,
+        3
+      ],
+      "2": [
+        1,
+        2
+      ],
+      "3": [
+        3,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "e7e80ff60a45f8f2572f3c7a8e2a939e06b83b98"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\MainPage.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\MainPage.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 4,
+          "column": 21
+        },
+        "end": {
+          "line": 6,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 5,
+          "column": 2
+        },
+        "end": {
+          "line": 5,
+          "column": 29
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 4,
+            "column": 21
+          },
+          "end": {
+            "line": 4,
+            "column": 22
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 27
+          },
+          "end": {
+            "line": 6,
+            "column": 1
+          }
+        },
+        "line": 4
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1
+    },
+    "f": {
+      "0": 1
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "bdd3ff4ecb415a46108f7d77fa65aadf6cdaeb16"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\NotFoundPage.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\NotFoundPage.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 5,
+          "column": 25
+        },
+        "end": {
+          "line": 21,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 6,
+          "column": 2
+        },
+        "end": {
+          "line": 20,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 5,
+            "column": 25
+          },
+          "end": {
+            "line": 5,
+            "column": 26
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 31
+          },
+          "end": {
+            "line": 21,
+            "column": 1
+          }
+        },
+        "line": 5
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 0
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "cb43ac0d9cf86998961fd5bc9ca31f1caebabd9f"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\AboutPage.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\AboutPage.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 3,
+          "column": 22
+        },
+        "end": {
+          "line": 13,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 4,
+          "column": 2
+        },
+        "end": {
+          "line": 12,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 3,
+            "column": 22
+          },
+          "end": {
+            "line": 3,
+            "column": 23
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 28
+          },
+          "end": {
+            "line": 13,
+            "column": 1
+          }
+        },
+        "line": 3
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 0
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "80d3d9e8a5cdc322e361c4f04ce8ff9484329c23"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormCardView.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormCardView.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 4,
+          "column": 40
+        },
+        "end": {
+          "line": 19,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 5,
+          "column": 2
+        },
+        "end": {
+          "line": 18,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 4,
+            "column": 40
+          },
+          "end": {
+            "line": 4,
+            "column": 41
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 51
+          },
+          "end": {
+            "line": 19,
+            "column": 1
+          }
+        },
+        "line": 4
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 0
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "014ef0d8e7f9d7a2ca84685794c0384d8150cdc6"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormError\\MyError.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormError\\MyError.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 9,
+          "column": 28
+        },
+        "end": {
+          "line": 19,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 10,
+          "column": 2
+        },
+        "end": {
+          "line": 18,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 9,
+            "column": 28
+          },
+          "end": {
+            "line": 9,
+            "column": 29
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 44
+          },
+          "end": {
+            "line": 19,
+            "column": 1
+          }
+        },
+        "line": 9
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 12,
+            "column": 7
+          },
+          "end": {
+            "line": 16,
+            "column": 7
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 13,
+              "column": 8
+            },
+            "end": {
+              "line": 13,
+              "column": 68
+            }
+          },
+          {
+            "start": {
+              "line": 15,
+              "column": 8
+            },
+            "end": {
+              "line": 15,
+              "column": 45
+            }
+          }
+        ],
+        "line": 12
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 38
+          },
+          "end": {
+            "line": 13,
+            "column": 63
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 13,
+              "column": 38
+            },
+            "end": {
+              "line": 13,
+              "column": 52
+            }
+          },
+          {
+            "start": {
+              "line": 13,
+              "column": 56
+            },
+            "end": {
+              "line": 13,
+              "column": 63
+            }
+          }
+        ],
+        "line": 13
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 0
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {
+      "0": [
+        0,
+        0
+      ],
+      "1": [
+        0,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "c206a87faf637b9937244c684ab8d26d8bd37172"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormInput\\MyFormInput.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormInput\\MyFormInput.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 17,
+          "column": 37
+        },
+        "end": {
+          "line": 28,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 18,
+          "column": 20
+        },
+        "end": {
+          "line": 18,
+          "column": 98
+        }
+      },
+      "2": {
+        "start": {
+          "line": 19,
+          "column": 2
+        },
+        "end": {
+          "line": 27,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 17,
+            "column": 37
+          },
+          "end": {
+            "line": 17,
+            "column": 38
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 17,
+            "column": 97
+          },
+          "end": {
+            "line": 28,
+            "column": 1
+          }
+        },
+        "line": 17
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 22,
+            "column": 9
+          },
+          "end": {
+            "line": 22,
+            "column": 34
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 22,
+              "column": 17
+            },
+            "end": {
+              "line": 22,
+              "column": 22
+            }
+          },
+          {
+            "start": {
+              "line": 22,
+              "column": 25
+            },
+            "end": {
+              "line": 22,
+              "column": 34
+            }
+          }
+        ],
+        "line": 22
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 0,
+      "2": 0
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {
+      "0": [
+        0,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "fe3d104530d437fb50dbbc4ffd1d9c920243cf80"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormSelect\\MyFormSelect.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormSelect\\MyFormSelect.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 13,
+          "column": 39
+        },
+        "end": {
+          "line": 38,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 14,
+          "column": 2
+        },
+        "end": {
+          "line": 37,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 13,
+            "column": 39
+          },
+          "end": {
+            "line": 13,
+            "column": 40
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 77
+          },
+          "end": {
+            "line": 38,
+            "column": 1
+          }
+        },
+        "line": 13
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 0
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "9a9a33dba6ead04cb03f61c3626bc5e196e73842"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\utils\\utils.ts": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\utils\\utils.ts",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 1,
+          "column": 26
+        },
+        "end": {
+          "line": 1,
+          "column": 69
+        }
+      },
+      "1": {
+        "start": {
+          "line": 2,
+          "column": 33
+        },
+        "end": {
+          "line": 2,
+          "column": 91
+        }
+      },
+      "2": {
+        "start": {
+          "line": 3,
+          "column": 26
+        },
+        "end": {
+          "line": 3,
+          "column": 47
+        }
+      },
+      "3": {
+        "start": {
+          "line": 4,
+          "column": 29
+        },
+        "end": {
+          "line": 4,
+          "column": 36
+        }
+      },
+      "4": {
+        "start": {
+          "line": 6,
+          "column": 30
+        },
+        "end": {
+          "line": 12,
+          "column": 1
+        }
+      },
+      "5": {
+        "start": {
+          "line": 7,
+          "column": 16
+        },
+        "end": {
+          "line": 7,
+          "column": 26
+        }
+      },
+      "6": {
+        "start": {
+          "line": 8,
+          "column": 15
+        },
+        "end": {
+          "line": 8,
+          "column": 34
+        }
+      },
+      "7": {
+        "start": {
+          "line": 9,
+          "column": 16
+        },
+        "end": {
+          "line": 9,
+          "column": 61
+        }
+      },
+      "8": {
+        "start": {
+          "line": 10,
+          "column": 14
+        },
+        "end": {
+          "line": 10,
+          "column": 54
+        }
+      },
+      "9": {
+        "start": {
+          "line": 11,
+          "column": 2
+        },
+        "end": {
+          "line": 11,
+          "column": 35
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 6,
+            "column": 30
+          },
+          "end": {
+            "line": 6,
+            "column": 31
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 36
+          },
+          "end": {
+            "line": 12,
+            "column": 1
+          }
+        },
+        "line": 6
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "f": {
+      "0": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "a6b5ad3814714cb045677613f3d9cf67550d5d61"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormFields.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\UI\\FormComponents\\FormFields.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 16,
+          "column": 12
+        },
+        "end": {
+          "line": 16,
+          "column": 13
+        }
+      },
+      "1": {
+        "start": {
+          "line": 18,
+          "column": 41
+        },
+        "end": {
+          "line": 193,
+          "column": 1
+        }
+      },
+      "2": {
+        "start": {
+          "line": 24,
+          "column": 6
+        },
+        "end": {
+          "line": 28,
+          "column": 4
+        }
+      },
+      "3": {
+        "start": {
+          "line": 30,
+          "column": 19
+        },
+        "end": {
+          "line": 45,
+          "column": 3
+        }
+      },
+      "4": {
+        "start": {
+          "line": 31,
+          "column": 81
+        },
+        "end": {
+          "line": 31,
+          "column": 85
+        }
+      },
+      "5": {
+        "start": {
+          "line": 32,
+          "column": 36
+        },
+        "end": {
+          "line": 42,
+          "column": 5
+        }
+      },
+      "6": {
+        "start": {
+          "line": 43,
+          "column": 4
+        },
+        "end": {
+          "line": 43,
+          "column": 21
+        }
+      },
+      "7": {
+        "start": {
+          "line": 44,
+          "column": 4
+        },
+        "end": {
+          "line": 44,
+          "column": 12
+        }
+      },
+      "8": {
+        "start": {
+          "line": 47,
+          "column": 2
+        },
+        "end": {
+          "line": 192,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 18,
+            "column": 41
+          },
+          "end": {
+            "line": 18,
+            "column": 42
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 57
+          },
+          "end": {
+            "line": 193,
+            "column": 1
+          }
+        },
+        "line": 18
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 30,
+            "column": 19
+          },
+          "end": {
+            "line": 30,
+            "column": 20
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 30,
+            "column": 46
+          },
+          "end": {
+            "line": 45,
+            "column": 3
+          }
+        },
+        "line": 30
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0
+    },
+    "f": {
+      "0": 0,
+      "1": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "223d080c5f6b3699534ba7cd1060b968da626c65"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\FormPage.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\pages\\FormPage.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 8,
+          "column": 21
+        },
+        "end": {
+          "line": 33,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 9,
+          "column": 24
+        },
+        "end": {
+          "line": 9,
+          "column": 66
+        }
+      },
+      "2": {
+        "start": {
+          "line": 9,
+          "column": 50
+        },
+        "end": {
+          "line": 9,
+          "column": 65
+        }
+      },
+      "3": {
+        "start": {
+          "line": 10,
+          "column": 18
+        },
+        "end": {
+          "line": 10,
+          "column": 34
+        }
+      },
+      "4": {
+        "start": {
+          "line": 11,
+          "column": 52
+        },
+        "end": {
+          "line": 11,
+          "column": 67
+        }
+      },
+      "5": {
+        "start": {
+          "line": 13,
+          "column": 21
+        },
+        "end": {
+          "line": 17,
+          "column": 3
+        }
+      },
+      "6": {
+        "start": {
+          "line": 14,
+          "column": 4
+        },
+        "end": {
+          "line": 14,
+          "column": 41
+        }
+      },
+      "7": {
+        "start": {
+          "line": 15,
+          "column": 4
+        },
+        "end": {
+          "line": 15,
+          "column": 31
+        }
+      },
+      "8": {
+        "start": {
+          "line": 16,
+          "column": 4
+        },
+        "end": {
+          "line": 16,
+          "column": 56
+        }
+      },
+      "9": {
+        "start": {
+          "line": 16,
+          "column": 21
+        },
+        "end": {
+          "line": 16,
+          "column": 48
+        }
+      },
+      "10": {
+        "start": {
+          "line": 18,
+          "column": 2
+        },
+        "end": {
+          "line": 32,
+          "column": 4
+        }
+      },
+      "11": {
+        "start": {
+          "line": 25,
+          "column": 12
+        },
+        "end": {
+          "line": 25,
+          "column": 48
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 8,
+            "column": 21
+          },
+          "end": {
+            "line": 8,
+            "column": 22
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 27
+          },
+          "end": {
+            "line": 33,
+            "column": 1
+          }
+        },
+        "line": 8
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 9,
+            "column": 39
+          },
+          "end": {
+            "line": 9,
+            "column": 40
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 50
+          },
+          "end": {
+            "line": 9,
+            "column": 65
+          }
+        },
+        "line": 9
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 13,
+            "column": 21
+          },
+          "end": {
+            "line": 13,
+            "column": 22
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 49
+          },
+          "end": {
+            "line": 17,
+            "column": 3
+          }
+        },
+        "line": 13
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 16,
+            "column": 15
+          },
+          "end": {
+            "line": 16,
+            "column": 16
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 16,
+            "column": 21
+          },
+          "end": {
+            "line": 16,
+            "column": 48
+          }
+        },
+        "line": 16
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 24,
+            "column": 25
+          },
+          "end": {
+            "line": 24,
+            "column": 26
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 25,
+            "column": 12
+          },
+          "end": {
+            "line": 25,
+            "column": 48
+          }
+        },
+        "line": 25
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 7
+          },
+          "end": {
+            "line": 21,
+            "column": 45
+          }
+        },
+        "type": "binary-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 21,
+              "column": 7
+            },
+            "end": {
+              "line": 21,
+              "column": 24
+            }
+          },
+          {
+            "start": {
+              "line": 21,
+              "column": 28
+            },
+            "end": {
+              "line": 21,
+              "column": 45
+            }
+          }
+        ],
+        "line": 21
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 22,
+            "column": 7
+          },
+          "end": {
+            "line": 30,
+            "column": 7
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 23,
+              "column": 8
+            },
+            "end": {
+              "line": 27,
+              "column": 14
+            }
+          },
+          {
+            "start": {
+              "line": 29,
+              "column": 8
+            },
+            "end": {
+              "line": 29,
+              "column": 27
+            }
+          }
+        ],
+        "line": 22
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0
+    },
+    "f": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    "b": {
+      "0": [
+        0,
+        0
+      ],
+      "1": [
+        0,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "9e7bb77f80ca821b091faa0ea0dee794b36ec77a"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\Header.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\Header.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 9,
+          "column": 41
+        },
+        "end": {
+          "line": 13,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 15,
+          "column": 19
+        },
+        "end": {
+          "line": 36,
+          "column": 1
+        }
+      },
+      "2": {
+        "start": {
+          "line": 16,
+          "column": 40
+        },
+        "end": {
+          "line": 16,
+          "column": 52
+        }
+      },
+      "3": {
+        "start": {
+          "line": 17,
+          "column": 19
+        },
+        "end": {
+          "line": 17,
+          "column": 32
+        }
+      },
+      "4": {
+        "start": {
+          "line": 19,
+          "column": 2
+        },
+        "end": {
+          "line": 22,
+          "column": 26
+        }
+      },
+      "5": {
+        "start": {
+          "line": 20,
+          "column": 23
+        },
+        "end": {
+          "line": 20,
+          "column": 84
+        }
+      },
+      "6": {
+        "start": {
+          "line": 20,
+          "column": 50
+        },
+        "end": {
+          "line": 20,
+          "column": 83
+        }
+      },
+      "7": {
+        "start": {
+          "line": 21,
+          "column": 4
+        },
+        "end": {
+          "line": 21,
+          "column": 56
+        }
+      },
+      "8": {
+        "start": {
+          "line": 21,
+          "column": 20
+        },
+        "end": {
+          "line": 21,
+          "column": 56
+        }
+      },
+      "9": {
+        "start": {
+          "line": 24,
+          "column": 2
+        },
+        "end": {
+          "line": 35,
+          "column": 4
+        }
+      },
+      "10": {
+        "start": {
+          "line": 29,
+          "column": 10
+        },
+        "end": {
+          "line": 31,
+          "column": 20
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 15,
+            "column": 19
+          },
+          "end": {
+            "line": 15,
+            "column": 20
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 15,
+            "column": 25
+          },
+          "end": {
+            "line": 36,
+            "column": 1
+          }
+        },
+        "line": 15
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 19,
+            "column": 12
+          },
+          "end": {
+            "line": 19,
+            "column": 13
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 19,
+            "column": 18
+          },
+          "end": {
+            "line": 22,
+            "column": 3
+          }
+        },
+        "line": 19
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 20,
+            "column": 40
+          },
+          "end": {
+            "line": 20,
+            "column": 41
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 20,
+            "column": 50
+          },
+          "end": {
+            "line": 20,
+            "column": 83
+          }
+        },
+        "line": 20
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 28,
+            "column": 25
+          },
+          "end": {
+            "line": 28,
+            "column": 26
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 29,
+            "column": 10
+          },
+          "end": {
+            "line": 31,
+            "column": 20
+          }
+        },
+        "line": 29
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 4
+          },
+          "end": {
+            "line": 21,
+            "column": 56
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 21,
+              "column": 4
+            },
+            "end": {
+              "line": 21,
+              "column": 56
+            }
+          },
+          {
+            "start": {},
+            "end": {}
+          }
+        ],
+        "line": 21
+      }
+    },
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 2,
+      "10": 6
+    },
+    "f": {
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 6
+    },
+    "b": {
+      "0": [
+        1,
+        0
+      ]
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "577d5d10b2d706d68b64f6cd9b075eebff9932db"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\Layout.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\components\\Layout.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 5,
+          "column": 19
+        },
+        "end": {
+          "line": 14,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 6,
+          "column": 2
+        },
+        "end": {
+          "line": 13,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 5,
+            "column": 19
+          },
+          "end": {
+            "line": 5,
+            "column": 20
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 25
+          },
+          "end": {
+            "line": 14,
+            "column": 1
+          }
+        },
+        "line": 5
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1
+    },
+    "f": {
+      "0": 1
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "218a34a731eda823615e6fcd3ac81717166385c4"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\App.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\App.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 10,
+          "column": 16
+        },
+        "end": {
+          "line": 21,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 11,
+          "column": 2
+        },
+        "end": {
+          "line": 20,
+          "column": 4
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 10,
+            "column": 16
+          },
+          "end": {
+            "line": 10,
+            "column": 17
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 22
+          },
+          "end": {
+            "line": 21,
+            "column": 1
+          }
+        },
+        "line": 10
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1
+    },
+    "f": {
+      "0": 1
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "c4afe45d3d12c0567d5cee29164cb6e5983be6b3"
+  },
+  "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\entry-client.tsx": {
+    "path": "E:\\JS\\rs-scgool-react\\rsschool-react\\src\\entry-client.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 7,
+          "column": 20
+        },
+        "end": {
+          "line": 16,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 8,
+          "column": 2
+        },
+        "end": {
+          "line": 15,
+          "column": 4
+        }
+      },
+      "2": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 18,
+          "column": 14
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 7,
+            "column": 20
+          },
+          "end": {
+            "line": 7,
+            "column": 21
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 26
+          },
+          "end": {
+            "line": 16,
+            "column": 1
+          }
+        },
+        "line": 7
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1
+    },
+    "f": {
+      "0": 1
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "a4f18e177eec1f724871ebddf36b1a8c422daed7"
+  }
+}
