@@ -3,17 +3,18 @@ import FormCardView from '../UI/FormComponents/FormCardView';
 import FormFileds from '../UI/FormComponents/FormFields';
 import { IFormCardData } from '../../interfaces';
 import { useAppDispatch, useAppSelector } from '../../redux/store/store';
-import { actions as formAction } from '../../redux/store/favorites/form.slice';
+import { setCard } from '../../redux/store/favorites/form.slice';
 
 const FormPage: FC = () => {
   const { formCards } = useAppSelector((state) => state.formState);
-  const dispath = useAppDispatch();
+  const dispatch = useAppDispatch();
   const [hasMessageCreated, setHasMessageCreated] = useState(false);
+  const removeMessageDelay = 2000;
 
   const createCard = (newCard: IFormCardData) => {
-    dispath(formAction.setCard(newCard));
+    dispatch(setCard(newCard));
     setHasMessageCreated(true);
-    setTimeout(() => setHasMessageCreated(false), 2000);
+    setTimeout(() => setHasMessageCreated(false), removeMessageDelay);
   };
   return (
     <>

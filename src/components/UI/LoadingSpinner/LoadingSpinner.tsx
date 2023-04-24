@@ -1,18 +1,12 @@
 import React, { FC } from 'react';
-import { ThreeCircles } from 'react-loader-spinner';
+import blockskSpinner from '../../../assets/blocks-shuffle.svg';
 import classes from './spinner.module.scss';
 
 export const LoadingSpinner: FC = () => {
   return (
-    <ThreeCircles
-      height="100"
-      width="100"
-      color="#ffa500"
-      wrapperStyle={{}}
-      wrapperClass={classes.spinner}
-      visible={true}
-      ariaLabel="three-circles-rotating"
-    />
+    <div className={classes.spinnerDiv}>
+      <img src={blockskSpinner} alt="loading" className={classes.spinnerImg} />
+    </div>
   );
 };
 

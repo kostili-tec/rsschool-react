@@ -1,4 +1,4 @@
-.spinner {
+.spinnerDiv {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,4 +8,8 @@
   right: 0;
   bottom: 0;
   z-index: 10;
+}
+
+.spinnerImg {
+  width: 200px;
 }

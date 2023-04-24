@@ -12,7 +12,11 @@ export default defineConfig(({ command, mode }) => ({
     sourcemap: command === 'serve' ? 'inline' : false,
   },
 
-  plugins: [react(), eslint()],
+  plugins: [react( {
+    babel: {
+      plugins: [['istanbul']],
+    }
+  }), eslint()],
   test: {
     globals: true,
     environment: 'jsdom',

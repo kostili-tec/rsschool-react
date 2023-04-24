@@ -17,6 +17,7 @@ export const MainCard: FC<MainCardProps> = ({ photoData, setCurrentId }) => {
         setCurrentId(id);
       }}
       role="main-card"
+      data-cy="unsplash-card"
     >
       <div className={classes.imageContainer}>
         <img src={urls.small} alt={`image-${description || alt_description}`} />

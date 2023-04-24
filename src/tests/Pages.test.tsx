@@ -12,8 +12,8 @@ describe('Pages test', () => {
         <MainPage />
       </Provider>
     );
-    const btn = screen.getByRole('button');
-    expect(btn).toBeInTheDocument();
+    const form = screen.getByRole('search-form');
+    expect(form).toBeInTheDocument();
   });
   it('render About page', () => {
     render(<AboutPage />);

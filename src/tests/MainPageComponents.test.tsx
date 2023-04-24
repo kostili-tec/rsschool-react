@@ -17,8 +17,6 @@ describe('Main page components tests', () => {
     );
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
-    fireEvent.click(button);
-    // expect(await screen.findByText(/to use this app you need/i)).toBeInTheDocument();
   });
   it('render MainSearcHForm', () => {
     render(
@@ -32,14 +30,12 @@ describe('Main page components tests', () => {
   });
 });
 
-describe('it LoadintSpinner test', () => {
-  it('render LoadintSPinner', () => {
+describe('it LoadingSpinner test', () => {
+  it('render LoadingSPinner', () => {
     render(<LoadingSpinner />);
 
-    const spinner = screen.getByTestId('three-circles-wrapper');
+    const spinner = screen.getByAltText('loading');
     expect(spinner).toBeInTheDocument();
-    expect(spinner).toHaveAttribute('aria-label', 'three-circles-rotating');
-    expect(spinner).toHaveAttribute('aria-busy', 'true');
     expect(spinner.getAttribute('class')).toContain('spinner');
   });
 });
