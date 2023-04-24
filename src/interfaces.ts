@@ -1,7 +1,6 @@
 export interface IHeaderLinks {
   linkName: string;
   linkTo: string;
-  'data-testid'?: string;
 }
 
 export interface IHeaderProps {
@@ -35,4 +34,37 @@ export interface IApiGetRequest {
   limit: number;
   skip: number;
   total: number;
+}
+
+export interface ICreatorFormRefs {
+  inputTitle: string;
+  textAreaDescription: string;
+  inputDate: string;
+  inputPrice: string;
+  selectValue: string;
+  checkboxValues?: Array<string> | [];
+  radioButtonValue: string;
+  inputFile: File | null;
+  inputFileUrl: string;
+}
+
+export interface IFormPageState {
+  cardsData: Array<ICreatorFormRefs> | [];
+  isVisibleMessage?: boolean;
+}
+
+export interface ICreateFormProps {
+  create: (value: Partial<ICreatorFormRefs>) => void;
+}
+
+export type StateForm = { [key in keyof ICreatorFormRefs]: boolean };
+
+export interface IFormInputProps {
+  type: string;
+  refValue: React.RefObject<HTMLInputElement>;
+  isValid: boolean;
+  placeholder?: string;
+  id?: string;
+  max?: string;
+  accept?: string;
 }

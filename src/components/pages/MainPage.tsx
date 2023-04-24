@@ -26,15 +26,17 @@ export default class MainPage extends Component<Partial<IState>> {
   render() {
     const { products } = this.state;
     return (
-      <div className="main-page" data-testid="main-page">
+      <div className="main-page">
         <SearchForm />
-        <div className="cards-container">
-          {products.length ? (
-            products.map((el) => <Card key={`card-${el.id}`} {...el} />)
-          ) : (
-            <img src={reactSVG} alt="react-logo" className="logo" />
-          )}
-        </div>
+        {products.length ? (
+          <div className="cards-container">
+            {products.map((el) => (
+              <Card key={el.id} {...el} />
+            ))}
+          </div>
+        ) : (
+          <img src={reactSVG} alt="react-logo" className="logo" />
+        )}
       </div>
     );
   }
