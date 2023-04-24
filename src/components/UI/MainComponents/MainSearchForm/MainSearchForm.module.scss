@@ -1,0 +1,39 @@
+.searchForm {
+  margin-bottom: 1rem;
+  width: 500px;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 5px 15px;
+  height: 2rem;
+  border: 2px solid rgb(124, 124, 124);
+  border-radius: 5px;
+  &:focus-visible {
+    outline-color: #d1d1d1;
+  }
+}
+
+.inputSubmit {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background: url('../../../../assets/search.svg') no-repeat scroll 0 0 transparent;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+@media screen and (max-width: 550px)  {
+  .searchForm {
+    width: 310px;
+  }
+}

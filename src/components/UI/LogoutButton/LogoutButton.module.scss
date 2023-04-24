@@ -1,0 +1,15 @@
+.logoutButton {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.logoutSVG {
+  width: 2rem;
+  height: 2rem;
+}

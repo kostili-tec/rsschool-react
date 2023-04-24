@@ -1,41 +1,27 @@
-import React, { FC, useEffect, useState } from 'react';
-import SearchForm from '../SearchForm';
-import Card from '../Card';
-import { getProducts } from '../../utils/api';
-import { IProductsArray } from '../../interfaces';
-import reactSVG from '../../assets/react.svg';
+import React, { FC, useState } from 'react';
+import MainPageContent from '../UI/MainComponents/MainPageContent';
+import AccessForm from '../UI/AccessForm/AccessForm';
+import { TValidationState } from '../../interfaces';
 
 const MainPage: FC = () => {
-  const [products, setProducts] = useState<IProductsArray>([]);
+  const [validationState, setValidationState] = useState<TValidationState>({
+    clientKey: '',
+    isValid: false,
+  });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getProducts();
-        if (data) {
-          const products = data.products;
-          setProducts(products);
-        }
-      } catch (error) {
-        console.error('Failed to load data', error);
-      }
-    };
-    fetchData();
-  }, []);
+  const handleLogout = () => {
+    localStorage.clear();
+    setValidationState({ clientKey: '', isValid: false });
+  };
 
   return (
-    <div className="main-page">
-      <SearchForm />
-      {products.length ? (
-        <div className="cards-container">
-          {products.map((el) => (
-            <Card key={el.id} {...el} />
-          ))}
-        </div>
+    <>
+      {!validationState.isValid ? (
+        <AccessForm setValidation={setValidationState} />
       ) : (
-        <img src={reactSVG} alt="react-logo" className="logo" />
+        <MainPageContent logoutCallback={handleLogout} validationState={validationState} />
       )}
-    </div>
+    </>
   );
 };
 

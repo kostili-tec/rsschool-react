@@ -18,8 +18,8 @@ const FormPage: FC = () => {
       {hasMessageCreated && <p>Card added</p>}
       {cards.length ? (
         <div className="form-page__container">
-          {cards.map((el, ind) => (
-            <FormCardView key={ind + 1} {...el} />
+          {cards.map((el) => (
+            <FormCardView key={el.id} {...el} />
           ))}
         </div>
       ) : (
