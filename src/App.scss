@@ -177,60 +177,8 @@
   }
 }
 
-.form__create-card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  button {
-    width: 300px;
-    height: 2rem;
-  }
-}
-
-.create-components__container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-}
-
-.create-card__container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-width: 300px;
-}
-
-.form-input__container {
-  display: flex;
-  flex-wrap: nowrap;
-  input, select {
-    &:focus-visible {
-      outline-color: #d1d1d1;
-    }
-  }
-  input[type=file] {
-    width: 248px;
-  }
-}
-
-.form-fieldset {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5px;
-}
-
-.error-span {
-  color: red;
-  margin-left: 0.5rem;
-}
-
 .form-page__container {
+  margin: 1rem 0;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

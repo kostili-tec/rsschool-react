@@ -12,10 +12,14 @@ describe('Pages test', () => {
   });
   it('render About page', () => {
     render(<AboutPage />);
-    expect(screen.getByText(/about us/i));
+    expect(screen.getByText(/about page/i));
   });
   it('render Form page', () => {
     render(<FormPage />);
-    expect(screen.getByPlaceholderText(/title/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/title/i)).toBeInTheDocument();
+  });
+  it("form page should be doesn't have any cards on render", () => {
+    render(<FormPage />);
+    expect(screen.getByText(/no cards/i)).toBeInTheDocument();
   });
 });

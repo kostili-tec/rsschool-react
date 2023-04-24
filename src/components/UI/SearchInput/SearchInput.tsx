@@ -1,38 +1,39 @@
-import React, { Component } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import classes from './input.module.scss';
 
-interface IInputState {
-  inputState: string;
-}
+const SearchInput: FC = () => {
+  const [searchField, setSearchField] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-export default class SearchInput extends Component<Partial<IInputState>> {
-  state: IInputState = {
-    inputState: '',
+  const handleChangeInput = () => {
+    if (inputRef.current) setSearchField(inputRef.current.value);
   };
 
-  changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ inputState: e.target.value });
-  };
-
-  componentDidMount(): void {
+  useEffect(() => {
     const inputQuery = localStorage.getItem('inputQuery');
     if (inputQuery) {
-      this.setState({ inputState: inputQuery });
+      setSearchField(inputQuery);
     }
-  }
+  }, []);
 
-  componentWillUnmount(): void {
-    localStorage.setItem('inputQuery', this.state.inputState);
-  }
+  useEffect(() => {
+    const input = inputRef.current;
+    return () => {
+      if (input) {
+        localStorage.setItem('inputQuery', input.value);
+      }
+    };
+  }, []);
 
-  render() {
-    return (
-      <input
-        onChange={this.changeHandler}
-        value={this.state.inputState}
-        className={classes.input}
-        placeholder="Search here"
-      />
-    );
-  }
-}
+  return (
+    <input
+      onChange={handleChangeInput}
+      ref={inputRef}
+      value={searchField}
+      className={classes.input}
+      placeholder="Search here"
+    />
+  );
+};
+
+export default SearchInput;

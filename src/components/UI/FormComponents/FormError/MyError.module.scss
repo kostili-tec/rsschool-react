@@ -1,0 +1,12 @@
+.error {
+  color: #bf1650;
+  max-width: 310px;
+  &::before {
+    display: inline;
+    content: "⚠ ";
+  }
+}
+
+.errorPlug {
+  height: 21px;
+}
