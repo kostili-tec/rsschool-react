@@ -1,40 +1,24 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { createPortal } from 'react-dom';
 import { useForm } from 'react-hook-form';
-import { checkAccessKey } from '../../../utils/api';
-import {} from '../../../interfaces';
+import { useLazyCheckAccesKeyQuery } from '../../../redux/store/api/api';
 import classes from './AccessForm.module.scss';
-import { TValidationState } from '../../../interfaces';
+import { useAppDispatch } from '../../../redux/store/store';
+import { actions as authAction } from '../../../redux/store/favorites/auth.slice';
 
 interface IUseFormAcces {
   inputKey: string;
 }
 
-interface IUseFormProps {
-  setValidation: (args: TValidationState) => void;
-}
-
-const AccessForm: FC<IUseFormProps> = ({ setValidation }) => {
+const AccessForm: FC = () => {
   const { register, handleSubmit } = useForm<IUseFormAcces>();
-
-  const saveAuthorization = (authoriObj: TValidationState) => {
-    localStorage.setItem('kostili-client_key', authoriObj.clientKey);
-    localStorage.setItem('kostili-isValid', authoriObj.isValid.toString());
-  };
-
-  useEffect(() => {
-    const storageClientKey = localStorage.getItem('kostili-client_key');
-    const storageIsValid = localStorage.getItem('kostili-isValid');
-    const isTrue = storageIsValid === 'true';
-    if (storageClientKey && isTrue) {
-      setValidation({ clientKey: storageClientKey, isValid: isTrue });
-    }
-  }, [setValidation]);
+  const dispatch = useAppDispatch();
+  const [checkAccess] = useLazyCheckAccesKeyQuery();
 
   const onSubmit = async (data: IUseFormAcces) => {
-    const status = await checkAccessKey(data.inputKey);
-    setValidation({ clientKey: data.inputKey, isValid: status });
-    saveAuthorization({ clientKey: data.inputKey, isValid: status });
+    dispatch(authAction.setToken({ token: data.inputKey, isValid: true }));
+    localStorage.setItem('kostili-client_key', data.inputKey); // temporarily
+    await checkAccess('');
   };
 
   return createPortal(

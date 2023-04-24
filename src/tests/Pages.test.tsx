@@ -1,12 +1,17 @@
-import { describe } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import MainPage from '../components/pages/MainPage';
 import AboutPage from '../components/pages/AboutPage';
 import FormPage from '../components/pages/FormPage';
+import { store } from '../redux/store/store';
 
 describe('Pages test', () => {
   it('render Main page', () => {
-    render(<MainPage />);
+    render(
+      <Provider store={store}>
+        <MainPage />
+      </Provider>
+    );
     const btn = screen.getByRole('button');
     expect(btn).toBeInTheDocument();
   });
@@ -15,11 +20,19 @@ describe('Pages test', () => {
     expect(screen.getByText(/about page/i));
   });
   it('render Form page', () => {
-    render(<FormPage />);
+    render(
+      <Provider store={store}>
+        <FormPage />
+      </Provider>
+    );
     expect(screen.getByLabelText(/title/i)).toBeInTheDocument();
   });
   it("form page should be doesn't have any cards on render", () => {
-    render(<FormPage />);
+    render(
+      <Provider store={store}>
+        <FormPage />
+      </Provider>
+    );
     expect(screen.getByText(/no cards/i)).toBeInTheDocument();
   });
 });

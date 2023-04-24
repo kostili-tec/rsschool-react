@@ -28,13 +28,19 @@ const FormFields: FC<ICreateFormProps> = ({ create }) => {
   });
 
   const onSubmit = (data: IFormInputsData) => {
+    const { title, date, checkboxes, description, price, radio, select, file } = data;
     const cardData: IFormCardData = {
       id: keyId++,
-      fileUrl: URL.createObjectURL(data.file[0]),
-      ...data,
+      title,
+      select,
+      date,
+      price,
+      checkboxes,
+      radio,
+      description,
+      fileUrl: URL.createObjectURL(file[0]),
     };
     create(cardData);
-    console.log(keyId);
     reset();
   };
 
