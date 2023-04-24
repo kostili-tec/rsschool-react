@@ -6,8 +6,8 @@ import {
 } from '../../../interfaces';
 
 const baseUrl = 'https://api.unsplash.com/';
-const additionSearh = 'search/photos?';
-const additionGetPhoto = 'photos/';
+const urlSearch = 'search/photos?';
+const urlGetPhoto = 'photos/';
 
 type RandomPhotosRequest = {
   query: string;
@@ -33,7 +33,7 @@ export const api = createApi({
     }),
     searchPhotos: builder.query<IUnsplashRequestData, RandomPhotosRequest>({
       query: ({ query, page, per_page }) => ({
-        url: additionSearh,
+        url: urlSearch,
         params: {
           query,
           page,
@@ -42,10 +42,10 @@ export const api = createApi({
       }),
     }),
     getPhotoById: builder.query<IUnsplashGetPhoto, string>({
-      query: (id) => `${additionGetPhoto}${id}`,
+      query: (id) => `${urlGetPhoto}${id}`,
     }),
     checkAccesKey: builder.query({
-      query: () => `${additionGetPhoto}random?count=1`,
+      query: () => `${urlGetPhoto}random?count=1`,
     }),
   }),
 });

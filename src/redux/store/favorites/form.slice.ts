@@ -13,4 +13,6 @@ export const formSlice = createSlice({
   },
 });
 
-export const { actions, reducer } = formSlice;
+export const { setCard } = formSlice.actions;
+
+export default formSlice.reducer;

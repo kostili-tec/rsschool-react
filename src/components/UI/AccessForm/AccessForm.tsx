@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useLazyCheckAccesKeyQuery } from '../../../redux/store/api/api';
 import classes from './AccessForm.module.scss';
 import { useAppDispatch } from '../../../redux/store/store';
-import { actions as authAction } from '../../../redux/store/favorites/auth.slice';
+import { setToken } from '../../../redux/store/favorites/auth.slice';
 
 interface IUseFormAcces {
   inputKey: string;
@@ -16,7 +16,7 @@ const AccessForm: FC = () => {
   const [checkAccess] = useLazyCheckAccesKeyQuery();
 
   const onSubmit = async (data: IUseFormAcces) => {
-    dispatch(authAction.setToken({ token: data.inputKey, isValid: true }));
+    dispatch(setToken({ token: data.inputKey, isValid: true }));
     localStorage.setItem('kostili-client_key', data.inputKey); // temporarily
     await checkAccess('');
   };

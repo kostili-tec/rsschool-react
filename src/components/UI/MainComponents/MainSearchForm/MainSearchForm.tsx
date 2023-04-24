@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import classes from './MainSearchForm.module.scss';
 import { useAppSelector, useAppDispatch } from '../../../../redux/store/store';
-import { actions as searchAction } from '../../../../redux/store/favorites/search.slice';
+import { setSearch } from '../../../../redux/store/favorites/search.slice';
 
 interface IUseSearchFormProps {
   inputValue: string;
@@ -26,8 +26,8 @@ export const MainSearchForm: FC = () => {
 
   const onSubmit = (data: IUseSearchFormProps) => {
     if (data.inputValue) {
-      dispatch(searchAction.setSearch({ searchQuery: inputState }));
-      if (skip) dispatch(searchAction.setSearch({ searchQuery: inputState, skip: false }));
+      dispatch(setSearch({ searchQuery: inputState }));
+      if (skip) dispatch(setSearch({ searchQuery: inputState, skip: false }));
     }
   };
 
