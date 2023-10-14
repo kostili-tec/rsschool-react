@@ -10,7 +10,8 @@ describe('Router test', () => {
         <App />
       </MemoryRouter>
     );
-    expect(screen.getByTestId('not-found-page')).toBeInTheDocument();
+    expect(screen.getByAltText('error-image')).toBeInTheDocument();
+    expect(screen.getByText('404')).toBeInTheDocument();
   });
   it('Main Page', () => {
     render(
@@ -18,6 +19,6 @@ describe('Router test', () => {
         <App />
       </MemoryRouter>
     );
-    expect(screen.getByTestId('main-page')).toBeInTheDocument();
+    expect(screen.getByAltText('react-logo')).toBeInTheDocument();
   });
 });

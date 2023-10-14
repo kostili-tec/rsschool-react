@@ -4,8 +4,9 @@ import Header from './Header';
 import { IHeaderLinks } from '../interfaces';
 
 const headerLinks: Array<IHeaderLinks> = [
-  { linkName: 'Main Page', linkTo: '/', 'data-testid': 'main-link' },
+  { linkName: 'Main Page', linkTo: '/' },
   { linkName: 'About Us', linkTo: '/about' },
+  { linkName: 'Form', linkTo: '/form' },
 ];
 
 export default class Layout extends Component {
