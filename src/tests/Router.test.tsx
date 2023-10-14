@@ -13,12 +13,17 @@ describe('Router test', () => {
     expect(screen.getByAltText('error-image')).toBeInTheDocument();
     expect(screen.getByText('404')).toBeInTheDocument();
   });
-  it('Main Page', () => {
+  it('Main Page with modal authrization', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
         <App />
       </MemoryRouter>
     );
-    expect(screen.getByAltText('react-logo')).toBeInTheDocument();
+    const header = screen.getByText(/to use this app/i);
+    const inputText = screen.getByPlaceholderText(/enter your unsplash/i);
+    const inputSumbit = screen.getByText(/submit/i);
+    expect(header).toBeInTheDocument();
+    expect(inputText).toBeInTheDocument();
+    expect(inputSumbit).toBeInTheDocument();
   });
 });
