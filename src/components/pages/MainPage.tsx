@@ -1,28 +1,12 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import MainPageContent from '../UI/MainComponents/MainPageContent';
 import AccessForm from '../UI/AccessForm/AccessForm';
-import { TValidationState } from '../../interfaces';
+import { useAppSelector } from '../../redux/store/store';
 
 const MainPage: FC = () => {
-  const [validationState, setValidationState] = useState<TValidationState>({
-    clientKey: '',
-    isValid: false,
-  });
+  const { isValid } = useAppSelector((state) => state.authState);
 
-  const handleLogout = () => {
-    localStorage.clear();
-    setValidationState({ clientKey: '', isValid: false });
-  };
-
-  return (
-    <>
-      {!validationState.isValid ? (
-        <AccessForm setValidation={setValidationState} />
-      ) : (
-        <MainPageContent logoutCallback={handleLogout} validationState={validationState} />
-      )}
-    </>
-  );
+  return <>{!isValid ? <AccessForm /> : <MainPageContent />}</>;
 };
 
 export default MainPage;

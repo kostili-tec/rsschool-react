@@ -1,9 +1,10 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { describe, vi } from 'vitest';
+import { fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import MainPageContent from '../components/UI/MainComponents/MainPageContent';
 import App from '../App';
 import { server } from './mocks/testServer';
+import { store } from '../redux/store/store';
 
 beforeAll(() => server.listen());
 
@@ -13,20 +14,27 @@ afterEach(() => {
 
 afterAll(() => server.close());
 
-describe('Api tests', () => {
+describe('Api tests', async () => {
   const testKey = 'valid_key';
-
   beforeEach(async () => {
-    render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
+    await act(async () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      );
+    });
     const input = screen.getByPlaceholderText(/enter your Unsplash key/i);
     const submitButton = screen.getByText(/submit/i);
     expect(input).toBeInTheDocument();
-    fireEvent.change(input, { target: { value: testKey } });
-    fireEvent.click(submitButton);
+    await act(async () => {
+      fireEvent.change(input, { target: { value: testKey } });
+    });
+    await act(async () => {
+      fireEvent.click(submitButton);
+    });
   });
 
   it('enter valid key and get random photos', async () => {
@@ -40,10 +48,9 @@ describe('Api tests', () => {
 describe('Main page content test', () => {
   beforeEach(async () => {
     render(
-      <MainPageContent
-        validationState={{ clientKey: 'client_key', isValid: true }}
-        logoutCallback={vi.fn()}
-      />
+      <Provider store={store}>
+        <MainPageContent />
+      </Provider>
     );
   });
   it('should upload images by search query', async () => {
