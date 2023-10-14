@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { reducer as searchReducer } from './favorites/search.slice';
-import { reducer as formReducer } from './favorites/form.slice';
-import { reducer as authReducer } from './favorites/auth.slice';
+import searchReducer from './favorites/search.slice';
+import formReducer from './favorites/form.slice';
+import authReducer from './favorites/auth.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { api } from './api/api';
 import type { TypedUseSelectorHook } from 'react-redux';

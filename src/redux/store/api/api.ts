@@ -4,11 +4,10 @@ import {
   IUnsplashRequestData,
   IUnsplashGetPhoto,
 } from '../../../interfaces';
-import { RootState } from '../store';
 
 const baseUrl = 'https://api.unsplash.com/';
-const additionSearh = 'search/photos?';
-const additionGetPhoto = 'photos/';
+const urlSearch = 'search/photos?';
+const urlGetPhoto = 'photos/';
 
 type RandomPhotosRequest = {
   query: string;
@@ -20,8 +19,8 @@ export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: baseUrl,
-    prepareHeaders: (headers, { getState }) => {
-      const token = (getState() as RootState).authState.token;
+    prepareHeaders: (headers) => {
+      const token = 'FYdN3NPqRZfJlZqP-pOElRcZ95ARwjpFvreQ-1zSBOM';
       if (token) {
         headers.set('Authorization', `Client-ID ${token}`);
       }
@@ -34,7 +33,7 @@ export const api = createApi({
     }),
     searchPhotos: builder.query<IUnsplashRequestData, RandomPhotosRequest>({
       query: ({ query, page, per_page }) => ({
-        url: additionSearh,
+        url: urlSearch,
         params: {
           query,
           page,
@@ -43,10 +42,10 @@ export const api = createApi({
       }),
     }),
     getPhotoById: builder.query<IUnsplashGetPhoto, string>({
-      query: (id) => `${additionGetPhoto}${id}`,
+      query: (id) => `${urlGetPhoto}${id}`,
     }),
     checkAccesKey: builder.query({
-      query: () => `${additionGetPhoto}random?count=1`,
+      query: () => `${urlGetPhoto}random?count=1`,
     }),
   }),
 });
