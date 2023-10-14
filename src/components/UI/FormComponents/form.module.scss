@@ -1,0 +1,166 @@
+.form {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  textarea {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+ 
+  button[type="submit"],
+  input[type="submit"] {
+    background: orange;
+    border: none;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: 100;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  button[type="submit"]:hover,
+  input[type="submit"]:hover {
+    background: #3d3d3d;
+  }
+  
+  button[type="submit"]:active,
+  input[type="button"]:active,
+  input[type="submit"]:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+  }
+  
+  input:disabled {
+    opacity: 0.4;
+  }
+  
+  input[type="button"]:hover {
+    transition: 0.3s all;
+  }
+  
+  button[type="submit"],
+  input[type="button"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+    
+  button[type="button"] {
+    display: block;
+    appearance: none;
+    background: #333;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+  hr {
+    margin: 0.5rem 0;
+  }
+  
+}
+
+.formInputsContaner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.inputsContaner {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputText {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.labelInput {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.labelChackRadio {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.checkContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.checkBox {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.paragraphInput {
+  line-height: 2;
+}
+
+.inputFile::file-selector-button {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  border: none;
+  background: orange;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+.inputFile::file-selector-button:hover {
+  background: #3d3d3d;
+}
+
+
+@media screen and (max-width: 830px) {
+
+  .form {
+    margin: 1rem 0;
+  }
+
+  .formInputsContaner {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .inputsContaner {
+    max-width: 300px;
+  }
+
+}

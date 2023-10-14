@@ -9,10 +9,6 @@ export interface IHeaderProps {
 
 export type TypeHeaderProps = Array<IHeaderLinks>;
 
-export interface IStateHeader {
-  title: string;
-}
-
 export interface IProduct {
   id: number;
   title: string;
@@ -48,13 +44,26 @@ export interface ICreatorFormRefs {
   inputFileUrl: string;
 }
 
-export interface IFormPageState {
-  cardsData: Array<ICreatorFormRefs> | [];
-  isVisibleMessage?: boolean;
+interface IBaseCardData {
+  id?: number;
+  title: string;
+  description: string;
+  select: string;
+  price: string;
+  date: string;
+  checkboxes: Array<string>;
+  radio: string;
+}
+export interface IFormInputsData extends IBaseCardData {
+  file: FileList;
+}
+
+export interface IFormCardData extends IBaseCardData {
+  fileUrl: string;
 }
 
 export interface ICreateFormProps {
-  create: (value: Partial<ICreatorFormRefs>) => void;
+  create: (value: IFormCardData) => void;
 }
 
 export type StateForm = { [key in keyof ICreatorFormRefs]: boolean };
